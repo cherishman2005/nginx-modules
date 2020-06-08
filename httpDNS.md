@@ -16,8 +16,11 @@
 
 访问HTTPDNS服务时，一次请求只能解析一个域名。
 请求示例：
+
 示例1（默认来源IP）：http://203.107.1.33/100000/d?host=www.aliyun.com
+
 示例2（指定来源IP）：http://203.107.1.33/100000/d?host=www.aliyun.com&ip=42.120.74.196
+
 示例3（指定解析类型）：http://203.107.1.33/100000/d?host=www.aliyun.com&ip=219.242.0.1&query=4,6
 
 
