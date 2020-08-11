@@ -41,3 +41,7 @@
 
 不是的，申请SSL证书（HTTPS），需要域名或者公网IP才都是可以申请的。
 目前支持公网IP或域名申请。 
+
+## web js端没法使用httpDNS
+
+因为web访问需要https，需要通过域名才能访问http后端；而httpDNS通常采用IP访问。
