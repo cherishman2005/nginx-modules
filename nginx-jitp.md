@@ -33,3 +33,8 @@ zhangbiwu
 * 设计过程中借鉴了openresty作者章亦春的nginx echo c module。
 * 如有兴趣欢迎联系交流
 
+# 参考链接
+
+* https://github.com/cherishman2005/ngx_http_jitp_module
+
+* https://github.com/openresty/echo-nginx-module
