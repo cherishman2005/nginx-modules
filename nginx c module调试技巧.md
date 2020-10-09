@@ -1,4 +1,4 @@
-# 在开发nginx c module时的一些调试技巧
+# 开发nginx c module的一些调试技巧
 
 ## 观察workder进程是否有core?
 
@@ -22,7 +22,7 @@ daemon off;
 
 ## http content-length和chunk
 
-抓包分析：
+`抓包分析`：
 
 * 分析body长度；或者chunk格式是否正确？
   
@@ -30,7 +30,8 @@ daemon off;
   
   —— 所以不仅仅要抓包，还有后端日志确认。
 
-
 ## 添加日志打印
 
-  因为nginx很多异步操作，gdb调试不一定方便；nginx日志较少，通过加一下日志打印，来定位问题。
+  因为nginx很多异步操作，gdb调试不一定方便；nginx日志较少。通过`添加一些日志打印`，来定位问题。
+
+  【注】nginx编译时要打开debug选项，并在nginx.conf打开debug开关。
