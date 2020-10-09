@@ -51,5 +51,6 @@ keywords: nginx
 
 - 陶辉 《深入理解Nginx模块开发与架构解析》（第2版P148）
 
-- [https://www.nginx.com/resources/wiki/extending/api/utility/](https://www.nginx.com/resources/wiki/extending/api/utility/)
+- [https://tengine.taobao.org/book/chapter_02.html](https://tengine.taobao.org/book/chapter_02.html)
 
+- [https://www.nginx.com/resources/wiki/extending/api/utility/](https://www.nginx.com/resources/wiki/extending/api/utility/)
