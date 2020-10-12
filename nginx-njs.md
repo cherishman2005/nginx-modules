@@ -95,6 +95,10 @@
 nginx: [emerg] SyntaxError: Token "let" not supported in this version in http.js:2
 ```
 
+# 参考链接
+
+- [http://nginx.org/en/docs/http/ngx_http_js_module.html](http://nginx.org/en/docs/http/ngx_http_js_module.html)
+
 
 
 
