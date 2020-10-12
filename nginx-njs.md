@@ -2,6 +2,13 @@
 
 # nginx-njs
 
+2015年9月，nginx宣布支持类JavaScript语言。
+
+1. nginScript是以nginx插件的方式存在。 插件名叫：njs 。和其他nginx插件一样，需要重新编译nginx来完成安装。
+1. nginScript是JavaScript/ECMAscript的子集 。它实现了大部分的JavaScript语言的能力，没有完全遵从ECMAScript标准，同时抛弃了JavaScript比较难懂的部分。
+1. nginScript不是通过V8引擎实现的 。而是通过一个更小、能耗更低、更符合nginx应用场景的小虚拟机（VM）来实现。可以理解为nginx为其实现了一套自己的词法解析。
+1. nginScript是跑在nginx的配置文件里。 比如：nginx.conf文件里。所以nginScript可以完成传统配置文件所能处理的所有事情，同时可以让配置管理动态化。这也是nginScript出现的最重要的原因。
+
 ## nginx-njs安装配置
 
 1. 下载njs插件
