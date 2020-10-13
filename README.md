@@ -1,6 +1,6 @@
-# nginx-consul
+# nginx-modules
 
-nginx-consul完美组合：
+## nginx-consul完美组合：
 
 	（1）服务发现API网关；
 	（2）后端微服务架构：负载均衡；
