@@ -8,6 +8,7 @@ Nginx负载均衡经历的阶段：
 根据服务发现的成熟度：
 
 （1）在配置中心配置key-value。 Nginx定时动态拉去key-value值。
+
 （2）nginx去服务中心拉取服务IP+Port列表。
 
 以上方案均不用nginx -s reload，减少重启nginx的性能损耗 和 抖动。
