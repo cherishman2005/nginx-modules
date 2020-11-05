@@ -13,7 +13,8 @@ Nginx负载均衡经历的阶段：
 
 以上方案均不用nginx -s reload，减少重启nginx的性能损耗 和 抖动。
 
-代码实现方式:
+实现方式:
+
 （1）nginx c/c++ module
 
 （2）openresty lua实现
