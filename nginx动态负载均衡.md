@@ -34,6 +34,8 @@ Nginx负载均衡经历的阶段：
 
 * nginx-njs没有挖掘http-upstream模块，主要在js-http-module采用js_set回调函数实现
 
+* njs的js模块暂时不支持共享内存功能；
+
 # 小结
 
 | nginx动态负载均衡       |    | 
@@ -44,7 +46,6 @@ Nginx负载均衡经历的阶段：
 
 * lua实现upstream的关键在upstream模块；njs实现upstream在http-js-module，充分利用js的回调函数特性；
 
-* njs的js模块暂时不支持共享内存功能；
 
 # Author
 
