@@ -73,6 +73,15 @@ for (i = 0; i < (ngx_uint_t) iphp->addrlen; i++) {
 
 # FAQ
 
+# Hash函数
+* 加法Hash；
+* 位运算Hash；
+* 乘法Hash；
+* 除法Hash；
+* 查表Hash；
+* 混合Hash；
+
+
 ## hash table
 
 nginx采用hash-table
@@ -99,3 +108,7 @@ function hash(text) {
     return hash >>> 0;
 }
 ```
+
+# 参考链接
+
+- [几种常用hash算法及原理](https://www.cnblogs.com/zhoug2020/p/6984177.html)
