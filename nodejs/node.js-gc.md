@@ -70,6 +70,7 @@ print();
 ```
 
 （2）运行
+手动在代码中操作 GC (不推荐)
 node --expose-gc example.js
 运行示例：
 ```
