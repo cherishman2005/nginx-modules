@@ -8,7 +8,7 @@ ip-hash机制能够让某一客户机在相当长的一段时间内只访问固�
 
 ip-hash是在upstream配置中定义的:
 ```
-upstream nginx.example.com {
+upstream backend {
     server 192.168.74.235:80;
     server 192.168.74.236:80;
     ip_hash;
@@ -18,7 +18,7 @@ server {
     listen 80;
 
     location / {
-        proxy_pass http://nginx.example.com;
+        proxy_pass http://backend;
     }
 }
 ```
