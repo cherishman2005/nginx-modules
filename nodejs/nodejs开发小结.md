@@ -1,4 +1,3 @@
-
 # nodejs
 
 nodejs和前端js的区别：
@@ -12,11 +11,11 @@ JavaScript是一门编程语言（脚本语言），而Node.js是一个平台。
 
 * nodejs
 
-  node.Js是一个基于Google V8引擎（js引擎的某一种）构建的JavaScript运行环境。
+  nodejs是一个基于Google V8引擎（js引擎的某一种）构建的JavaScript运行环境。
 
 * 前端js
 
-基于浏览器端的 javascript。
+  基于浏览器端的 javascript。
 
 
 ## nodejs开发小结
