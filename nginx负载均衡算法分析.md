@@ -112,3 +112,5 @@ function hash(text) {
 # 参考链接
 
 - [几种常用hash算法及原理](https://www.cnblogs.com/zhoug2020/p/6984177.html)
+
+- [https://www.codeproject.com/Articles/56138/Consistent-hashing](https://www.codeproject.com/Articles/56138/Consistent-hashing)
