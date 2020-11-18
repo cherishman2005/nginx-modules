@@ -45,8 +45,8 @@ MVC 分别指的是：
 
 MVC分离为 MC + V：
 
-V: View静态实现（采用前端 + web-sdk或native-sdk）
-MC： Model（数据）+ Controller（逻辑）由nodejs、go、java等成熟框架实现；
+* V: View静态实现（采用前端 + web-sdk或native-sdk）
+* MC： Model（数据）+ Controller（逻辑）由nodejs、go、java等成熟框架实现；
 
 同时前端接入采用nginx做静态和动态分离， View部署在nginx。
 
