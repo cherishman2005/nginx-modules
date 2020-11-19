@@ -66,6 +66,8 @@ MVC 分别指的是：
 
 ## 前后端分离
 
+![前后端分析](../img/front-backend-separate0.png)
+
 核心思想是前端HTML页面通过AJAX调用后端的RESTFUL API接口并使用JSON数据进行交互。
 
 ![前后端分析](../img/front-backend-separate.png)
