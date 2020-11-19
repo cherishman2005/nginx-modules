@@ -53,4 +53,6 @@ MVC分离为 MC + V：
 
 # 参考链接
 
+- [https://developer.mozilla.org/en-US/docs/Glossary/MVC](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+
 - [https://www.cnblogs.com/SheilaSun/p/7294706.html](https://www.cnblogs.com/SheilaSun/p/7294706.html)
