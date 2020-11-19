@@ -1,6 +1,30 @@
 # MVC框架
 
-![MVC框架](../img/ModelViewControllerDiagram.png)
+| 框架                      | 描述                                  |
+|:--------------------------|:--------------------------------------|
+| 前后端耦合     | web-server传统框架                       |
+| 前后端分离     | 非常流行、实用的框架                      |
+| 微前端框架     | 前后端分离的特定场景实用                             |
+
+以上框架基本都是从MVC演进过来，熟悉MVC框架，才方便进行后端模块化、面向对象设计。
+
+前后端分离实质：
+* 将MC + V进行了分离。View静态资源放在nginx/appache/CDN；
+* 业务处理逻辑主要由后端服务器实现；
+* 根据业务需要，前端View处理部分业务逻辑；前端主要做呈现，UI渲染、交互；
+
+## 前后端耦合
+
+![前后端耦合](../img/mvc.png)
+
+弊端：
+
+web-server开发人员 前端后端职责不清，甚至两者都要会。
+
+
+### MVC框架
+
+![MVC框架](../img/model-view-controller.png)
 
 MVC 分别指的是：
 
@@ -39,7 +63,12 @@ MVC 分别指的是：
 -- models
 ```
 
+
 ## 前后端分离
+
+核心思想是前端HTML页面通过AJAX调用后端的RESTFUL API接口并使用JSON数据进行交互。
+
+![前后端分析](../img/front-backend-separate.png)
 
 为了实现各个端（移动端，web端，小程序端等）之间互通，现在优先采用前后端分离架构。
 
@@ -51,8 +80,17 @@ MVC分离为 MC + V：
 同时前端接入采用nginx做静态和动态分离， View部署在nginx。
 
 
+## 前后端分离（微前端架构）
+
+![微前端架构](../img/front-backend-separate1.png)
+
+Electron采用为前端架构，electron嵌入了chrome和nodejs核。
+这种框架在一些对要求比较高的场景可以尝试。如时延要求高，追求极致体验的场景。如webrtc视频通话，视频播放（通过nodejs代理拉取ts分片等优化场景）。
+
 # 参考链接
 
 - [https://developer.mozilla.org/en-US/docs/Glossary/MVC](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+
+- [https://blog.csdn.net/fuzhongmin05/article/details/81591072](https://blog.csdn.net/fuzhongmin05/article/details/81591072)
 
 - [https://www.cnblogs.com/SheilaSun/p/7294706.html](https://www.cnblogs.com/SheilaSun/p/7294706.html)
