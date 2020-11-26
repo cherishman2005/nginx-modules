@@ -75,6 +75,8 @@ MVC模块化设计，便于维护。
 * 如果你要更新程序怎么办？不得不让用户中断访问一段时间？
   —— 实质做到微服务，在前面加上API网关（如nginx）就好办了。
 
+* nginx和nodejs混合能更好地创建微型应用服务。
+
 后端服务务必要满足两条特性：
 * 能容错（Fault tolerant）
 * 可扩展（Scalability）
@@ -114,3 +116,5 @@ MVC模块化设计，便于维护。
 - [node.js后端框架介绍](https://zhuanlan.zhihu.com/p/133666957)
 
 - [Node.js 应该处于技术架构中的哪个位置？](https://yq.aliyun.com/roundtable/45383)
+
+- [5个提高Node.js应用性能的技巧](https://segmentfault.com/a/1190000004916646)

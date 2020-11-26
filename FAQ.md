@@ -37,3 +37,9 @@ char* p = (char*)"abc"; //OK
 
 需要分情况分类讨论，一般可能是后端服务器挂了，也有可能是 Proxy Buffer 不够。
 
+## DNS劫持、http劫持
+
+## CDN分发网络
+
+减少时延 
+
