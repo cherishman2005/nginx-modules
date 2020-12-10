@@ -1,8 +1,8 @@
 # nginx动态负载均衡
 
-Nginx负载均衡经历的阶段：
+**Nginx负载均衡经历的阶段：**
 
-静态负载均衡  ==》 动态负载均衡
+静态负载均衡  ==》 动态负载均衡 ==》 后端服务弹性伸缩
 
 
 根据服务发现的成熟度：
@@ -38,16 +38,22 @@ Nginx负载均衡经历的阶段：
 
 * njs的js模块暂时不支持共享内存功能；
 
+
 # 小结
 
 | nginx动态负载均衡       |    | 
-| ---------- | ------ |
+| :---------- | :------ |
 | c module upstream      | 开发门槛要求高 | 
 | lua-upstream     | 开发效率高，扩展个性化upstream均衡算法方便 |
 | njs-upstream     | 开发效率高，可扩展个性化均衡算法，暂没有lua-upstream成熟 | 
 
-* lua实现upstream的关键在upstream模块；njs实现upstream在http-js-module，充分利用js的回调函数特性；
+* lua实现upstream的关键在upstream模块；
 
+* njs实现upstream在http-js-module，充分利用js的回调函数特性；
+
+# 参考链接
+
+- [https://github.com/nginx/njs/issues/354](https://github.com/nginx/njs/issues/354)
 
 # Author
 

@@ -61,6 +61,11 @@ for (i = 0; i < (ngx_uint_t) iphp->addrlen; i++) {
   * 判定重试次数；
 * 如果重试次数超过20次，则降级为轮询；
 
+## random随机负载均衡
+
+最简单的方式。nginx原生没有提供这种负载均衡方式，采用nginx-lua或nginx-njs实现比较方便。
+
+
 
 # 小结
 
