@@ -43,3 +43,11 @@ char* p = (char*)"abc"; //OK
 
 减少时延 
 
+## ERR_NAME_NOT_RESOLVED
+
+```
+(index):2 GET https://service-test.xxx.com/rtm-dev.js?t=1606472352 net::ERR_NAME_NOT_RESOLVED
+```
+
+域名已经失效
+
