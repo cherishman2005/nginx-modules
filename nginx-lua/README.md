@@ -11,6 +11,13 @@ ngx.timer.at 的 delay 参数，指定的是以秒为单位的延迟触发时间
 
 需要特别注意的是：有一些 ngx_lua 的 API 不能在这里调用，比如子请求、ngx.req.*和向下游输出的 API(ngx.print、ngx.flush 之类)，原因是这些调用需要依赖具体的请求。但是 ngx.timer.at 自身的运行，与当前的请求并没有关系的。
 
+## openresty(nginx-lua)脚本调试
+
+```
+/usr/local/openresty/bin/resty  h.lua
+```
+
+
 # 参考文献
 
 - [https://moonbingbing.gitbooks.io/openresty-best-practices/content/ngx_lua/timer.html](https://moonbingbing.gitbooks.io/openresty-best-practices/content/ngx_lua/timer.html)
@@ -22,3 +29,5 @@ ngx.timer.at 的 delay 参数，指定的是以秒为单位的延迟触发时间
 - [Nginx 负载均衡策略之“快者优先”的 Lua 实现](https://toutiao.io/posts/ocepp3/preview)
 
 - [https://github.com/openresty/lua-resty-balancer](https://github.com/openresty/lua-resty-balancer)
+
+- [https://github.com/jaderhs/lua-consistent-hash](https://github.com/jaderhs/lua-consistent-hash)
