@@ -20,3 +20,5 @@ ngx.timer.at 的 delay 参数，指定的是以秒为单位的延迟触发时间
 - [Dynamic NGINX Upstreams from Consul via lua-nginx-module](https://medium.com/@sigil66/dynamic-nginx-upstreams-from-consul-via-lua-nginx-module-2bebc935989b)
 
 - [Nginx 负载均衡策略之“快者优先”的 Lua 实现](https://toutiao.io/posts/ocepp3/preview)
+
+- [https://github.com/openresty/lua-resty-balancer](https://github.com/openresty/lua-resty-balancer)
