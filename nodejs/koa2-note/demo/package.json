@@ -1,7 +1,7 @@
 {
-  "name": "rtm-token-server",
+  "name": "rtm-server",
   "version": "1.2.0",
-  "description": "rtm-token-server cluster",
+  "description": "rtm-server cluster",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
