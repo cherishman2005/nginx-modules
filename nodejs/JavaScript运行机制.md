@@ -8,7 +8,9 @@ console.log(3);
 },0);
 console.log(2);
 ```
-//请问数字打印顺序是什么？
+
+请问数字打印顺序是什么？
+
 这一题看似很简单，但如果你不了解JavaScript运行机制，很容易就答错了。题目的答案是依次输出1 2 3，如果你有疑惑，下文有详细解释。
 
 # 理解JS的单线程的概念
@@ -96,14 +98,14 @@ for循环一次碰到一个 setTimeout()，并不是马上把setTimeout()拿到�
 ```
 $.ajax({
 url：“xxxxx",
-success:function (result){
+success:function (result) {
 console.log("a")
  }
 })
-setTimeout(function (){
+setTimeout(function () {
 console.log("b")
 },100)
-setTimeout(function (){
+setTimeout(function () {
 console.log("c")
 })
 console.log("d");
@@ -113,31 +115,38 @@ JavaScript运行机制
 ajax加载完成时才会放入异步队列，至于这段时间不确定，所有有两种情况：①大于100ms,最后的结果是 d c b a ;②小于100ms,最后的结果便是d c a b。
 
 # 题外话
+
 如果要输出0~4，上面例题应该如何修改？
 
 将var变为let
+```
 for (let i = 0; i < 5; i++) {
-setTimeout(function() { 
- console.log(i);
- }, 1000);
+  setTimeout(function() { 
+    console.log(i);
+  }, 1000);
 }
+```
+
 2.加个立即执行函数
-
+```
 for (var i = 0; i < 5; i++) {
-(function(i){
-setTimeout(function() { 
- console.log(i);
- }, 1000);
-})(i)
+  (function(i) {
+    setTimeout(function() { 
+      console.log(i);
+    }, 1000);
+  })(i)
 }
-3.也可以通过这样加闭包
+```
 
-for(var i = 1;i < 5;i++){ 
- var a = function(){ 
- var j = i; 
- setTimeout(function(){ 
- console.log(j); 
- },1000) 
- } 
-a();
+3.也可以通过这样加闭包
+```
+for(var i = 1; i < 5;i++) { 
+  var a = function(){ 
+    var j = i; 
+    setTimeout(function() { 
+      console.log(j); 
+    }, 1000) 
+  } 
+  a();
 }
+```
