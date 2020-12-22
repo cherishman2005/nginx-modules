@@ -69,6 +69,11 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 ```
 
+# 小结
+
+* github上开源的nodejs/javascript很多经典代码。非常值得借鉴和研究。
+  * 多研究express，koa2，ws，socket.io源码。
+
 # 参考链接
 
 - [KOA2框架原理解析和实现](https://juejin.cn/post/6844903709592256525)
