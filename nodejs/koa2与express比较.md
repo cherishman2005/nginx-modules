@@ -69,14 +69,41 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 ```
 
+## express与koa2的部分核心代码
+
+使用了nodejs的内核http模块。
+
+### koa2 http
+
+```
+  listen(...args) {
+    debug('listen');
+    const server = http.createServer(this.callback());
+    return server.listen(...args);
+  }
+```
+
+### express http
+
+```
+app.listen = function listen() {
+  var server = http.createServer(this);
+  return server.listen.apply(server, arguments);
+};
+```
+
 # 小结
 
 * github上开源的nodejs/javascript很多经典代码。非常值得借鉴和研究。
-  * 多研究express，koa2，ws，socket.io源码。
+  * 多研究express，koa2，ws，socket.io源码。—— 阅读开源源码，受益匪浅。
 
 * nodejs适合开发RTM/RTC接入服务系统，开发效率高。
 
 # 参考链接
+
+- [https://github.com/koajs/koa](https://github.com/koajs/koa)
+
+- [https://github.com/expressjs/express](https://github.com/expressjs/express)
 
 - [KOA2框架原理解析和实现](https://juejin.cn/post/6844903709592256525)
 
