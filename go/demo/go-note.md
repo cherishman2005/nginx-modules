@@ -1,4 +1,8 @@
-# main示例
+# go-note
+
+
+
+## main示例
 
 main.go
 ```
@@ -24,3 +28,7 @@ go build main.go
 
 ./main
 ```
+
+# 参考链接
+
+- [https://studygolang.com/articles/9467](https://studygolang.com/articles/9467)
