@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"net/url"
 	"time"
 	"encoding/json"
 )
@@ -15,9 +16,13 @@ type Person struct {
 
 func userHandler(format string) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
-		//tm := time.Now().Format(format)
+		if len(r.Form["usrargs"]) > 0 {
+			usrargs := ptrReq.Form["usrargs"][0]
+			//param = getParam(usrargs)
+			log.Println(usrargs)
+		}
 
-		p1 := Person{
+		p1 := Person {
 			Name: "awu",
 			Age:  18,
 		}

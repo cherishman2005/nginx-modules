@@ -9,7 +9,6 @@ type Person struct {
     Name string `json:"name"`
     Age  int    `json:"age"`
     Addr string `json:"addr,omitempty"`
-    //Addr string `json:"addr"`
 }
  
 func main() {
