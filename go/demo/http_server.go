@@ -16,10 +16,14 @@ type Person struct {
 
 func userHandler(format string) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
-		if len(r.Form["usrargs"]) > 0 {
-			usrargs := ptrReq.Form["usrargs"][0]
-			//param = getParam(usrargs)
-			log.Println(usrargs)
+		urlStr := r.URL.RawQuery
+		if len(urlStr) > 0 {
+			m, _ := url.ParseQuery(urlStr)
+			log.Println(m)
+			if len(m["name"]) > 0 {
+				log.Println(m["name"][0])
+		
+			}
 		}
 
 		p1 := Person {
