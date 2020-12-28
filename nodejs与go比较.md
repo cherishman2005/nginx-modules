@@ -1,7 +1,11 @@
-
 # nodejs与go比较 
 
 nodejs和go均擅长做web服务器
+
+|        |   nodejs  |  go |
+| :---------- | :------ | :------ |
+| 内存限制      | 64 位操作系统约为 1.4G<BR>32 位操作系统约为 0.7G |  |
+
 
 
 ## nodejs和golang协程的不同
@@ -80,3 +84,5 @@ golang类似与小c++，最大的亮点就是使用协程管理多线程。
 - [https://zhuanlan.zhihu.com/p/59295820](https://zhuanlan.zhihu.com/p/59295820)
 
 - [https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-defer/](https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-defer/)
+
+- [《深入浅出Node.js》-内存控制](https://lz5z.com/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode-js-%E5%86%85%E5%AD%98%E6%8E%A7%E5%88%B6/)
