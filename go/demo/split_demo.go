@@ -17,12 +17,12 @@ func init() {
 func main() {
 	s := "123,456,789"
 	
-	TransferStringToMap(s, &WhitelistUidMap)
+	TransferStringToMap(s, WhitelistUidMap)
 	
 	fmt.Println(WhitelistUidMap)
 }
 
-func TransferStringToMap(s string, slice *map[uint64]bool) {
+func TransferStringToMap(s string, slice map[uint64]bool) {
 	elements := strings.Split(s, ",")
 	
 	for _, v := range elements {
@@ -30,6 +30,6 @@ func TransferStringToMap(s string, slice *map[uint64]bool) {
 		if err != nil {
 			continue
 		}
-		(*slice)[uid] = true
+		slice[uid] = true
 	}
 }
