@@ -1,5 +1,43 @@
 # go-note
 
+## array增删改查
+
+```
+func search(slice *[]uint64, value uint64) int {
+	for i, v := range *slice {
+		if v == value {
+			return i
+		}
+	}
+	return -1
+}
+
+func delete(slice *[]uint64, index int) {
+	if index > len(*slice) - 1 {
+	   return  
+	}
+	*slice = append((*slice)[:index], (*slice)[index+1:]...)
+}
+
+func clear(slice *[]uint64) {
+	*slice = []uint64{}
+}
+```
+
+## golang map 判断key是否存在
+
+判断方法示例代码
+```
+if _, ok := map[key]; ok {
+    // 存在
+}
+ 
+if _, ok := map[key]; !ok {
+    // 不存在
+}
+```
+
+判断方式为value,ok := map[key], ok为true则存在
 
 
 ## main示例
@@ -60,3 +98,6 @@ func exchange(nums []int) []int {
 - [https://www.runoob.com/go/go-arrays.html](https://www.runoob.com/go/go-arrays.html)
 
 - [https://learnku.com/go/t/23460/bit-operation-of-go](https://learnku.com/go/t/23460/bit-operation-of-go)
+
+- [Go net/http包](https://studygolang.com/articles/9467)
+
