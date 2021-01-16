@@ -101,3 +101,18 @@ func exchange(nums []int) []int {
 
 - [Go net/http包](https://studygolang.com/articles/9467)
 
+- [go goroutine 学习笔记](https://juejin.cn/post/6844904141911752718)
+
+- [https://zhuanlan.zhihu.com/p/34211611](https://zhuanlan.zhihu.com/p/34211611)
+
+- [golang操作mysql使用总结](https://my.oschina.net/u/3553591/blog/1630617)
+
+- [Golang slice 增删改查](https://www.codeleading.com/article/1035931752/)
+
+- [Golang slice 增删改查](https://cloud.tencent.com/developer/article/1428643)
+
+- [Go并发调度器解析之实现一个高性能协程池](https://zhuanlan.zhihu.com/p/37754274)
+
+- [Golang 入门 : goroutine(协程)](https://www.cnblogs.com/sparkdev/p/10930168.html)
+
+- [使用chan的时候选择对象还是指针](https://www.cnblogs.com/yjf512/p/10417698.html)

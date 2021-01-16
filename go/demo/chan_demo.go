@@ -2,48 +2,43 @@ package main
 
 import(
 	"fmt"
+    "time"
 )
 
 
 var (
-	WhitelistUids []uint64
+	GoroutineHandlers int = 5 //多少个协程处理
+	nickQueue chan uint64
 )
 
+func worker(id int, ch chan uint64) {
+    for {
+        select {
+        case uid := <- ch:
+            fmt.Println("handler id=", id, " uid=", uid)
+            time.Sleep(1e3)
+        }
+    }
+}
+
+func init() {
+    fmt.Println("init")
+
+    nickQueue = make(chan uint64, 1000)
+	for i := 0; i < GoroutineHandlers; i++ {
+        go worker(i, nickQueue)
+	}
+}
+
+
 func main() {
-	WhitelistUids = []uint64{123, 456, 789}
-	
-	queue := make(chan uint64, 100)
-	
+	var WhitelistUids = []uint64{123, 456, 789, 111, 222, 333, 444, 555, 666, 777, 888, 999, 1000}
+
 	for _, v := range WhitelistUids {
-		queue <- v
+		nickQueue <- v
 	}
-	
-	go SyncYYInfoToBaiDu(queue)
-}
-
-/*
-func getChanData(c chan uint64) {
-	data := <-c
-	fmt.Printf("get data :%d\n", data)
-}
-*/
-
-/*
-func SyncYYInfoToBaiDu(c chan uint64) {
-	for {
-		select {
-		case uid := <- c:
-			fmt.Println(uid)
-			return
-		}
-	}
-}
-*/
-
-func SyncYYInfoToBaiDu(c chan uint64) {
-	for {
-		uid := <- c
-		fmt.Println(uid)
-	}
+    
+    time.Sleep(1e9)
+    
 }
 
