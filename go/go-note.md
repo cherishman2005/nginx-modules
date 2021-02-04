@@ -116,3 +116,7 @@ func exchange(nums []int) []int {
 - [Golang 入门 : goroutine(协程)](https://www.cnblogs.com/sparkdev/p/10930168.html)
 
 - [使用chan的时候选择对象还是指针](https://www.cnblogs.com/yjf512/p/10417698.html)
+
+## go-mysql
+
+- [https://github.com/s1s1ty/go-mysql-crud](https://github.com/s1s1ty/go-mysql-crud)
