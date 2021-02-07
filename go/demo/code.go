@@ -8,9 +8,10 @@ import (
 )
 
 func main() {
-	extends := map[string]string{
+	extends := map[string]interface{}{
 		"bdResCode": "110001",
 		"bdResMessage": "downloadFail",
+		"uid": 123,
 	}
 
 	b, err := json.Marshal(extends)
