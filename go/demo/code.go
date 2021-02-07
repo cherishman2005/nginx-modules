@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"time"
+	"encoding/json"
 )
 
 func main() {
@@ -11,10 +12,14 @@ func main() {
 		"bdResCode": "110001",
 		"bdResMessage": "downloadFail",
 	}
-	code := getLogoAuditResCode(extends)
-	fmt.Println(code)
+
+	b, err := json.Marshal(extends)
+	if err != nil {
+		fmt.Println("json.Marshal failed:", err)
+		return
+	}
 	
-	fmt.Println(GetContext(123))
+	fmt.Println("b:", string(b))
 }
 
 
