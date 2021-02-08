@@ -89,6 +89,26 @@ func exchange(nums []int) []int {
 }
 ```
 
+# Go语言fmt.Sprintf（格式化输出）
+
+|  动  词      |   功  能  |
+| :---------- | :------ |
+| %v      | 按值的本来值输出 |
+| %+v      | 在 %v 基础上，对结构体字段名和值进行展开 |
+| %#v      | 输出 Go 语言语法格式的值 |
+| %T       | 输出 Go 语言语法格式的类型和值 |
+| %%       | 输出 % 本体 |
+| %b       | 整型以二进制方式显示 |
+| %o       | 整型以八进制方式显示 |
+| %d       | 整型以十进制方式显示 |
+| %x       | 整型以十六进制方式显示 |
+| %X       | 整型以十六进制、字母大写方式显示 |
+| %U       | Unicode 字符 |
+| %f       | 浮点数 |
+| %p       | 指针，十六进制方式显示 |
+
+
+
 # 参考链接
 
 - [https://studygolang.com/articles/9467](https://studygolang.com/articles/9467)
@@ -116,6 +136,8 @@ func exchange(nums []int) []int {
 - [Golang 入门 : goroutine(协程)](https://www.cnblogs.com/sparkdev/p/10930168.html)
 
 - [使用chan的时候选择对象还是指针](https://www.cnblogs.com/yjf512/p/10417698.html)
+
+- [Go语言fmt.Sprintf（格式化输出）](http://c.biancheng.net/view/41.html)
 
 ## go-mysql
 
