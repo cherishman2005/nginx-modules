@@ -1,31 +1,31 @@
-protobuf 3.1.0 °²×°Ê¾ÀıºÍÊ¹ÓÃÖ¸ÄÏËµÃ÷
+protobuf 3.1.0 å®‰è£…ç¤ºä¾‹å’Œä½¿ç”¨æŒ‡å—è¯´æ˜
 
-ËµÃ÷: ±¾ÎÄÀı×Ó¼û£º https://github.com/githublefantian/protobuf-3.1.0example.git
-1¡¢protobufÊÇgoogle¹«Ë¾Ìá³öµÄÊı¾İ´æ´¢¸ñÊ½£¬ÏêÏ¸½éÉÜ¿ÉÒÔ²Î¿¼£ºhttps://code.google.com/p/protobuf/
+è¯´æ˜: æœ¬æ–‡ä¾‹å­è§ï¼š https://github.com/githublefantian/protobuf-3.1.0example.git
+1ã€protobufæ˜¯googleå…¬å¸æå‡ºçš„æ•°æ®å­˜å‚¨æ ¼å¼ï¼Œè¯¦ç»†ä»‹ç»å¯ä»¥å‚è€ƒï¼šhttps://code.google.com/p/protobuf/
 
-2¡¢ÏÂÔØ×îĞÂµÄprotobufÔ´´úÂë£¬ÏÂÔØµØÖ·£º
+2ã€ä¸‹è½½æœ€æ–°çš„protobufæºä»£ç ï¼Œä¸‹è½½åœ°å€ï¼š
 
 https://github.com/google/protobuf/archive/v3.1.0.tar.gz
 
-3¡¢ÏÂÔØprotobuf-3.1.0°æ±¾£¬protobuf-3.1.0.tar.gz½âÑ¹²¢½øĞĞ°²×°¡£
-½âÑ¹£ºtar xvzf protobuf-3.1.0.tar.gz
-°²×°²½Öè£º
-£¨0£©./autogen.sh
-£¨1£©./configure? --prefix=/usr/local/protobuf
-£¨2£©make
-£¨3£©make check
-£¨4£©make install
+3ã€ä¸‹è½½protobuf-3.1.0ç‰ˆæœ¬ï¼Œprotobuf-3.1.0.tar.gzè§£å‹å¹¶è¿›è¡Œå®‰è£…ã€‚
+è§£å‹ï¼štar xvzf protobuf-3.1.0.tar.gz
+å®‰è£…æ­¥éª¤ï¼š
+ï¼ˆ0ï¼‰./autogen.sh
+ï¼ˆ1ï¼‰./configure? --prefix=/usr/local/protobuf
+ï¼ˆ2ï¼‰make
+ï¼ˆ3ï¼‰make check
+ï¼ˆ4ï¼‰make install
 
-×¢Òâ£º
-?? ?°²×°³É¹¦ºó£¬½«ËüµÄbinºÍlibÄ¿Â¼·Ö±ğ¼ÓÈëµ½PATHºÍLD_LIBRARY_PATH»·¾³±äÁ¿£¬ÒÔ·½±ãÖ±½Óµ÷ÓÃ¡£
+æ³¨æ„ï¼š
+?? ?å®‰è£…æˆåŠŸåï¼Œå°†å®ƒçš„binå’Œlibç›®å½•åˆ†åˆ«åŠ å…¥åˆ°PATHå’ŒLD_LIBRARY_PATHç¯å¢ƒå˜é‡ï¼Œä»¥æ–¹ä¾¿ç›´æ¥è°ƒç”¨ã€‚
 
-ÉèÖÃ»·¾³±äÁ¿¹ı³Ì£º±à¼­/etc/profile£¬ÔÚÎÄ¼şÄ©Î²Ìí¼Ó£º
+è®¾ç½®ç¯å¢ƒå˜é‡è¿‡ç¨‹ï¼šç¼–è¾‘/etc/profileï¼Œåœ¨æ–‡ä»¶æœ«å°¾æ·»åŠ ï¼š
 export PATH=$PATH:/usr/local/protobuf/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/protobuf/lib
-´ËÊ±×îºÃÖØÆôÒ»´Î¡£
+æ­¤æ—¶æœ€å¥½é‡å¯ä¸€æ¬¡ã€‚
 
-4¡¢²âÊÔÀı×Ó£º
-?? ?1£©´´½¨Ò»¸ö.protoÎÄ¼ş£¬Àı×ÓÖĞÎÄ¼şÎª£ºlm.helloworld.proto
+4ã€æµ‹è¯•ä¾‹å­ï¼š
+?? ?1ï¼‰åˆ›å»ºä¸€ä¸ª.protoæ–‡ä»¶ï¼Œä¾‹å­ä¸­æ–‡ä»¶ä¸ºï¼šlm.helloworld.proto
 
 syntax = "proto3";
 
@@ -37,12 +37,12 @@ message helloworld
 ??? optional int32???? opt = 3;? //optional field
 }
 
-±àÒë³ÉÄ¿±êÓïÑÔ£º protoc -I=./ --cpp_out=./?? lm.helloworld.proto
+ç¼–è¯‘æˆç›®æ ‡è¯­è¨€ï¼š protoc -I=./ --cpp_out=./?? lm.helloworld.proto
 
-?? ?2£©±àĞ´ c++ÎÄ¼ş£ºreader.cc? writer.cc
+?? ?2ï¼‰ç¼–å†™ c++æ–‡ä»¶ï¼šreader.cc? writer.cc
 
 
-/*reader.cc*/¶ÁÎÄ¼ş£º
+/*reader.cc*/è¯»æ–‡ä»¶ï¼š
 #include "lm.helloworld.pb.h"
 #include <iostream>
 #include <sys/socket.h>
@@ -76,7 +76,7 @@ int main(int argc, char* argv[]) {
 
 
 
-/*writer.cc*/ Ğ´ÎÄ¼ş£º
+/*writer.cc*/ å†™æ–‡ä»¶ï¼š
 #include "lm.helloworld.pb.h"
 #include <iostream>
 #include <sys/socket.h>
@@ -109,24 +109,20 @@ int main(void)
 
 
 
-5¡¢±àÒë³ÌĞò£ºC++ÓïÑÔ±àÒëÃüÁîÌí¼Óºó×ºÈçÏÂ£º
+5ã€ç¼–è¯‘ç¨‹åºï¼šC++è¯­è¨€ç¼–è¯‘å‘½ä»¤æ·»åŠ åç¼€å¦‚ä¸‹ï¼š
 
-×¢Òâ£º±àÒë ÊÇÒªÖ¸¶¨protobufÍ·ÎÄ¼şÎ»ÖÃºÍprotobufµÄ¿âÎÄ¼şÎ»ÖÃ? ÀıÈç -I/usr/local/protobuf/include ?-L/usr/local/protobuf/lib -lprotobuf -pthread
+æ³¨æ„ï¼šç¼–è¯‘ æ˜¯è¦æŒ‡å®šprotobufå¤´æ–‡ä»¶ä½ç½®å’Œprotobufçš„åº“æ–‡ä»¶ä½ç½®? ä¾‹å¦‚ -I/usr/local/protobuf/include ?-L/usr/local/protobuf/lib -lprotobuf -pthread
 
 g++ reader.cc?? lm.helloworld.pb.cc?? -o reader? -I/usr/local/protobuf/include ?-L/usr/local/protobuf/lib -lprotobuf
 g++ writer.cc?? lm.helloworld.pb.cc?? -o writer? -I/usr/local/protobuf/include ?-L/usr/local/protobuf/lib -lprotobuf
 
 
-6¡¢ÔËĞĞ½á¹û
+6ã€è¿è¡Œç»“æœ
 
-ÔËĞĞ Writer ºÍ Reader µÄ½á¹ûÈçÏÂ£º
+è¿è¡Œ Writer å’Œ Reader çš„ç»“æœå¦‚ä¸‹ï¼š
 ?>writer
 ?>reader
 ?101
 ?Hello
 
 
-±¾ÎÄÀı×Ó¼û£º https://github.com/githublefantian/protobuf-3.1.0example.git
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-°æÈ¨ÉùÃ÷£º±¾ÎÄÎªCSDN²©Ö÷¡¸cÀÖ·­Ìì¡¹µÄÔ­´´ÎÄÕÂ£¬×ñÑ­CC 4.0 BY-SA°æÈ¨Ğ­Òé£¬×ªÔØÇë¸½ÉÏÔ­ÎÄ³ö´¦Á´½Ó¼°±¾ÉùÃ÷¡£
-Ô­ÎÄÁ´½Ó£ºhttps://blog.csdn.net/mircosheng/article/details/70141704
