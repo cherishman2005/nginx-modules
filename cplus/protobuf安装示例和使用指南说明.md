@@ -9,10 +9,10 @@
 https://github.com/google/protobuf/archive/v3.1.0.tar.gz
 
 3、下载protobuf-3.1.0版本，protobuf-3.1.0.tar.gz解压并进行安装。
-解压：tar xvzf protobuf-3.1.0.tar.gz
+解压：tar -xvzf protobuf-3.1.0.tar.gz
 安装步骤：
 （0）./autogen.sh
-（1）./configure? --prefix=/usr/local/protobuf
+（1）./configure --prefix=/usr/local/protobuf
 （2）make
 （3）make check
 （4）make install
@@ -39,9 +39,9 @@ message helloworld
     optional int32   opt = 3; //optional field
 }
 ```
-编译成目标语言： protoc -I=./ --cpp_out=./?? lm.helloworld.proto
+编译成目标语言： protoc -I=./ --cpp_out=./ lm.helloworld.proto
 
-2）编写 c++文件：reader.cc? writer.cc
+2）编写 c++文件：reader.cc writer.cc
 
 ```
 /*reader.cc*/读文件：
