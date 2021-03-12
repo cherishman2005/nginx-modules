@@ -4,8 +4,11 @@ using namespace std;
 
 class BusinessAuthRouteDao {
  public:
-  BusinessAuthRouteDao(): i_(0) {}
-  ~BusinessAuthRouteDao() {}
+
+  ~BusinessAuthRouteDao() {
+    if(_inst != NULL)
+				delete _inst;
+  }
 
   static BusinessAuthRouteDao* Instance() {
     if (_inst == NULL) {
@@ -23,6 +26,8 @@ class BusinessAuthRouteDao {
     cout << i_ << endl;
   }
 private:
+  BusinessAuthRouteDao(): i_(0) {}
+  BusinessAuthRouteDao(const BusinessAuthRouteDao&);
   static BusinessAuthRouteDao *_inst;
 };
 
@@ -32,6 +37,8 @@ int main() {
     BusinessAuthRouteDao *obj1 = BusinessAuthRouteDao::Instance();
     BusinessAuthRouteDao *obj2 = BusinessAuthRouteDao::Instance();
     
+    BusinessAuthRouteDao *obj3 = new BusinessAuthRouteDao();
+    
     obj1->setNum(1111);
     obj1->showNum();
     obj2->showNum();
@@ -39,6 +46,8 @@ int main() {
     obj2->setNum(200);
     obj1->showNum();
     obj2->showNum();
+    
+    obj3->showNum();
     
     return 0;
 }
