@@ -1,5 +1,4 @@
 // https://www.educative.io/edpresso/what-is-the-stdbadalloc-exception-in-cpp
-
 #include <iostream>
 #include <new>
 #include <vector>
