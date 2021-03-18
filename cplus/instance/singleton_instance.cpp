@@ -3,51 +3,34 @@
 using namespace std;
 
 class BusinessAuthRouteDao {
- public:
+public:
+    ~BusinessAuthRouteDao() {}
 
-  ~BusinessAuthRouteDao() {
-    if(_inst != NULL)
-				delete _inst;
-  }
-
-  static BusinessAuthRouteDao* Instance() {
-    if (_inst == NULL) {
-      _inst = new BusinessAuthRouteDao();
+    static BusinessAuthRouteDao& Instance() {
+        static BusinessAuthRouteDao _inst;
+        return _inst;
     }
-    return _inst;
-  }
-  
-  int i_;
-  void setNum(int i) {
-    i_ = i;
-  }
-  
-  void showNum() {
-    cout << i_ << endl;
-  }
+
+    void setNum(int i) {
+        i_ = i;
+    }
+
+    void showNum() {
+        cout << i_ << endl;
+    }
+
 private:
-  BusinessAuthRouteDao(): i_(0) {}
-  BusinessAuthRouteDao(const BusinessAuthRouteDao&);
-  static BusinessAuthRouteDao *_inst;
+    BusinessAuthRouteDao(): i_(0) {}
+    BusinessAuthRouteDao(const BusinessAuthRouteDao&);
+    int i_;
 };
 
-BusinessAuthRouteDao* BusinessAuthRouteDao::_inst = NULL;
-
 int main() {
-    BusinessAuthRouteDao *obj1 = BusinessAuthRouteDao::Instance();
-    BusinessAuthRouteDao *obj2 = BusinessAuthRouteDao::Instance();
-    
-    BusinessAuthRouteDao *obj3 = new BusinessAuthRouteDao();
-    
-    obj1->setNum(1111);
-    obj1->showNum();
-    obj2->showNum();
-    
-    obj2->setNum(200);
-    obj1->showNum();
-    obj2->showNum();
-    
-    obj3->showNum();
-    
+    //BusinessAuthRouteDao obj1 = BusinessAuthRouteDao::Instance();
+    //BusinessAuthRouteDao obj2 = BusinessAuthRouteDao::Instance();
+
+    BusinessAuthRouteDao::Instance().setNum(1111);
+    BusinessAuthRouteDao::Instance().showNum();
+
     return 0;
 }

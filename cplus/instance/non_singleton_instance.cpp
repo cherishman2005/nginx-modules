@@ -3,23 +3,24 @@
 using namespace std;
 
 class BusinessAuthRouteDao {
- public:
-  BusinessAuthRouteDao(): i_(0) {}
-  ~BusinessAuthRouteDao() {}
+public:
+    BusinessAuthRouteDao(): i_(0) {}
+    ~BusinessAuthRouteDao() {}
 
-  static BusinessAuthRouteDao& Instance() {
-    static BusinessAuthRouteDao _inst;
-    return _inst;
-  }
-  
-  int i_;
-  void setNum(int i) {
-    i_ = i;
-  }
-  
-  void showNum() {
-    cout << i_ << endl;
-  }  
+    static BusinessAuthRouteDao& Instance() {
+        static BusinessAuthRouteDao _inst;
+        return _inst;
+    }
+
+    void setNum(int i) {
+        i_ = i;
+    }
+
+    void showNum() {
+        cout << i_ << endl;
+    }
+private:
+     int i_;
 };
 
 int main() {
