@@ -28,6 +28,7 @@ class BusinessAuthRouteDao {
 private:
   BusinessAuthRouteDao(): i_(0) {}
   BusinessAuthRouteDao(const BusinessAuthRouteDao&);
+  BusinessAuthRouteDao& operator=(BusinessAuthRouteDao const&){};
   static BusinessAuthRouteDao *_inst;
 };
 
@@ -36,6 +37,8 @@ BusinessAuthRouteDao* BusinessAuthRouteDao::_inst = NULL;
 int main() {
     BusinessAuthRouteDao *obj1 = BusinessAuthRouteDao::Instance();
     BusinessAuthRouteDao *obj2 = BusinessAuthRouteDao::Instance();
+    
+    BusinessAuthRouteDao *obj3  = obj1;
     
     //BusinessAuthRouteDao *obj3 = new BusinessAuthRouteDao();
     
