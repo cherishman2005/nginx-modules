@@ -55,6 +55,14 @@ public:
     //std::string ShowTails();
 
 private:
+    bool isInSids(uint32_t sid) {
+        return m_sids.find(sid) != m_sids.end();
+    }
+    
+    bool isInTails(uint32_t sid) {
+        return m_sidTails.find(sid%m_mod) != m_sidTails.end();
+    }
+    
     // 灰度发布
     //uint32_t m_grayEnable;
     std::set<uint32_t> m_sids;
@@ -84,25 +92,19 @@ void GraySidByTail::Init(const std::string& strSids, const std::string& strTails
         m_mod = strtoul(strMod.c_str(), 0, 0);
     }
     
+    /*
     cout << "m_mod=" << m_mod << endl;
     copy(m_sids.begin(), m_sids.end(), ostream_iterator<uint32_t>(cout, ","));
     cout << endl;
     
     copy(m_sidTails.begin(), m_sidTails.end(), ostream_iterator<uint32_t>(cout, ","));
     cout << endl;
+    */
 }
 
 bool GraySidByTail::Match(uint32_t sid)
 {
-    if (m_sids.find(sid) != m_sids.end()) {
-        return true;
-    }
-    
-    if (m_sidTails.find(sid%m_mod) != m_sidTails.end()) {
-        return true;
-    }
-    
-    return false;
+    return isInSids(sid) || isInTails(sid);
 }
 
 int main() 
