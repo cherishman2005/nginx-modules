@@ -57,8 +57,8 @@ public:
 private:
     // 灰度发布
     //uint32_t m_grayEnable;
-    std::set<uint32_t> m_graySids;
-    std::set<uint32_t> m_graySidTails;
+    std::set<uint32_t> m_sids;
+    std::set<uint32_t> m_sidTails;
     uint32_t m_mod;
 };
 
@@ -68,7 +68,7 @@ void GraySidByTail::Init(const std::string& strSids, const std::string& strTails
         const std::vector<std::string> sids = tokenize_str_trim(strSids, ",");
         for (std::vector<std::string>::const_iterator it = sids.begin(); it != sids.end(); it++) {
             uint32_t id = strtoul((*it).c_str(), 0, 0);
-            m_graySids.insert(id);
+            m_sids.insert(id);
         }
     }
     
@@ -76,7 +76,7 @@ void GraySidByTail::Init(const std::string& strSids, const std::string& strTails
         const std::vector<std::string> tails = tokenize_str_trim(strTails, ",");
         for (std::vector<std::string>::const_iterator it = tails.begin(); it != tails.end(); it++) {
             uint32_t id = strtoul((*it).c_str(), 0, 0);
-            m_graySidTails.insert(id);
+            m_sidTails.insert(id);
         }
     }
 
@@ -85,20 +85,20 @@ void GraySidByTail::Init(const std::string& strSids, const std::string& strTails
     }
     
     cout << "m_mod=" << m_mod << endl;
-    copy(m_graySids.begin(), m_graySids.end(), ostream_iterator<uint32_t>(cout, ","));
+    copy(m_sids.begin(), m_sids.end(), ostream_iterator<uint32_t>(cout, ","));
     cout << endl;
     
-    copy(m_graySidTails.begin(), m_graySidTails.end(), ostream_iterator<uint32_t>(cout, ","));
+    copy(m_sidTails.begin(), m_sidTails.end(), ostream_iterator<uint32_t>(cout, ","));
     cout << endl;
 }
 
 bool GraySidByTail::Match(uint32_t sid)
 {
-    if (m_graySids.find(sid) != m_graySids.end()) {
+    if (m_sids.find(sid) != m_sids.end()) {
         return true;
     }
     
-    if (m_graySidTails.find(sid%m_mod) != m_graySidTails.end()) {
+    if (m_sidTails.find(sid%m_mod) != m_sidTails.end()) {
         return true;
     }
     
@@ -107,16 +107,16 @@ bool GraySidByTail::Match(uint32_t sid)
 
 int main() 
 {
-    GraySidByTail *graySidByTail = new GraySidByTail();
+    GraySidByTail *gray = new GraySidByTail();
    
     std::string strSids = "111111, 222333, 777888";
     std::string strTails = "6,     0";
     std::string strMod = "10";
-    graySidByTail->Init(strSids, strTails, strMod);
+    gray->Init(strSids, strTails, strMod);
     
-    cout << graySidByTail->Match(777888) << endl;
-    cout << graySidByTail->Match(7778881) << endl;
-    cout << graySidByTail->Match(55556) << endl;
+    cout << gray->Match(777888) << endl;
+    cout << gray->Match(7778881) << endl;
+    cout << gray->Match(55556) << endl;
     
     return 0;
 }
