@@ -1,0 +1,21 @@
+ssh是一种安全协议，主要用于给远程登录会话数据进行加密，保证数据传输的安全，我们可以很方便的用ssh链接工具连接远程服务器进行相关操作，但是在享受这种方便的同时我们需要进行一些配置。
+
+首先我们需要在远程主机上安装SSH服务，执行sudo apt-get install openssh-server命令安装SSH服务。
+
+安装完成之后，我们可以通过sudo ps -e |grep ssh命令查看SSH服务是否已经启动，如果查询结果中已经有了sshd信息，那么说明SSH服务已经正常启动。
+
+如果没有sshd信息的话，我们可以sudo service ssh start启动SSH服务
+
+启动之后还需要进行ssh服务的配置使我们能够远程登录
+
+SSH服务的配置文件在/etc/ssh/sshd_config下，我们可以使用vi或者gedit打开这个配置文件进行修改
+
+修改一：把配置文件中的"PermitRootLogin without-password"前面加一个"#"号,把它注释掉
+
+修改二：增加一句"PermitRootLogin yes"
+
+保存，退出。
+
+重启ssh服务/etc/init.d/ssh restart。
+
+查看该主机的IP地址，然后就可以使用客户端（可以使用Xshell或者putty）进行远程连接了。
