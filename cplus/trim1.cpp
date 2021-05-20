@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <string>
 #include <set>
@@ -100,6 +101,15 @@ void GraySidByTail::Init(const std::string& strSids, const std::string& strTails
     copy(m_sidTails.begin(), m_sidTails.end(), ostream_iterator<uint32_t>(cout, ","));
     cout << endl;
     */
+    
+    std::stringstream ss;
+    ss << "m_mod=" << m_mod << ", sids:";
+
+    std::copy(m_sids.begin(), m_sids.end(), std::ostream_iterator<uint32_t>(ss, " "));
+    ss << ", sidTails:";
+
+    std::copy(m_sidTails.begin(), m_sidTails.end(), std::ostream_iterator<uint32_t>(ss, " "));
+    cout << ss.str() << endl;
 }
 
 bool GraySidByTail::Match(uint32_t sid)
