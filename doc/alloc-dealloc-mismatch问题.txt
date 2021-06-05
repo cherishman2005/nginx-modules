@@ -1,0 +1,9 @@
+在分配内存的时候，new和delete，malloc和free最好结对使用，不然可能造成内存泄漏
+
+如果尝试用free释放一个new出来的内存，或者用delete对应malloc，可能会报错分配-释放不匹配的问题：alloc-dealloc-mismatch
+
+特殊的情况：
+
+在本地IDE比如VS中，如果只用了new没有delete，有的时候会自动采用delete的方式进行释放，如果你用的是malloc没有free，会自动采用free的方式释放；然而在LeetCode中，如果在选择C++编译，使用malloc分配内存没有对应的free，会默认采用delete的方式释放，因此就出现了分配和释放不匹配的问题。
+
+因此如果要编C++，老老实实使用new就好了，其他的C的老用法也最好还是都别混着用的好，在这里提醒自己一下
