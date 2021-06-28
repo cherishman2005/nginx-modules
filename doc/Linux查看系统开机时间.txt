@@ -1,0 +1,77 @@
+Linux查看系统开机时间
+
+【摘要】有时候需要查看Linux系统运行了多久时间，此时需要知道上次开机启动时间； 有时候由于断电或供电故障突然停机，需要查看Linux开机时间/重启时间；  下面总结一些查看Linux开机关机时间的方法（非常全面）1： who 命令查看      who -b 查看最后一次系统启动的时间。      who -r 查看当前系统运行时间[root@DB-Server ~]# who -b      ...
+有时候需要查看Linux系统运行了多久时间，此时需要知道上次开机启动时间； 有时候由于断电或供电故障突然停机，需要查看Linux开机时间/重启时间；  下面总结一些查看Linux开机关机时间的方法（非常全面）
+
+1： who 命令查看
+
+who -b 查看最后一次系统启动的时间。
+
+who -r 查看当前系统运行时间
+
+[root@DB-Server ~]# who -b
+
+system boot May 11 09:27
+
+Linux查看系统开机时间1
+
+Linux查看系统开机时间2
+
+
+2： last  reboot
+
+如下所示last reboot可以看到Linux系统历史启动的时间。 重启一下操作系统后，然后
+
+[root@DB-Server ~]# last reboot
+
+reboot system boot 2.6.9-42.ELsmp Thu May 29 15:25 (00:07)
+
+reboot system boot 2.6.9-42.ELsmp Sun May 11 09:27 (18+05:55)
+
+wtmp begins Mon May 5 16:18:57 2014
+
+Linux查看系统开机时间3
+
+如果只需要查看最后一次Linux系统启动的时间
+
+[root@DB-Server ~]# last reboot | head -1
+
+reboot system boot 2.6.9-42.ELsmp Thu May 29 15:25 (00:08) 
+
+
+3：TOP命令查看
+
+如下截图所示，up后表示系统到目前运行了多久时间。反过来推算系统重启时间
+
+Linux查看系统开机时间44：w  命令查看
+
+
+4： w命令查看
+
+如下截图所示，up后表示系统到目前运行了多久时间。反过来推算系统重启时间
+
+
+5：uptime 命令查看
+
+Linux查看系统开机时间5
+
+
+6： 查看/proc/uptime
+
+[root@DB-Server ~]# cat /proc/uptime
+
+1415.59 1401.42
+
+[root@DB-Server ~]# date -d "`cut -f1 -d. /proc/uptime` seconds ago"
+
+Thu May 29 15:24:57 CST 2014
+
+[root@DB-Server ~]# date -d "$(awk -F. '{print $1}' /proc/uptime) second ago" +"%Y-%m-%d %H:%M:%S" 
+2014-05-29 15:24:57
+
+
+参考资料：
+
+http://www.thegeekstuff.com/2011/10/linux-reboot-date-and-time/
+
+http://www.averainy.info/linux-system-operation-time-and-the-view-of-the-latest-powered-up-time/
