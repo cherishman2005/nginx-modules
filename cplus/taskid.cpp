@@ -8,29 +8,29 @@ using namespace std;
 
 struct TaskID
 {
-    uint32_t taskType;
-    std::string taskId;
+    uint32_t type;
+    std::string id;
 
     TaskID()
-        : taskType(0)
+        : type(0)
     {
     }
 
-    TaskID(uint32_t type, std::string id)
+    TaskID(uint32_t t, std::string i)
     {
-        taskType = type;
-        taskId = id;
+        type = type;
+        id = i;
     }
     
-    bool operator<(const TaskID& right) const
+    bool operator < (const TaskID& right) const
     {
-        return (taskType < right.taskType) ||
-            ((taskType == right.taskType) && (taskId < right.taskId));
+        return (type < right.type) ||
+            ((type == right.type) && (id < right.id));
     }
 
-    bool operator==(const TaskID& right) const
+    bool operator == (const TaskID& right) const
     {
-        return ((taskType == right.taskType) && (taskId == right.taskId));
+        return ((type == right.type) && (id == right.id));
     }
 };
 
@@ -44,11 +44,11 @@ int main() {
     cout << "size=" << task.size() << endl;
     
     for (const auto & e : task) {
-        cout << e.first.taskId << ":" << e.second << endl;
+        cout << e.first.id << ":" << e.second << endl;
     }
     
-    TaskID id(1, "123");
-    if (task.find(id) == task.end()) {
+    TaskID taskId(1, "123");
+    if (task.find(taskId) == task.end()) {
         cout << "not found" << endl;
     } else {
         cout << "found" << endl;
