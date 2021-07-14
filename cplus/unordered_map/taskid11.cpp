@@ -40,12 +40,10 @@ struct TaskID
         return ((type != right.type) || (id != right.id));
     }
     
-    /*
-    size_t operator()() const
+    size_t operator()(const TaskID& t) const
     {
-        return std::hash<std::string>()(to_string(type)) ^ (std::hash<std::string>()(id) << 1);
+        return std::hash<std::string>()(to_string(t.type)) ^ (std::hash<std::string>()(t.id) << 1);
     }
-    */
 
     string dump() const
     {
@@ -62,8 +60,6 @@ public:
         //return std::hash<TaskID>()(t);
     }
 };
-
-
 int main() {
     unordered_map<TaskID, string, TaskHash> task;
 
