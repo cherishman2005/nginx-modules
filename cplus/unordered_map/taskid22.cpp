@@ -8,7 +8,7 @@
 
 using namespace std;
 
-
+namespace Stream {
 struct TaskID
 {
     uint32_t type;
@@ -41,12 +41,6 @@ struct TaskID
         return ((type != right.type) || (id != right.id));
     }
     
-    size_t operator()(const TaskID& t) const
-    {
-        //return std::hash<std::string>()(to_string(t.type)) ^ (std::hash<std::string>()(t.id) << 1);
-        return std::hash<int>()(t.type) ^ std::hash<string>()(t.id);
-    }
-
     string dump() const
     {
         ostringstream os;
@@ -54,14 +48,14 @@ struct TaskID
         return os.str();
     }
 };
-
+}
 
 
 namespace std {
 template<>
-class hash<TaskID> {
+class hash<Stream::TaskID> {
 public:
-    size_t operator()(const TaskID &t) const {
+    size_t operator()(const Stream::TaskID &t) const {
         return std::hash<int>()(t.type) ^ std::hash<string>()(t.id);
     }
 };
@@ -69,7 +63,7 @@ public:
 
 
 int main() {
-    unordered_map<TaskID, string> task;
+    unordered_map<Stream::TaskID, string> task;
 
     task.insert({{1, "123"}, "555"});
     
@@ -79,7 +73,7 @@ int main() {
         cout << e.first.id << ":" << e.second << endl;
     }
     
-    TaskID taskId(1, "123");
+    Stream::TaskID taskId(1, "123");
     //cout << "taskId=" << taskId << endl;
     if (task.find(taskId) == task.end()) {
         cout << "not found" << endl;
