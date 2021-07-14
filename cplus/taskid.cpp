@@ -18,7 +18,7 @@ struct TaskID
 
     TaskID(uint32_t t, std::string i)
     {
-        type = type;
+        type = t;
         id = i;
     }
     
