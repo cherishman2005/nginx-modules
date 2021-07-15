@@ -56,7 +56,9 @@ template<>
 class hash<Stream::TaskID> {
 public:
     size_t operator()(const Stream::TaskID &t) const {
-        return std::hash<int>()(t.type) ^ std::hash<string>()(t.id);
+        size_t h = std::hash<int>()(t.type) ^ std::hash<string>()(t.id);
+        cout << "hash=" << h << endl;
+        return h;
     }
 };
 }
@@ -66,6 +68,7 @@ int main() {
     unordered_map<Stream::TaskID, string> task;
 
     task.insert({{1, "123"}, "555"});
+    task.insert({{1, "444"}, "666"});
     
     cout << "size=" << task.size() << endl;
     
