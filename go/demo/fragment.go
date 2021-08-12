@@ -14,7 +14,7 @@ type Fragment struct {
 func main() {
     fragment := Fragment{
         NormalLength: 5000,
-        HdLength: 1000,
+        //HdLength: 1000,
     }
     b, err := json.Marshal(fragment)
     if err != nil {
