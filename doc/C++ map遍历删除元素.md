@@ -58,3 +58,22 @@ for(auto it=myvector.begin(); it!=myvector.end();) {
     }
 }
 ```
+
+## 小结
+
+### 写法1更加直观的写法
+
+```
+void deleteExpireData(map<int, Object> & m, int expire) {
+    auto t = now();
+    for (auto it = m.begin(); it != m.end();) {
+        if (t - it->second.timestamp > expire) {
+            auto tmp = it;
+            it++;
+            m.erase(tmp);
+        } else {
+            it++;
+        }
+    }
+}
+```
