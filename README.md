@@ -17,3 +17,8 @@
 	（2）key/value配置中心；
 	（3）health健康检测；
 	（4）与nginx结合，实现（4层/7层）动态负载均衡；
+
+
+# C++11
+
+- [c++11中std::thread的join用法](./doc/c++11中std::thread的join用法.md)
