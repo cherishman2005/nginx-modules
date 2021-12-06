@@ -25,3 +25,5 @@
 
 # go
 - [https://go.dev/](https://go.dev/)
+
+- [http://c.biancheng.net/view/94.html](http://c.biancheng.net/view/94.html)
