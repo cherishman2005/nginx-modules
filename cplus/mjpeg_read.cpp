@@ -5,8 +5,8 @@ using namespace std;
 int main()
 {
     //保存输入图像文件名和输出图像文件名
-    char InImgName[10];
-    char OutImgName[10];
+    char InImgName[100];
+    char OutImgName[100];
     //图像数据长度
     int length;
     //文件指针
