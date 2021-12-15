@@ -15,9 +15,9 @@ int main()
     cout << "Enter Image name:";
     cin >> InImgName;
     //以二进制方式打开图像
-    if ((fp = fopen(InImgName, "rb"))==NULL )
+    if (NULL == (fp = fopen(InImgName, "rb")))
     {
-        cout<<"Open image failed!"<<endl;
+        cout << "Open image failed!" << endl;
         exit(0);
     }
     //获取图像数据总长度
@@ -25,7 +25,7 @@ int main()
     length = ftell(fp);
     rewind(fp);
     //根据图像数据长度分配内存buffer
-    char* ImgBuffer=(char*)malloc(length* sizeof(char));
+    char* ImgBuffer = new char[length* sizeof(char)];
     //将图像数据读入buffer
     fread(ImgBuffer, length, 1, fp);
     fclose(fp);
@@ -33,7 +33,7 @@ int main()
     cout << "Enter the name you want to save:";
     cin >> OutImgName;
     //以二进制写入方式
-    if ((fp=fopen(OutImgName, "wb"))==NULL)
+    if (NULL == (fp=fopen(OutImgName, "wb")))
     {
         cout << "Open File failed!" <<endl;
         exit(0);
@@ -43,7 +43,7 @@ int main()
     cout << "Done!" <<endl;
     //关闭文件指针，释放buffer内存
     fclose(fp);
-    free(ImgBuffer);
+    delete [] ImgBuffer;
     
     return 0;
 }
