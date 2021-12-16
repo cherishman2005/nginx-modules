@@ -1,5 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <curl/curl.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
 bool getUrl(char *filename)
 {
     CURL *curl;
@@ -50,12 +57,42 @@ bool postUrl(char *filename)
 }
 
 bool postUrl1() {
+    
+    std::string url1 = "http://127.0.0.1:8080/";
+	std::string data = "ffmpeg http-flv rtmp hls mp4";
+
+    FILE* fp;
+	const char *img = "2314776959_1639567355890.jpeg";
+
+    if (NULL == (fp = fopen(img, "rb"))) {
+        std::cout << "Open image failed!" << std::endl;
+        exit(0);
+    }
+
+    int length = ftell(fp);
+    rewind(fp);
+
+    char* imgBuffer = new char[length* sizeof(char)];
+
+    fread(imgBuffer, length, 1, fp);
+    
+    cout << "length=" << length << endl;
+
+   /*
+    
     CURL *curl = curl_easy_init();
 
     curl_easy_setopt(curl, CURLOPT_URL, "http://127.0.0.1:8080/");
-    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"hi\" : \"there\"}");
+    
+    //curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"hi\" : \"there\"}");
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, imgBuffer);
 
     curl_easy_perform(curl);
+    */
+    
+    
+    fclose(fp);
+    delete [] imgBuffer;
 }
 int main(void)
 {
