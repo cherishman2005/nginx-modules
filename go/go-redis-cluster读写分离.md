@@ -1,8 +1,8 @@
 # go-redis-cluster读写分离
 
-![BEC927C8778AD360FE7DCD54AB6B6A0E](https://user-images.githubusercontent.com/17688273/148764139-34d8e13b-f3ea-4284-ba45-f6d46b4af857.jpg)
-
 ![0F5ECF682B3D9FE9CE52B9F2B7A5EBF9](https://user-images.githubusercontent.com/17688273/148764159-9ed4efcf-7aaa-4171-a70b-d13557248b5b.jpg)
+
+![BEC927C8778AD360FE7DCD54AB6B6A0E](https://user-images.githubusercontent.com/17688273/148764139-34d8e13b-f3ea-4284-ba45-f6d46b4af857.jpg)
 
 go-redis-cluster 设置了 ReadyOnly后，读写是分离的。读只请求slave从节点。
 
