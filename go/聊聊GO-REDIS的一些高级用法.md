@@ -51,8 +51,11 @@ func (c *ClusterClient) cmdSlotAndNode(cmd Cmder) (int, *clusterNode, error) {
     return slot, node, err
 }
 ```
+
 若是ReadOnly = true，只选择Slave Node
+
 若是ReadOnly = true 且 RouteByLatency = true 将从slot对应的Master Node 和 Slave Node选择，选择策略为: 选择PING 延迟最低的节点
+
 若是ReadOnly = true 且 RouteRandomly = true 将从slot对应的Master Node 和 Slave Node选择，选择策略为:随机选择
 
 # 3. 在集群模式下使用pipeline功能
