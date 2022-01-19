@@ -26,6 +26,7 @@ func main() {
     
     cleanLoop()
     
+    /*
     timer := time.NewTimer(3 * time.Second) 
     for {
         timer.Reset(3 * time.Second) // 这里复用timer
@@ -34,4 +35,11 @@ func main() {
             fmt.Println("Execute every 3 seconds")
         }
     }
+    */
+    
+    ticker := time.NewTicker(3 * time.Second)
+    for range ticker.C {
+        fmt.Println("每隔3秒执行任务")
+    }
+    ticker.Stop()
 }
