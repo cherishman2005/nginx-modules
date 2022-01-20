@@ -28,6 +28,10 @@
 
 - [http://c.biancheng.net/view/94.html](http://c.biancheng.net/view/94.html)
 
+# ab压测
+
+- [ab压测](doc/ab-perf.md)
+
 # 参考链接
 
 - [https://en.wikipedia.org/wiki/Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
