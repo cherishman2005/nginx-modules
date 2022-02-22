@@ -5,6 +5,8 @@
 
 - [go-mysql](./go-mysql.md)
 
+- [go-sync.Once](./go-sync.Once.md)
+
 
 # FAQ
 
