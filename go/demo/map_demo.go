@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "errors"
 )
 
 type RouteKey struct {
@@ -16,8 +17,18 @@ type AuthConfig struct {
 	Pass uint32
 }
 
+func getAuthRouteConfig(authConfigs map[RouteKey]*AuthConfig, appid, auth uint32) (*AuthConfig, error) {
+	key := RouteKey{
+		Appid: appid,
+		BusinessAuth: auth,
+	}
 
-
+	if v, ok := authConfigs[key]; ok {
+		return v, nil
+	}
+	
+	return nil, errors.New("no route config")
+}
 
 func main() {
     configs := make(map[RouteKey]*AuthConfig)
@@ -66,11 +77,18 @@ func main() {
     } else {
         fmt.Println("not found")
     }
+    
+    if conf, err := getAuthRouteConfig(configs, 15013, 16777218); err == nil{
+        fmt.Println(conf)
+    } else {
+        fmt.Println("not found")
+    }
 }
 
 /*
     运行结果：
     configs: map[{15013 16777218}:0xc00000c080 {22014 16777218}:0xc00000c060]
     &{22014 16777218 auth_audio_route 0}
+    &{15013 16777218 auth_audio_route 0}
     &{15013 16777218 auth_audio_route 0}
 */
