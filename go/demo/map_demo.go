@@ -5,7 +5,7 @@ import (
     "errors"
 )
 
-type RouteKey struct {
+type AuthKey struct {
 	Appid uint32
 	BusinessAuth uint32
 }
@@ -17,8 +17,8 @@ type AuthConfig struct {
 	Pass uint32
 }
 
-func getAuthRouteConfig(authConfigs map[RouteKey]*AuthConfig, appid, auth uint32) (*AuthConfig, error) {
-	key := RouteKey{
+func getAuthRouteConfig(authConfigs map[AuthKey]*AuthConfig, appid, auth uint32) (*AuthConfig, error) {
+	key := AuthKey{
 		Appid: appid,
 		BusinessAuth: auth,
 	}
@@ -31,9 +31,9 @@ func getAuthRouteConfig(authConfigs map[RouteKey]*AuthConfig, appid, auth uint32
 }
 
 func main() {
-    configs := make(map[RouteKey]*AuthConfig)
+    configs := make(map[AuthKey]*AuthConfig)
     
-    key := RouteKey{
+    key := AuthKey{
         Appid: 22014,
         BusinessAuth: 16777218,
     }
@@ -47,7 +47,7 @@ func main() {
     
     
     
-    key1 := RouteKey{
+    key1 := AuthKey{
         Appid: 15013,
         BusinessAuth: 16777218,
     }
@@ -68,7 +68,7 @@ func main() {
     }
     
     
-    key2 := RouteKey{
+    key2 := AuthKey{
         Appid: 15013,
         BusinessAuth: 16777218,
     }
