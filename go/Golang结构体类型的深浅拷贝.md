@@ -34,6 +34,7 @@
 指向完全不同的内存地址
 修改是互不影响的
 通过指针求值，将值拷贝实现，修改拷贝的值不影响原来的值
+
 ```
 type Author struct {
 	Name string
@@ -78,6 +79,7 @@ func TestMain8(t *testing.T) {
 ## 3、结构体的深拷贝
 
 默认情况下，结构体类型中的字段是值类型，拷贝时都是深拷贝
+
 ```
 type Per struct {
 	Name     string
@@ -105,6 +107,7 @@ func main()  {
 ## 4、结构体的浅拷贝
 
 使用指针进行浅拷贝，浅拷贝中，可以看到p1和p2的内存地址是相同的，修改其中一个对象的属性时，另一个也会产生变化
+
 ```
 package main
 
@@ -141,6 +144,7 @@ func main()  {
 
 使用指针
 使用new函数（new函数返回的是指针）
+
 ```
 package main
 
@@ -174,6 +178,7 @@ func main()  {
 结构体默认是深拷贝，但如果结构体中包含map、slice等这些引用类型，默认也还是浅拷贝
 
 map是引用类型，引用类型浅拷贝是默认的情况
+
 ```
 package main
 
@@ -217,6 +222,7 @@ func main() {
 ### 方法一：挨个把可导致浅拷贝的引用类型字段自行赋值
 
 赋值后，修改值就相互不影响了
+
 ```
 package main
 
@@ -269,6 +275,7 @@ func main() {
 
 简单来说：json将引用类型的数据进行dump，dump后就和原来的引用类型没有关系了
 
+```
 package main
 
 import (
@@ -306,5 +313,6 @@ func main() {
 	fmt.Printf("%v %p \n", p1, &p1) // {likui 19 [22 44] [119 718] map[k1:m1 k2:v2]} 0xc00006c050
 	fmt.Printf("%v %p \n", p2, &p2) // {ssgeek 24 [22 33] [911 718] map[k1:v1 k2:v2]} 0xc00006c140
 }
+```
 
 ### 方法三：使用其他三方库（这里还没深入）
