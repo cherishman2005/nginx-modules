@@ -1,12 +1,12 @@
 # go development
 
-
 - [go-redis-cluster读写分离](./go-redis-cluster读写分离.md)
 
 - [go-mysql](./go-mysql.md)
 
 - [go-sync.Once](./go-sync.Once.md)
 
+- [Golang结构体类型的深浅拷贝](./Golang结构体类型的深浅拷贝.md)
 
 # FAQ
 
