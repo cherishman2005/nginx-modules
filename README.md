@@ -24,9 +24,18 @@
 - [c++11中std::thread的join用法](./doc/c++11中std::thread的join用法.md)
 
 # go
+
 - [https://go.dev/](https://go.dev/)
 
 - [http://c.biancheng.net/view/94.html](http://c.biancheng.net/view/94.html)
+
+- [go-redis-cluster读写分离](./go-redis-cluster读写分离.md)
+
+- [go-mysql](./go-mysql.md)
+
+- [go-sync.Once](./go-sync.Once.md)
+
+- [Golang结构体类型的深浅拷贝](./Golang结构体类型的深浅拷贝.md)
 
 # ab压测
 
