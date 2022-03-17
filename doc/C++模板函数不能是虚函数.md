@@ -20,3 +20,7 @@ error: templates may not be ‘virtual’
 如果没有对象，那么这种多态就没有意义，因为根本不存在需要在运行期确定对象类型的必要。
 
 所以只从属于类而不和具体对象相关的静态成员函数作为虚函数是没有意义的，因此语言禁止这么做。
+
+# 参考链接
+
+- [https://stackoverflow.com/questions/4961909/templates-may-not-be-virtual](https://stackoverflow.com/questions/4961909/templates-may-not-be-virtual)
