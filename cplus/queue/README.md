@@ -20,6 +20,12 @@ pop_front
 ## 采用map模拟queue
 
 
+### 编译
+
+```
+ g++ main.cpp -o main -std=c++11 -pthread
+```
+
 # 参考链接
 
 - [https://www.cplusplus.com/reference/queue/queue/](https://www.cplusplus.com/reference/queue/queue/)
