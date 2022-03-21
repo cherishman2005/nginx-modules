@@ -16,7 +16,6 @@
 #include <iostream>
 
 using namespace std;
-using std::make_pair;
 
 namespace Stream
 {
@@ -117,12 +116,12 @@ namespace Stream
                 m_prePopTimeMs = 0;
                 m_preTimeRef = 0;
 
-                cout << "clean queue because recv CLEAN_QUEUE_FRAME" << endl;
+                cout << "rollback" << endl;
             }
 
             m_prePushKey = key;
 
-            m_queue.insert(make_pair(key, val));
+            m_queue.insert({key, val});
 
             while (m_queue.size() >= m_maxSize)
             {
