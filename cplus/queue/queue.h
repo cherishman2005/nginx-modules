@@ -19,7 +19,7 @@ using namespace std;
 
 namespace Stream
 {
-    inline uint64_t getNowMs()
+    static inline uint64_t getNowMs()
     {
         timeval tv;
         gettimeofday(&tv, nullptr);
@@ -37,10 +37,20 @@ namespace Stream
     public:
         Queue()
             : m_name("")
-            , m_prePushKey(UINT32_MAX)
+            , m_prePushKey(UINT64_MAX)
             , m_prePopTimeMs(0)
             , m_preTimeRef(0)
             , m_maxSize(kDefaultMaxSize)
+            , m_pushRollBackCount(0)
+        {
+        }
+
+        Queue(size_t max)
+            : m_name("")
+            , m_prePushKey(UINT64_MAX)
+            , m_prePopTimeMs(0)
+            , m_preTimeRef(0)
+            , m_maxSize(max)
             , m_pushRollBackCount(0)
         {
         }
@@ -77,14 +87,14 @@ namespace Stream
             return m_queue.empty();
         }
 
-        bool push(uint32_t key, const VAL &val)
+        bool push(uint64_t key, const VAL &val)
         {
             std::unique_lock<std::mutex> lockGuard(m_mutex);
             m_maxKey = m_maxKey > key ? m_maxKey : key;
 
             bool forceClean = false;
 
-            if (m_prePushKey != UINT32_MAX)
+            if (m_prePushKey != UINT64_MAX)
             {
                 // 针对audio/video场景：
                 // 1. key值小于先前值，push失败；
@@ -112,7 +122,7 @@ namespace Stream
             if (forceClean)
             {
                 // 次数达到kMaxRollbackCount则认为翻转、重置
-                m_prePushKey = UINT32_MAX;
+                m_prePushKey = UINT64_MAX;
                 m_prePopTimeMs = 0;
                 m_preTimeRef = 0;
 
@@ -214,9 +224,9 @@ namespace Stream
             return true;
         }
 
-        bool pop_by_given_time_ref(uint32_t timeRef, VAL &val)
+        bool pop_by_given_time_ref(uint64_t timeRef, VAL &val)
         {
-            uint32_t now_ms = getNowMs();
+            uint64_t now_ms = getNowMs();
 
             std::unique_lock<std::mutex> lockGuard(m_mutex);
 
@@ -225,7 +235,7 @@ namespace Stream
                 return false;
             }
 
-            uint32_t fixedTime = timeRef;
+            uint64_t fixedTime = timeRef;
             if (fixedTime <= m_preTimeRef)
             {
                 if (m_prePopTimeMs == 0)
@@ -246,7 +256,7 @@ namespace Stream
             return true;
         }
 
-        void chooseFrame(uint32_t fixedTime, VAL &val)
+        void chooseFrame(uint64_t fixedTime, VAL &val)
         {
             if (fixedTime == 0)
             {
@@ -284,18 +294,18 @@ namespace Stream
 
     private:
         std::string m_name;
-        std::map<uint32_t, VAL> m_queue;
+        std::map<uint64_t, VAL> m_queue;
         std::mutex m_mutex;
         std::condition_variable m_cond;
 
-        uint32_t m_prePushKey;
-        uint32_t m_prePopTimeMs;
-        uint32_t m_preTimeRef;
+        uint64_t m_prePushKey;
+        uint64_t m_prePopTimeMs;
+        uint64_t m_preTimeRef;
         size_t m_maxSize;
 
         uint32_t m_pushRollBackCount;
 
-        uint32_t m_maxKey;
+        uint64_t m_maxKey;
     };
 
 
