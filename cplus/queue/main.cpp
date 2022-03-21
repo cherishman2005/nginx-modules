@@ -115,7 +115,7 @@ void delete_data(uint32_t timeout, Queue<int> *q)
 }
 
 int test3() {
-    AudioQueue q;
+    TestQueue q;
     int val = 0;
     
     std::thread t1(delete_data, 30*1000, &q);
