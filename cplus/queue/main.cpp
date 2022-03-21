@@ -6,9 +6,10 @@
 using namespace std;
 using namespace Stream;
 
+typedef Queue<int> TestQueue;
 
 int test() {
-    Queue<int> q;
+    TestQueue q;
     int val = 0;
     bool b = false;
     
@@ -44,7 +45,7 @@ int test() {
 }
 
 int test1() {
-    Queue<int> q;
+    TestQueue q;
     int val = 0;
     bool b = false;
     
@@ -65,7 +66,7 @@ int test1() {
 
 
 int test2() {
-    Queue<int> q;
+    TestQueue q;
     int val = 0;
     bool b = false;
     
@@ -114,7 +115,7 @@ void delete_data(uint32_t timeout, Queue<int> *q)
 }
 
 int test3() {
-    Queue<int> q;
+    AudioQueue q;
     int val = 0;
     
     std::thread t1(delete_data, 30*1000, &q);
