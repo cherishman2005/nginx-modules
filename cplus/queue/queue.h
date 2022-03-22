@@ -40,11 +40,11 @@ namespace Stream
             , m_prePushKey(INT64_MAX)
             , m_prePopTimeMs(0)
             , m_preTimeRef(0)
-            //, m_maxSize(MAX_SIZE)
+            , m_maxSize(MAX_SIZE)
             , m_pushRollBackCount(0)
         {
-            m_maxSize = MAX_SIZE;
-            cout << "construct maxSize=" << m_maxSize << endl;
+            //m_maxSize = MAX_SIZE;
+            //cout << "construct maxSize=" << m_maxSize << endl;
         }
 
         ~Queue()
