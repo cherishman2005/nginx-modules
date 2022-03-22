@@ -23,6 +23,8 @@
 
 - [c++11中std::thread的join用法](./doc/c++11中std::thread的join用法.md)
 
+- [c++11 cast标准写法](./c++11_cast.md)
+
 # go
 
 - [https://go.dev/](https://go.dev/)
