@@ -258,7 +258,7 @@ namespace Stream
 
         void chooseFrame(int64_t fixedTime, VAL &val)
         {
-            if (fixedTime == 0)
+            if (0 == fixedTime)
             {
 #if 0
                 auto iter = m_queue.begin();
