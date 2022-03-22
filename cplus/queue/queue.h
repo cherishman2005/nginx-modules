@@ -222,8 +222,25 @@ namespace Stream
             return true;
         }
 
+        // 时间非相关性API
+        bool pop_by_time_ref(int64_t timeRef, VAL &val)
+        {
+            std::unique_lock<std::mutex> lockGuard(m_mutex);
+
+            if (m_queue.empty())
+            {
+                return false;
+            }
+
+            chooseFrame(timeRef, val);
+
+            return true;
+        }
+
+        // 时间相关性API
         bool pop_by_given_time_ref(int64_t timeRef, VAL &val)
         {
+            int pop_n = 0;
             int64_t now_ms = getNowMs();
 
             std::unique_lock<std::mutex> lockGuard(m_mutex);
@@ -247,6 +264,7 @@ namespace Stream
             }
 
             chooseFrame(fixedTime, val);
+            cout << "pop_by_given_time_ref, fixedTime:" << fixedTime << endl;
 
             m_prePopTimeMs = now_ms;
             m_preTimeRef = timeRef;
@@ -288,6 +306,7 @@ namespace Stream
                     m_queue.erase(m_queue.begin(), iter);
                 }
             }
+
         }
 
     private:
