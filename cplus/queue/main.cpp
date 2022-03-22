@@ -8,7 +8,7 @@ using namespace Stream;
 
 typedef Queue<int> TestQueue;
 
-int test() {
+static int test() {
     TestQueue q;
     int val = 0;
     bool b = false;
@@ -44,7 +44,7 @@ int test() {
     return 0;
 }
 
-int test1() {
+static int test1() {
     TestQueue q;
     int val = 0;
     bool b = false;
@@ -65,7 +65,7 @@ int test1() {
 }
 
 
-int test2() {
+static int test2() {
     TestQueue q;
     int val = 0;
     bool b = false;
@@ -74,19 +74,27 @@ int test2() {
         q.push(i, {i});
     }
     
-    // tail_n
+    // pop_by_given_time_ref
     b = q.pop_by_given_time_ref(10, val);
     if (b) {
         cout << "pop_by_given_time_ref: val=" << val << ", size=" << q.size() << endl;
     } else {
         cout << "no value" << endl;
     }
-    
+
+    // pop_by_given_time_ref
+    b = q.pop_by_given_time_ref(10, val);
+    if (b) {
+        cout << "pop_by_given_time_ref: val=" << val << ", size=" << q.size() << endl;
+    } else {
+        cout << "no value" << endl;
+    }
+
     return 0;
 }
 
 
-void update_data(uint32_t timeout, Queue<int> *q)
+static void update_data(uint32_t timeout, Queue<int> *q)
 {
     if (nullptr == q) {
         return;
@@ -99,7 +107,7 @@ void update_data(uint32_t timeout, Queue<int> *q)
     cout << "update queue size=" << q->size() << endl;
 }
 
-void delete_data(uint32_t timeout, Queue<int> *q)
+static void delete_data(uint32_t timeout, Queue<int> *q)
 {
     if (nullptr == q) {
         return;
@@ -114,7 +122,7 @@ void delete_data(uint32_t timeout, Queue<int> *q)
     }
 }
 
-int test3() {
+static int test3() {
     TestQueue q;
     int val = 0;
     
@@ -139,6 +147,7 @@ int test3() {
 //    }
     return 0;
 }
+
 
 int main() {
     test();
