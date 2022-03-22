@@ -6,7 +6,7 @@
 using namespace std;
 using namespace Stream;
 
-typedef Queue<int> TestQueue;
+typedef Queue<int, 36> TestQueue;
 
 static int test() {
     TestQueue q;
@@ -94,7 +94,7 @@ static int test2() {
 }
 
 
-static void update_data(uint32_t timeout, Queue<int> *q)
+static void update_data(uint32_t timeout, TestQueue *q)
 {
     if (nullptr == q) {
         return;
@@ -107,7 +107,7 @@ static void update_data(uint32_t timeout, Queue<int> *q)
     cout << "update queue size=" << q->size() << endl;
 }
 
-static void delete_data(uint32_t timeout, Queue<int> *q)
+static void delete_data(uint32_t timeout, TestQueue *q)
 {
     if (nullptr == q) {
         return;

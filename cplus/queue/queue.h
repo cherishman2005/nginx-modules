@@ -31,7 +31,7 @@ namespace Stream
     constexpr size_t kMaxRollbackCount = 60 * 1;
     constexpr int DEFAULT_QUEUE_TIMEOUT_MS = 5;
 
-    template <typename VAL>
+    template <typename VAL, size_t MAX_SIZE>
     class Queue
     {
     public:
@@ -40,19 +40,11 @@ namespace Stream
             , m_prePushKey(INT64_MAX)
             , m_prePopTimeMs(0)
             , m_preTimeRef(0)
-            , m_maxSize(kDefaultMaxSize)
+            //, m_maxSize(MAX_SIZE)
             , m_pushRollBackCount(0)
         {
-        }
-
-        Queue(size_t max)
-            : m_name("")
-            , m_prePushKey(INT64_MAX)
-            , m_prePopTimeMs(0)
-            , m_preTimeRef(0)
-            , m_maxSize(max)
-            , m_pushRollBackCount(0)
-        {
+            m_maxSize = MAX_SIZE;
+            cout << "construct maxSize=" << m_maxSize << endl;
         }
 
         ~Queue()
@@ -181,6 +173,12 @@ namespace Stream
             m_queue.erase(m_queue.begin());
 
             return true;
+        }
+
+        void clear()
+        {
+            std::unique_lock<std::mutex> lockGuard(m_mutex);
+            m_queue.clear();
         }
 
         bool pop_tail(VAL &val)
