@@ -31,7 +31,7 @@ namespace Stream
     constexpr size_t kMaxRollbackCount = 60 * 1;
     constexpr int DEFAULT_QUEUE_TIMEOUT_MS = 5;
 
-    template <typename VAL, size_t MAX_SIZE>
+    template <typename VAL, size_t MAX_SIZE = kDefaultMaxSize>
     class Queue
     {
     public:
