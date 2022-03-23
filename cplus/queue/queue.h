@@ -43,7 +43,6 @@ namespace Stream
             , m_maxSize(MAX_SIZE)
             , m_pushRollBackCount(0)
         {
-            //m_maxSize = MAX_SIZE;
             //cout << "construct maxSize=" << m_maxSize << endl;
         }
 
@@ -125,7 +124,7 @@ namespace Stream
 
             m_queue.insert({key, val});
 
-            while (m_queue.size() >= m_maxSize)
+            while (m_queue.size() > m_maxSize)
             {
                 cout << "queue size too big: " << m_queue.size() << endl;
                 m_queue.erase(m_queue.begin());
@@ -264,7 +263,7 @@ namespace Stream
             }
 
             chooseFrame(fixedTime, val);
-            cout << "pop_by_given_time_ref, fixedTime:" << fixedTime << endl;
+            //cout << "pop_by_given_time_ref, fixedTime:" << fixedTime << endl;
 
             m_prePopTimeMs = now_ms;
             m_preTimeRef = timeRef;
@@ -274,6 +273,7 @@ namespace Stream
 
         void chooseFrame(int64_t fixedTime, VAL &val)
         {
+            int n = 0;
             if (0 == fixedTime)
             {
 #if 0
@@ -286,6 +286,7 @@ namespace Stream
                 val = iter->second;
                 m_queue.erase(m_queue.begin(), iter);
 #else
+                n = m_queue.size();
                 auto iter = m_queue.rbegin();
                 val = iter->second;
                 m_queue.clear();
@@ -297,16 +298,19 @@ namespace Stream
 
                 if (iter == m_queue.end())
                 {
+                    n = m_queue.size();
                     val = m_queue.rbegin()->second;
                     m_queue.clear();
                 }
                 else
                 {
+                    n = distance(m_queue.begin(), iter);
                     val = iter->second;
                     m_queue.erase(m_queue.begin(), iter);
                 }
             }
-
+            
+            //cout << "chooseFrame: popN=" << n << endl;
         }
 
     private:
