@@ -124,7 +124,7 @@ namespace Stream
 
             m_queue.insert({key, val});
 
-            while (m_queue.size() > m_maxSize)
+            while (m_queue.size() >= m_maxSize)
             {
                 cout << "queue size too big: " << m_queue.size() << endl;
                 m_queue.erase(m_queue.begin());
