@@ -26,6 +26,12 @@
 - [c++11 cast标准写法](./c++11_cast.md)
 - [使用stl中的advance和distance方法来进行iterator的加减](/cplus/使用stl中的advance和distance方法来进行iterator的加减.md)
 
+# thread
+
+## pthread_kill
+
+函数pthread_kill()向同一进程下的另一线程发送信号。因为仅在同一进程中可保证线程ID的唯一性，所以无法调用pthread_kill向其他进程中的线程发送信号。
+
 # go
 
 - [https://go.dev/](https://go.dev/)
