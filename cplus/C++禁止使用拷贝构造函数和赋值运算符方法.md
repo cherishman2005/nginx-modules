@@ -1,3 +1,27 @@
+# C++禁止使用拷贝构造函数和赋值运算符方法
+
+1.将拷贝构造函数和赋值运算符声明为私有，并不予实现
+
+```
+class Uncopyable  
+{  
+private:  
+    Uncopyable(const Uncopyable &); // 阻止copying  
+    Uncopyable &operator=(const Uncopyable &);  
+}; 
+```
+
+2.使用delete
+
+```
+class Uncopyable  
+{  
+
+    Uncopyable(const Uncopyable &) =delete; // 阻止copying  
+    Uncopyable &operator=(const Uncopyable &)=delete;  
+};  
+```
+
 # 禁用拷贝（复制）构造函数
 
 关于C++的拷贝构造函数，很多的建议是直接禁用。为什么大家会这么建议呢？没有拷贝构 造函数会有什么限制呢？如何禁用拷贝构造呢？这篇文章对这些问题做一个简单的总结。
