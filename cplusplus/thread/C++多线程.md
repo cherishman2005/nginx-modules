@@ -24,29 +24,42 @@ demo3：在线程中使用带有形参的函数
 
 C++11 并发指南一(C++11 多线程初探)
 http://www.cnblogs.com/haippy/p/3235560.html
+
 C++11 并发指南二(std::thread 详解)
 http://www.cnblogs.com/haippy/p/3236136.html
+
 C++11 并发指南三(std::mutex 详解)
 http://www.cnblogs.com/haippy/p/3237213.html
+
 C++11 并发指南三(Lock 详解)
 http://www.cnblogs.com/haippy/p/3346477.html
+
 C++11 并发指南四(<future> 详解一 std::promise 介绍)
 http://www.cnblogs.com/haippy/p/3239248.html
+
 C++11 并发指南四(<future> 详解二 std::packaged_task 介绍)
 http://www.cnblogs.com/haippy/p/3279565.html
+
 C++11 并发指南四(<future> 详解三 std::future & std::shared_future)
 http://www.cnblogs.com/haippy/p/3280643.html
+
 C++11 并发指南五(std::condition_variable 详解)
 http://www.cnblogs.com/haippy/p/3252041.html
+
 C++11 并发指南六(atomic 类型详解一 atomic_flag 介绍)
 http://www.cnblogs.com/haippy/p/3252056.html
-C++11 并发指南六( <atomic> 类型详解二 std::atomic )
+
+C++11 并发指南六( <atomic> 类型详解二 std::atomic)
 http://www.cnblogs.com/haippy/p/3301408.html
+
 C++11 并发指南六(atomic 类型详解三 std::atomic (续))
 http://www.cnblogs.com/haippy/p/3304556.html
+
 C++11 并发指南六(atomic 类型详解四 C 风格原子操作介绍)
 http://www.cnblogs.com/haippy/p/3306625.html
+
 C++11 并发指南七(C++11 内存模型一：介绍)
 http://www.cnblogs.com/haippy/p/3412858.html
+
 C++11 并发指南九(综合运用: C++11 多线程下生产者消费者模型详解)
 http://www.cnblogs.com/haippy/p/3252092.html
