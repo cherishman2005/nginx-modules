@@ -1,4 +1,4 @@
-# C++之多线程（C++11 thread.h文件实现多线程）
+# C++多线程（C++11 thread.h文件实现多线程）
 
 http://www.cnblogs.com/haippy/p/3235560.html
 
