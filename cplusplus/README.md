@@ -14,9 +14,15 @@
 xxx_cast<newType>(data)
 ```
 
+## c++11 constexpr
+
+constexpr是C++11引入的关键字，用于编译时的常量与常量函数。
+- [https://zh.wikipedia.org/wiki/Constexpr](https://zh.wikipedia.org/wiki/Constexpr)
+
 # 参考链接
 
 - [https://github.com/wuye9036/CppTemplateTutorial](https://github.com/wuye9036/CppTemplateTutorial)
 - [关于lower_bound( )和upper_bound( )的常见用法](https://blog.csdn.net/qq_40160605/article/details/80150252)
 - [C++11 std::unique_lock与std::lock_guard区别及多线程应用实例](https://www.cnblogs.com/fnlingnzb-learner/p/9542183.html)
 - [C++四种类型转换运算符：static_cast、dynamic_cast、const_cast和reinterpret_cast](http://c.biancheng.net/cpp/biancheng/view/3297.html)
+- [https://zh.wikipedia.org/wiki/Constexpr](https://zh.wikipedia.org/wiki/Constexpr)
