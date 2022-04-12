@@ -21,6 +21,7 @@
 
 # C++11
 
+- [c++11编程注意事项](/cplusplus/README.md)
 - [c++11中thread的join用法](./doc/c++11中thread的join用法.md)
 
 - [c++11 cast标准写法](./c++11_cast.md)
