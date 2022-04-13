@@ -8,7 +8,7 @@
 
 - [Golang结构体类型的深浅拷贝](./Golang结构体类型的深浅拷贝.md)
 
-- [Go中map全局变量](./Go中map全局变量使用原则.md)
+- [Go中map全局变量](./Go中map全局变量.md)
 
 # FAQ
 
