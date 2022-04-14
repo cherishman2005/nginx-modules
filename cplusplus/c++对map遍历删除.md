@@ -1,7 +1,7 @@
 
-# C++11对map嵌套操作
+# C++对map遍历删除
 
-## C++11对map嵌套操作
+## C++11对map遍历删除
 ```
 #include <iostream>
 #include <stdlib.h>
@@ -23,6 +23,7 @@ int main()
     
     // 形如如下逻辑
     for (const auto & e : tasks) {
+        // 根据业务场景，满足条件的元素进行删除操作
         if (e.first != 3) continue;
         
         const auto & it = tasks.find(e.first);
@@ -40,4 +41,6 @@ int main()
     return 0;
 }
 ```
+
+
 
