@@ -46,7 +46,8 @@ int main()
 
 ### 修复方法
 
-```
+先将满足的key值放在set或vector，然后删除
+
 ```
 #include <iostream>
 #include <stdlib.h>
@@ -61,23 +62,29 @@ int main()
 
 using namespace std;
 
+
+// 先将满足的key值放在set，然后删除
+
 int main()
 {
 
     map<int, int> tasks = {{1,1}, {2, 2}, {3,3}, {4, 4}};
     
     // 形如如下逻辑
+    set<int> s;
     for (const auto & e : tasks) {
         // 根据业务场景，满足条件的元素进行删除操作
-        if (e.first != 3) continue;
-        
-        const auto & it = tasks.find(e.first);
-        if (it != tasks.end()) {
-            tasks.erase(it);
+        if (e.first == 3) {
+            s.insert(e.first);
         }
     }
     
-    
+    for (const auto & el : s) {
+        const auto & it = tasks.find(el);
+        if (it != tasks.end()) {
+          tasks.erase(el);
+        }
+    }
 
     for (const auto & e : tasks) {
         cout << e.first << endl;
@@ -85,7 +92,8 @@ int main()
 
     return 0;
 }
-```
+
+// g++ test.cpp -o test -std=c++11
 ```
 
 # 参考链接
