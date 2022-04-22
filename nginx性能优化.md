@@ -180,11 +180,14 @@ worker_rlimit_nofile 20480;
 日志优化
 可适当减少日志操作。比如访问静态资料的日志记录，如果你感觉不重要，可以取消日志记录。这样请求资源的时候就会减少日志的磁盘 io。
 
+```
 # 关闭日志
 access_log off;
 # 禁用文件未找到的错误到日志中去
 log_not_found off;
-复制代码
+```
+
+```
 反向代理优化
 如果你用 nginx 作为代理服务器，也要减少磁盘 io 的读取。
 
@@ -321,10 +324,12 @@ http {
     }
 
 }
-复制代码
-资料参考
-http-security-headers
+```
 
-Nginx Performance Tuning – Tips & Tricks
+# 资料参考
 
-《深入理解 Nginx 模块开发与架构设计》。
+* http-security-headers
+
+* Nginx Performance Tuning – Tips & Tricks
+
+* 《深入理解 Nginx 模块开发与架构设计》
