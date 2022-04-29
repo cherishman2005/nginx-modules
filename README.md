@@ -51,6 +51,12 @@
 
 - [ab压测](doc/ab-perf.md)
 
+# 小结
+
+* 后端开发技术
+  在开发需求的角度，如果有一定工作经验，比较简单。
+  更重要的是多做积累和开发调试工具，方便监控和定位问题。
+
 # 参考链接
 
 - [https://en.wikipedia.org/wiki/Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
