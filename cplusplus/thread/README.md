@@ -21,6 +21,25 @@ printf("the specified thread is alive\n");
 ```
 上述的代码就可以判断线程是不是还活着了。
 
+## prctl设置线程名
+
+```
+void StreamThread::start()
+{
+#if 0
+  if (!m_name.empty()) {
+    prctl(PR_SET_NAME, (uint64_t)(m_name.c_str()), 0, 0);
+  }
+#endif
+
+  if (0 != pthread_create(&m_WorkerThread, NULL, StreamThread::worker, this)) {
+    m_WorkerThread = pthread_t();
+    FUNLOG(Error, "thread throw");
+  }
+}
+
+```
+
 # 参考链接
 
 - [对于pthread_kill的一些误解](https://blog.csdn.net/qu1993/article/details/105580924?spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3.pc_relevant_antiscanv2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3.pc_relevant_antiscanv2&utm_relevant_index=6)
