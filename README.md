@@ -67,6 +67,12 @@
   * 或是否进过大公司
   * 或是否读过优秀的代码（或开源代码）；
 
+# FAQ
+
+## 浏览器访问跨域问题
+
+- [浏览器访问跨域问题](doc/浏览器访问跨域问题.md)
+
 # 参考链接
 
 - [https://en.wikipedia.org/wiki/Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
