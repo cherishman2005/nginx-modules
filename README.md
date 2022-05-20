@@ -57,6 +57,12 @@
 
 - [ab压测](doc/ab-perf.md)
 
+# git
+
+- [git合并分支到master](./doc/git合并分支到master.md)
+- [git_submodule](./doc/git_submodule.md)
+
+
 # 小结
 
 * 后端开发技术
