@@ -55,7 +55,7 @@ func Hash(s string) int {
 var helper *RedisHelper
 
 func main() {
-    addrs := []string{"group1013.com:20075","group1013.com:20075","group1013.yy.com:20075"}
+    addrs := []string{"group1013.com:20075","group1013.com:20075","group1013.**.com:20075"}
     mastername := []string{"redis_001", "redis_002", "redis_003"}
     helper = NewRedisHelper(addrs, mastername)
     
