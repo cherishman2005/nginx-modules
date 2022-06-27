@@ -63,6 +63,10 @@
 - [git_submodule](./doc/git_submodule.md)
 
 
+# linux工具
+
+- [/proc/stat解析](/doc/proc_stat解析.md)
+
 # 小结
 
 * 后端开发技术
