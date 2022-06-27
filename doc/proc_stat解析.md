@@ -111,3 +111,7 @@ starttime: 此值单位为jiffies, 结合/proc/stat的btime，可知道每一个
 * signal：即将要处理的信号，十进制，此处等于6660
 * blocked：阻塞的信号，十进制
 * sigignore：被忽略的信号，十进制，此处等于36088
+
+# 参考链接
+
+- [http://gityuan.com/2017/08/12/proc_stat/](http://gityuan.com/2017/08/12/proc_stat/)
