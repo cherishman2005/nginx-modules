@@ -65,12 +65,16 @@ cat /proc/uptime
 proc//stat用于获取某一个进程的统计信息，实现过程见fs/proc/array.c的do_task_stat()
 
 3.1 stat数据
-Gityuan$ adb shell cat /proc/8385/stat
+```
+# cat /proc/8385/stat
 1557 (system_server) S 823 823 0 0 -1 1077952832 //1~9
 2085481 15248 2003 27 166114 129684 26 30  //10~17
 10 -10 221 0 2284 2790821888 93087 18446744073709551615 //18~25
 1 1 0 0 0 0 6660 0 36088 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+```
+
 3.2 解释
+
 pid： 进程ID.
 comm: task_struct结构体的进程名
 state: 进程状态, 此处为S
