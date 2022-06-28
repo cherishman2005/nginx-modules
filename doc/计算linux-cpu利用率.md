@@ -13,3 +13,8 @@ cstop=$(cat /sys/fs/cgroup/cpu/mygroup/cpuacct.usage)#当前时刻mygroup这个c
 bc -l <<EOF
 ($cstop - $cstart) / ($tstop - $tstart) * 100 #cpu占用的毫秒数/总的时间数即为cpu利用率
 ```
+
+
+# 参考链接
+
+- [获取docker的内存，cpu使用率](https://www.cnblogs.com/my_life/articles/14945409.html)
