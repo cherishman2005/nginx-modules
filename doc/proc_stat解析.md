@@ -115,3 +115,4 @@ starttime: 此值单位为jiffies, 结合/proc/stat的btime，可知道每一个
 # 参考链接
 
 - [http://gityuan.com/2017/08/12/proc_stat/](http://gityuan.com/2017/08/12/proc_stat/)
+- [计算 Linux CPU 利用率](https://blog.51cto.com/frytea/4223788)
