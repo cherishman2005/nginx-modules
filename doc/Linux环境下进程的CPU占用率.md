@@ -3,7 +3,7 @@
 1、Linux 环境下查看 CPU 信息
 1.1、查看 CPU 详细信息
 通过 cat /proc/cpuinfo 命令，可以查看 CPU 相关的信息：
-
+```
 [root@rh ~]$ cat /proc/cpuinfo
 processor : 0
 vendor_id : GenuineIntel
@@ -30,6 +30,7 @@ cache_alignment : 64
 address sizes : 40 bits physical, 48 bits virtual
 power management:
 ......
+```
 在查看到的相关信息中，通常有些信息比较让人迷惑，这里列出一些解释：
 
 physical id: 指的是物理封装的处理器的 id。
@@ -38,7 +39,7 @@ core id: 每个内核的 id。
 siblings: 位于相同物理封装的处理器中的逻辑处理器的数量。
 processor: 逻辑处理器的 id。
 我们通常可以用下面这些命令获得这些参数的信息：
-
+```
 [root@rh ~]$ cat /proc/cpuinfo | grep "physical id" | sort|uniq
 physical id     : 0
 physical id     : 1
@@ -68,6 +69,7 @@ processor     : 6
 processor     : 7
 processor     : 8
 processor     : 9
+```
 通过上面的结果，可以看出这台机器：
 
 1）有 2 个物理封装的处理器（physical id 有 2 个）；
@@ -82,7 +84,7 @@ processor     : 9
 2、在 Linux 环境下计算进程的 CPU 占用
 2.1、通过 /proc/stat 文件查看所有的 CPU 活动信息
 下面实例数据是内核 2.6.24-24 版本以上的：
-
+```
 [root@rh ~]$ cat /proc/stat
 cpu  223447 240 4504182 410802165 59753 412 586209 0 0
 cpu0 17625 11 193414 25755165 34590 72 16780 0 0
@@ -108,6 +110,7 @@ processes 27283
 procs_running 1
 procs_blocked 0
 softirq 1262462448 0 63122856 50789329 1074176388 225020 0 461213 9535581 76130 64075931
+```
 第一行的数据表示的是 CPU 总的使用情况。我们来解释一下这行数据各数值的含义：
 
 1）这些数值的单位都是 jiffies，jiffies 是内核中的一个全局变量，用来记录系统启动以来产生的节拍数，在 Linux 中，一个节拍大致可以理解为操作系统进程调度的最小时间片，不同的 Linux 系统内核这个值可能不同，通常在 1ms 到 10ms 之间。
@@ -122,8 +125,9 @@ softirq(586209) 从系统启动开始累积到当前时刻，软中断时间。(
 stealstolen(0) Which is the time spent in other operating systems when running in a virtualized environment.(since 2.6.11)
 guest(0) Which is the time spent running a virtual CPU for guest operating systems under the control of the Linux kernel.(since 2.6.24)
 从以上信息我们可以得到总的 CPU 活动时间为：
-
+```
 totalCPUTime = user + nice + system + idle + iowait + irq + softirq + stealstolen + guest
+```
 
 2.2、通过 /proc/[PID]/stat 文件查看某一进程的 CPU 活动信息
 2.2.1、存储进程信息的文件目录
@@ -135,15 +139,17 @@ Linux 系统贯彻“一切都是文件”的思想，所有的进程的运行�
 2.2.2、查看进程运行的详细信息
 
 通过查看 /proc/[PID]/stat 文件，可以进程运行的详细信息，其中就包括 CPU 占用信息。 比如：
-
+```
 [root@rh ~]$ cat /proc/1/stat
 1 (init) S 0 1 1 0 -1 4202752 3026 2635222 9 483 5 165 102346 3188016 20 0 1 0 1 19820544 384 18446744073709551615 1 1 0 0 0 0 0 4096 536962595 18446744073709551615 0 0 0 4 0 0 34 0 0
+```
+
 /proc/[PID]/stat 文件信息解释
 
 看到上面这些信息，肯定会很迷惑，不知道每个字段都是什么意思。
 
 1）我们可以通过 man 5 proc 命令查看文档，找到 /proc/[pid]/stat 节点，就可以看到各字段的意思了。如：
-
+```
 /proc/[pid]/stat
 Status information about the process.  This is used by ps(1).  It is defined in /usr/src/linux/fs/proc/array.c.
 The fields, in order, with their proper scanf(3) format specifiers, are:
@@ -152,8 +158,10 @@ comm %s     The  filename  of the executable, in parentheses.  This is visible w
 state %c    One character from the string "RSDZTW" where R is running, S is sleeping in an interruptible  wait,  D  is waiting in uninterruptible disk sleep, Z is zombie, T is traced or stopped (on a signal), and W is paging.
 ppid %d     The PID of the parent.
 ......
-2）具体解释，一个示例：
+```
 
+2）具体解释，一个示例：
+```
 pid=6873 进程(包括轻量级进程，即线程)号
 comm=a.out 应用程序或命令的名字。
 task_state=R 任务的状态，R:runnign, S:sleeping (TASK_INTERRUPTIBLE), D:disk sleep (TASK_UNINTERRUPTIBLE), T: stopped, T:tracing stop, Z:zombie, X:dead。
@@ -195,6 +203,8 @@ exit_signal=17 该进程结束时，向父进程所发送的信号。
 task_cpu(task)=0 运行在哪个 CPU 上。
 task_rt_priority=0 实时进程的相对优先级别。
 task_policy=0 进程的调度策略，0=非实时进程，1=FIFO实时进程；2=RR实时进程
+```
+
 2.2.3、关于进程占用 CPU 的相关信息
 
 在上述的时间中，这些信息会在计算 CPU 占用率时用到：
@@ -205,15 +215,17 @@ stime 该任务在核心态运行的时间，单位为 jiffies。
 cutime 累计的该任务的所有的 waited-for 进程曾经在用户态运行的时间，单位为 jiffies。
 cstime 累计的该任务的所有的 waited-for 进程曾经在核心态运行的时间，单位为 jiffies。
 该进程的 CPU 占用时间（该值包括其所有线程的 CPU 时间）：
-
+```
 processCPUTime = utime + stime + cutime + cstime
+```
 
 2.3、通过 /proc/[PID]/task/[TID]/stat 文件查看某一进程下的某一线程的活动信息
 该文件包含了某一轻量级进程（lwp，即通常所说的线程）所有的活动信息，该文件中的所有值都是从系统启动开始累计到当前时刻。该文件的内容格式以及各字段的含义与 /proc/[PID]/stat 文件类似。该文件中的 tid 字段表示的是轻量级线程号。
 
 该线程的 CPU 占用时间：
-
+```
 threadCPUTime = utime + stime
+```
 
 2.4、单核情况下 CPU 使用率的计算
 2.4.1、基本思想
@@ -223,15 +235,16 @@ threadCPUTime = utime + stime
 2.4.2、计算总的 CPU 使用率 totalCPUUse
 
 1）采样两个足够短的时间间隔的 CPU 快照，即读取 /proc/stat 文件，获取两个时间点的下列数据：
-
+```
 CPUT1 (user1, nice1, system1, idle1, iowait1, irq1, softirq1, stealstolen1, guest1);
 CPUT2 (user2, nice2, system2, idle2, iowait2, irq2, softirq2, stealstolen2, guest2);
+```
 2）计算总的 CPU 时间 totalCPUTime：
-
+```
 CPUTime1 = user1 + nice1 + system1 + idle1 + iowait1 + irq1 + softirq1 + stealstolen1 + guest1;
 CPUTime2 = user2 + nice2 + system2 + idle2 + iowait2 + irq2 + softirq2 + stealstolen2 + guest2;
 totalCPUTime = CPUTime2 – CPUTime1;
-
+```
 3）计算 CPU 空闲时间 idleCPUTime：
 
 idleCPUTime = idle2 – idle1;
