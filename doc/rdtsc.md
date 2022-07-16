@@ -14,3 +14,4 @@
  
  - [细说RDTSC的坑](http://www.wangkaixuan.tech/?p=901)
  - [X86平台采用rdtsc指令读取时间戳计数器完成高精度计时](https://www.cnblogs.com/cnmaizi/archive/2011/01/17/1937772.html)
+ - [https://goodcommand.readthedocs.io/zh_CN/latest/command/rdtsc.html](https://goodcommand.readthedocs.io/zh_CN/latest/command/rdtsc.html)
