@@ -26,4 +26,8 @@ func transferStrArrayToMap(arr string) (map[string]bool) {
 func main() {
     m := transferStrArrayToMap("zhangbiwu, zhangbiwu, zhang    ")
     fmt.Println(m)
+    
+    for k,_ := range m {
+        fmt.Println(k)
+    }
 }
