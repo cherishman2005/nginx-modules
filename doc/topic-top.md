@@ -31,6 +31,6 @@ top:
 - topic查看到的user数是11，而top查看到的user数是1(实为宿主机的当前登录用户数)
 - topic查看到的容器运行时间为2days 10:35，而top查看到的是20days 1:57(实为宿主机的运行时间)
 - topic和top的进程相关信息显示基本一致。
-如果您需要试用，可以下载topic到容器中运行(记得加上执行权限)，好用可以给个Star ^_^
 
-项目地址 https://github.com/silenceshell/topic
+# 参考链接
+- [https://github.com/silenceshell/topic](https://github.com/silenceshell/topic)
