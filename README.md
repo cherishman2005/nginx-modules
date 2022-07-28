@@ -66,6 +66,7 @@
 # linux工具
 
 - [/proc/stat解析](/doc/proc_stat解析.md)
+- [topic-top](/doc/topic-top.md)
 
 # 小结
 
