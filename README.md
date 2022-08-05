@@ -41,7 +41,7 @@
 
 # go
 
-* golang深拷贝和浅拷贝
+- [golang-map和slice深拷贝](/go/golang-map和slice深拷贝.md)
 
 - [https://go.dev/](https://go.dev/)
 
