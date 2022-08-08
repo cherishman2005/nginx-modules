@@ -55,6 +55,8 @@
 
 - [Golang结构体类型的深浅拷贝](./Golang结构体类型的深浅拷贝.md)
 
+- [go-fmt](https://www.liwenzhou.com/posts/Go/go_fmt/)
+
 # ab压测
 
 - [ab压测](doc/ab-perf.md)
