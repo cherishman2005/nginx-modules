@@ -19,6 +19,11 @@ xxx_cast<newType>(data)
 constexpr是C++11引入的关键字，用于编译时的常量与常量函数。
 - [https://zh.wikipedia.org/wiki/Constexpr](https://zh.wikipedia.org/wiki/Constexpr)
 
+# 小结
+
+* C++开发时要注意运行效率，怎样高效。不要为了只是完成需求。
+
+
 # FAQ
 
 ## string初始化
