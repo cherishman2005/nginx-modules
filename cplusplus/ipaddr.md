@@ -12,3 +12,13 @@ inline std::string addr_ntoa(u_long ip)
 	return std::string(::inet_ntoa(addr)); 
 }
 ```
+
+## ipsegment
+
+![image](https://user-images.githubusercontent.com/17688273/185039788-93cdb7c8-489e-4e61-885e-30abe7bf53c9.png)
+
+
+# 参考链接
+
+ip segment计算
+- [https://jodies.de/ipcalc](https://jodies.de/ipcalc)
