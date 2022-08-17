@@ -5,7 +5,7 @@
 #include <sstream>
 #include <vector>
 #include <stdio.h>
- #include <stdlib.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -110,15 +110,6 @@ public:
         m_mask = 0xFFFFFFFF << (32 - type);
     }
     
-    bool isInRange(const string & ip) const {
-        uint32_t _ip = aton_addr(ip);
-        _ip = htonl(_ip);
-        uint32_t addr = htonl(m_address);
-        printf("mask=0x%08lx, _ip=0x%08lx, segment ip=0x%08lx\n", m_mask, _ip, addr);
-        return (_ip & m_mask) == (addr & m_mask);
-    }
-    
-    
     bool operator < (const IpSegment& right) const
     {
         return (m_address < right.m_address) ||
@@ -135,6 +126,14 @@ public:
         return (m_address != right.m_address) || (m_mask != right.m_mask);
     }
     
+    bool isInRange(const string & ip) const {
+        uint32_t _ip = aton_addr(ip);
+        _ip = htonl(_ip);
+        uint32_t addr = htonl(m_address);
+        printf("mask=0x%08lx, _ip=0x%08lx, segment ip=0x%08lx\n", m_mask, _ip, addr);
+        return (_ip & m_mask) == (addr & m_mask);
+    }
+
     string dump() const {
         //uint32_t addr = ntohl(m_address);
         string ip = addr_ntoa(m_address);
@@ -152,10 +151,51 @@ private:
     uint32_t m_mask;
 };
 
-set<uint32_t> m_lips;
-set<IpSegment> m_ipsegments;
+template<class T>
+class Singleton
+{
+protected:
+  Singleton(){}
+private:
+  Singleton(const Singleton& s);
+  Singleton& operator = (Singleton& s);
+public:
+  virtual ~Singleton(){}
+  static T* Instance()
+  {
+    static T _inst;
+    return &_inst;
+  }
+};
 
-bool read_whitelist()
+class IpWhite : public Singleton<IpWhite> {
+
+public:
+    bool read_whitelist();
+    
+    bool isInRange(const std::string &ip) {
+        for (std::set<IpSegment>::const_iterator it = m_ipsegments.begin(); it != m_ipsegments.end(); it++) {
+            bool in = it->isInRange(ip);
+            if (in) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    void debug(const std::string &ip) {
+        for (std::set<IpSegment>::const_iterator it = m_ipsegments.begin(); it != m_ipsegments.end(); it++) {
+            cout << "ip=" << ip << ", ip segment=" << it->dump() << ", isInRange=" << it->isInRange(ip) << endl;
+        }
+    }
+    
+private:
+    std::set<uint32_t> m_lips;
+    std::set<IpSegment> m_ipsegments;
+};
+
+
+bool IpWhite::read_whitelist()
 {
     const char *path = "ipwhite.txt";
     FILE *pfile = fopen(path, "r");
@@ -216,11 +256,9 @@ int main()
     bool f = ipsegment.isInRange(ip);
     cout << "isInRange=" << f << endl;
     
-    read_whitelist();
+    IpWhite::Instance()->read_whitelist();
     
-    for (std::set<IpSegment>::const_iterator it = m_ipsegments.begin(); it != m_ipsegments.end(); it++) {
-        cout << "ip=" << ip << ", ip segment=" << it->dump() << ", isInRange=" << it->isInRange(ip) << endl;
-    }
-    
+    IpWhite::Instance()->debug(ip);
+
     return 0;
 }
