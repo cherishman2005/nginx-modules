@@ -1,6 +1,10 @@
 # ipaddr
 
 ```
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
 inline bool   valid_addr(u_long ip)             { return ip != INADDR_NONE; }
 inline u_long aton_addr(const char * ip)        { return ::inet_addr(ip); }
 inline u_long aton_addr(const std::string & ip) { return aton_addr(ip.c_str()); }
