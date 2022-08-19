@@ -1,5 +1,11 @@
 # apt get update
 
+/etc/resolv.conf 
+
+/etc/apt/sources.list
+
+/etc/hosts
+
 ## docker ubunt12.04更新失败
 
 
