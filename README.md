@@ -78,6 +78,15 @@
 - [/proc/stat解析](/doc/proc_stat解析.md)
 - [topic-top](/doc/topic-top.md)
 
+## linux配置
+
+/etc/hosts
+
+/etc/resolv.conf 
+
+/etc/apt/sources.list
+
+
 # 小结
 
 * 后端开发技术
