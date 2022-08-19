@@ -7,13 +7,12 @@
 /etc/hosts
 
 ## docker ubunt12.04更新失败
-
 https://askubuntu.com/questions/1385440/ubuntu-sudo-apt-get-update-404-not-found-problem
 
 Most of the repositories and PPAs in your sources.list are no longer available and are throwing errors. I'd recommend restoring the default repositories.
 
 First, restore the default focal repositories using these commands:
-
+```
 mkdir ~/solution
 cd ~/solution/
 
@@ -36,14 +35,16 @@ EOF
 
 sudo rm /etc/apt/sources.list
 sudo cp ~/solution/sources.list /etc/apt/sources.list
+```
 Remove all the PPAs in your system:
-
+```
 sudo mv /etc/apt/sources.list.d/* ~/solution
+```
 Update the repositories:
-
+```
 sudo apt update
+```
 Now there should be no errors.
-
 
 ### 解决方法参考
 
