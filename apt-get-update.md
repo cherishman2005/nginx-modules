@@ -33,12 +33,12 @@ deb http://archive.canonical.com/ubuntu focal partner
 deb-src http://archive.canonical.com/ubuntu focal partner
 EOF
 
-sudo rm /etc/apt/sources.list
+sudo mv /etc/apt/sources.list /etc/apt/sources.list_bak
 sudo cp ~/solution/sources.list /etc/apt/sources.list
 ```
 Remove all the PPAs in your system:
 ```
-sudo mv /etc/apt/sources.list.d/* ~/solution
+sudo mv /etc/apt/sources.list.d ~/solution/
 ```
 Update the repositories:
 ```
