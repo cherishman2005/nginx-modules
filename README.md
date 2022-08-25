@@ -86,6 +86,8 @@
 - [/proc/stat解析](/doc/proc_stat解析.md)
 - [topic-top](/doc/topic-top.md)
 
+## 通过netstat和lsof查询 本端和对端服务进程信息
+
 ## linux配置
 
 /etc/hosts
