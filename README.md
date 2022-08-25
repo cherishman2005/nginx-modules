@@ -75,6 +75,14 @@
 
 # linux工具
 
+* top
+* netstat
+  * netstat -tlpn | grep xxx
+  * netstat -tpn | grep xxxx
+* lsof -p [pid]
+
+* tcpdump
+
 - [/proc/stat解析](/doc/proc_stat解析.md)
 - [topic-top](/doc/topic-top.md)
 
