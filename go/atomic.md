@@ -9,3 +9,28 @@ func SwapUint32(addr *uint32, new uint32) (old uint32)
 注意：(* uint32)是指向uint32值的指针。但是，int32包含从0到4294967295的所有无符号32位整数的集合。
 
 返回值：它将新的uint32值存储到* addr中，并返回先前的* addr值。
+
+```
+package main 
+  
+// Importing fmt and sync/atomic 
+import ( 
+    "fmt"
+    "sync/atomic"
+) 
+  
+// Main function 
+func main() { 
+  
+    // Assigning value to uint32 
+    var x uint32 = 18384411 
+  
+    // Using SwapUint32 method  
+    // with its parameters 
+    var old_val = atomic.SwapUint32(&x, 324233535) 
+  
+    // Prints new and old value 
+    fmt.Println("Stored new value:", 
+         x, ", Old value:", old_val) 
+}
+```
