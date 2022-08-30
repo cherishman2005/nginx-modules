@@ -23,6 +23,12 @@ func main() {
         fmt.Printf("%v\t%v\t%v\n", &a,unsafe.Sizeof(a),unsafe.Alignof(a))
         fmt.Printf("%v\t%v\t%v\n", &b,unsafe.Sizeof(b),unsafe.Alignof(b))
         fmt.Printf("%v\t%v\t%v\n", &c,unsafe.Sizeof(c),unsafe.Alignof(c))
+
+        var m map[string]int  = make(map[string]int)
+        fmt.Printf("%v\t%v\t%v\n", &m,unsafe.Sizeof(m),unsafe.Alignof(m))
+        
+        var mb map[string]bool  = make(map[string]bool)
+        fmt.Printf("%v\t%v\t%v\n", &mb,unsafe.Sizeof(mb),unsafe.Alignof(mb))
 }
 ```
 
@@ -30,18 +36,11 @@ func main() {
 
 
 ```
-longqiping@ubuntu:~/go/src/unsafe/u1$ ./u1 
-0x40000140b0    8       8
-0x40000140b8    2       2
-0x40000140bc    4       4
-longqiping@ubuntu:~/go/src/unsafe/u1$ ./u1 
-0x400018c000    8       8
-0x400018c008    2       2
-0x400018c00c    4       4
-longqiping@ubuntu:~/go/src/unsafe/u1$ ./u1 
-0x40000140b0    8       8
-0x40000140b8    2       2
-0x40000140bc    4       4
+0xc000016098    8       8
+0xc0000160b0    2       2
+0xc0000160b4    4       4
+&map[]  8       8
+&map[]  8       8
 ```
 
 每一次分配给变量a的地址总是8的整数倍。而分配给b的地址总是2的整数倍。分配给c的地址总是4的整数倍。
