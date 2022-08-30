@@ -49,19 +49,21 @@ longqiping@ubuntu:~/go/src/unsafe/u1$ ./u1
 2、聚合类型
 聚合类型（结构体或数组）的值的长度至少是它的成员或元素之和，并且由于内存对齐的原因，或许比这个更大。内存空位是由编译器添加的未使用的内存地址，用来确保连续的成员或者元素相对于结构体或数组的起始地址是对齐的。
 
-类型	大小（sizes are guaranteed）
-bool	1个字
-intN、uintN、floatN、complexN	N/8字节，如float64是8字节
-int、uint、uintptr	1个字
-*T	1个字
-string	2个字（数据、长度）
-[]T	3个字（指向底层数组的指针、长度和容量）长度和容量都 是int，即都是1个字，指向底层数组的指针也是1个字。因此[]T是3个字。
-map	1个字
-func	1个字
-chan	1个字
-interface	两个字（类型、值）
+| 类型  | 大小（sizes are guaranteed） |
+| ------------- | ------------- |
+| bool   | 1个字  |
+| intN、uintN、floatN、complexN  | N/8字节，如float64是8字节  |
+| int、uint、uintptr  | 32位机：4字节； 64位机：8字节  |
+| *T  | 1个字  |
+|  string | 2个字（数据、长度） |
+| []T  | 3个字（指向底层数组的指针、长度和容量）长度和容量都 是int，即都是1个字，指向底层数组的指针也是1个字。因此[]T是3个字。  |
+| map  | 1个字  |
+| func  | 1个字  |
+| chan  | 1个字  |
+| interface  | 两个字（类型、值） |
+
 如果结构体成员的类型是不同的，那么将相同类型的成员定义在一起，sizes are guaranteed的值大的定义在前可以更节约内存空间。
-![image](https://user-images.githubusercontent.com/17688273/187450552-524b42dc-6e1d-4695-bd10-e87f0e58836b.png)
+
 
 示例
 ```
