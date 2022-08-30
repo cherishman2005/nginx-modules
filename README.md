@@ -45,6 +45,8 @@
 
 # go
 
+- [go语言内存对齐](/doc/go语言内存对齐.md)
+
 - [c++与golang map拷贝的区别](/doc/cpp-and-golang-map.md)
 
 - [golang-map和slice深拷贝](/go/golang-map和slice深拷贝.md)
