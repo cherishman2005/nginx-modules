@@ -20,9 +20,11 @@ func main() {
         var a int
         var b int16
         var c rune
+        var d bool
         fmt.Printf("%v\t%v\t%v\n", &a,unsafe.Sizeof(a),unsafe.Alignof(a))
         fmt.Printf("%v\t%v\t%v\n", &b,unsafe.Sizeof(b),unsafe.Alignof(b))
         fmt.Printf("%v\t%v\t%v\n", &c,unsafe.Sizeof(c),unsafe.Alignof(c))
+        fmt.Printf("%v\t%v\t%v\n", &d,unsafe.Sizeof(d),unsafe.Alignof(d))
 
         var m map[string]int  = make(map[string]int)
         fmt.Printf("%v\t%v\t%v\n", &m,unsafe.Sizeof(m),unsafe.Alignof(m))
@@ -39,6 +41,7 @@ func main() {
 0xc000016098    8       8
 0xc0000160b0    2       2
 0xc0000160b4    4       4
+0xc0000160b8    1       1
 &map[]  8       8
 &map[]  8       8
 ```
