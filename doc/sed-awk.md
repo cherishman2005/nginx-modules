@@ -1,6 +1,6 @@
-# sed
+# sed和awk
 
-## 换行
+## sed替换（换行）
 ```
 sed 's/},{/},\n{/g'  if.txt  > if_proc.txt 
 ```
