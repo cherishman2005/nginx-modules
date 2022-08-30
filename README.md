@@ -96,6 +96,10 @@
 
 /etc/apt/sources.list
 
+## sed和awk
+
+- [sed和awk](/doc/sed.md)
+
 
 # 小结
 
