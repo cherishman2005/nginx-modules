@@ -98,7 +98,7 @@
 
 ## sed和awk
 
-- [sed和awk](/doc/sed.md)
+- [sed和awk](/doc/sed-awk.md)
 
 
 # 小结
