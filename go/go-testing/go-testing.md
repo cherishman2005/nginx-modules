@@ -21,3 +21,10 @@ BenchmarkStringJoin1-4 300000 4351 ns/op 32 B/op 2 allocs/op
 ## 压测结果
 
 ![image](https://user-images.githubusercontent.com/17688273/191460167-d7f8003b-95ee-406c-9488-d25dc1a3b5f0.png)
+
+| map(set)    | 占用内存   |
+| --------   | -----:  |
+| map[int]int      | 88M   |
+| map[int]bool      | 55M   |
+| map[string]int      | 132M   |
+| map[string]bool      | 99M   |
