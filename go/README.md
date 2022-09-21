@@ -10,6 +10,8 @@
 
 - [Go中map全局变量](./Go中map全局变量.md)
 
+- [golang-linux安装](/go/golang-linux安装.md)
+
 # FAQ
 
 ## 引用外部模块函数的首字母要大写
