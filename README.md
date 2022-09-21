@@ -69,6 +69,8 @@
 
 - [go-fmt](https://www.liwenzhou.com/posts/Go/go_fmt/)
 
+- [go-testing](/go/go-testing/go-testing.md)
+
 # ab压测
 
 - [ab压测](doc/ab-perf.md)
