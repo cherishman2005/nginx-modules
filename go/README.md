@@ -42,3 +42,7 @@ go env -json
 # 参考链接
 
 - [Golang error 的突围](https://www.cnblogs.com/qcrao-2018/p/11538387.html)
+
+- [理解go的function types](https://www.jianshu.com/p/fc4902159cf5)
+
+- [go benchmark实践与原理](http://cbsheng.github.io/posts/go_benchmark%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%8E%9F%E7%90%86/)
