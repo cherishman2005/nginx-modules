@@ -12,6 +12,8 @@
 
 - [golang-linux安装](/go/golang-linux安装.md)
 
+- [go-testing](/go/go-testing/go-testing.md)
+
 # FAQ
 
 ## 引用外部模块函数的首字母要大写
