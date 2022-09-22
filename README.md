@@ -49,6 +49,8 @@
 
 # go
 
+- [Go如何优雅的解决方法重载的问题](/go/Go如何优雅的解决方法重载的问题.md)
+
 - [go语言内存对齐](/doc/go语言内存对齐.md)
 
 - [c++与golang map拷贝的区别](/doc/cpp-and-golang-map.md)
