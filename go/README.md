@@ -52,3 +52,6 @@ go env -json
 - [理解go的function types](https://www.jianshu.com/p/fc4902159cf5)
 
 - [go benchmark实践与原理](http://cbsheng.github.io/posts/go_benchmark%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%8E%9F%E7%90%86/)
+
+- [关于go：将一个元素添加到nil slice可以将容量增加两个](https://www.codenong.com/38543825/)
+
