@@ -24,7 +24,7 @@ func Handler(timeOut time.Duration, retry int) {
 
 ## 2.解决问题
 
-其实解决的思想很简单，我们知道有可变参数，那么到底传入什么样的参数哇。
+其实解决的思想很简单，我们知道有可变参数，那么到底传入什么样的参数。
 
 难道是这样子？
 ```
@@ -32,9 +32,9 @@ func Handler(op ...interface{}) {
 
 }
 ```
-哇，太不合理了吧，如何解析呢。
+太不合理了吧，如何解析呢。
 
-哇，是不是能不能这样子。
+能不能这样子？
 ```
 type Op struct {
 	TimeOut time.Duration
@@ -45,7 +45,7 @@ func Handler(op *Op) {
 }
 ```
 
-但是人家不想传入参数咋整。。。 这个解决不了。换种思维，其实很多框架都使用了这种方式。
+但是人家不想传入参数的情况 怎么解决？换种思维，其实很多框架都使用了这种方式。
 ```
 type Option func(*Options)
 type Options struct {
