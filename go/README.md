@@ -1,5 +1,7 @@
 # go development
 
+- [Go如何优雅的解决方法重载的问题](/go/Go如何优雅的解决方法重载的问题.md)
+
 - [go-redis-cluster读写分离](./go-redis-cluster读写分离.md)
 
 - [go-mysql](./go-mysql.md)
