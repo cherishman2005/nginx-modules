@@ -1,4 +1,4 @@
-# pprof
+# go-pprof
 
 ## alloc_objects
 
