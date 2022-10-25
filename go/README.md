@@ -18,6 +18,8 @@
 
 - [go-testing](/go/go-testing/go-testing.md)
 
+- [超时](/go/timeout.md)
+
 # FAQ
 
 ## 引用外部模块函数的首字母要大写
