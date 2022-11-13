@@ -50,6 +50,8 @@ a = a[:1]，如果后面的元素都是指针，都指向了 500MB 的一个大 
 
 少用闭包，被闭包引用的局部变量会逃逸到堆上。
 
+### 使用strconv包替代fmt.Sprintf的格式化方式
+
 ### sync.Mutex
 
 如果是struct，并且里面包含了sync.Mutex之类的同步原语，那么请使用*T，避免copy。
@@ -81,3 +83,5 @@ a = a[:1]，如果后面的元素都是指针，都指向了 500MB 的一个大 
 - [Golang性能优化](https://blog.csdn.net/yonggeit/article/details/122393354?share_token=f71127c8-846f-4a7a-a7be-58ca7047684f)
 
 - [golang服务器优化之旅](https://www.cnblogs.com/huangliang-hb/p/11153398.html?share_token=4a4139ff-e0c5-4c46-a125-321ade2a62b6)
+
+- [golang服务优化](https://blog.csdn.net/qq_27290011/article/details/121041355?share_token=024b50a3-9d1d-42a3-948f-edbe03dd976c)
