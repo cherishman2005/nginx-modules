@@ -89,3 +89,5 @@ a = a[:1]，如果后面的元素都是指针，都指向了 500MB 的一个大 
 - [golang gc 优化思路以及实例分析](https://www.cnblogs.com/gao88/p/9850235.html?share_token=ea789f77-71be-47a2-bedf-f4dbb9dddc15)
 
 - [怎样优化一个 Go 服务以减少 40% 的 CPU 使用率](https://www.toutiao.com/article/6837035024143876611/?app=news_article&timestamp=1668239461&use_new_style=1&req_id=202211121551000101512042280D56B2F8&group_id=6837035024143876611&wxshare_count=1&tt_from=weixin&utm_source=weixin&utm_medium=toutiao_android&utm_campaign=client_share&share_token=2ed44c70-c62c-4101-8f3c-023132bdf6f4&source=m_redirect&wid=1668356410287)
+
+- [Golang中常用的代码优化点](https://mp.weixin.qq.com/s/QONfbKioFf6VqJE2OwP7Kw)
