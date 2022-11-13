@@ -36,6 +36,15 @@
 
 ## golang优化技巧
 
+### 最小作用域
+
+```
+if err := DoSomething(); err != nil {
+    return err
+}
+```
+尽量减少作用域, GC 比较友好
+
 ### slice
 
 * slice 缩容时，被缩掉对象如果不置 nil，是不会释放的
