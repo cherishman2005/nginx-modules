@@ -36,6 +36,12 @@
 
 ## golang优化技巧
 
+### slice
+
+* slice 缩容时，被缩掉对象如果不置 nil，是不会释放的
+
+a = a[:1]，如果后面的元素都是指针，都指向了 500MB 的一个大 buffer，没法释放，GC 认为你还是持有引用的。这种情况需要自己先把后面的元素全置为 nil，再缩容。
+
 ### sync.Mutex
 
 如果是struct，并且里面包含了sync.Mutex之类的同步原语，那么请使用*T，避免copy。
@@ -64,3 +70,4 @@
 
 - [go1.14基于netpoll优化timer定时器实现原理](https://xiaorui.cc/archives/6483?share_token=70d6bd36-1f68-4c66-b042-525fced1e0c5)
 
+- [Golang性能优化](https://blog.csdn.net/yonggeit/article/details/122393354?share_token=f71127c8-846f-4a7a-a7be-58ca7047684f)
