@@ -51,3 +51,7 @@
 # 参考链接
 
 - [Go性能优化技巧](https://blog.csdn.net/zhonglinzhang/article/details/71107168?share_token=7c9f28b2-f504-4bf2-a52b-6f034b02a4f9)
+
+- [golang：快来抓住让我内存泄漏的“真凶”](https://mp.weixin.qq.com/s/FyHEiaa-UfyLStMKl2VFGA)
+
+- 
