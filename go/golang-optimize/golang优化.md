@@ -36,6 +36,10 @@
 
 ## golang优化技巧
 
+### sync.Mutex
+
+如果是struct，并且里面包含了sync.Mutex之类的同步原语，那么请使用*T，避免copy。
+
 ### array与slice
 
 对于一些初学者，自知道 Go 里面的 array 以 pass-by-value 方式传递后，就莫名地引起 “恐慌”。外加诸多文章未作说明，就建议用 slice 代替 array，企图避免数据拷贝，提升性能。实际上，此做法有待商榷。某些时候怕会适得其反，倒造成不必要的性能损失。
