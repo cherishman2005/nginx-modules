@@ -26,33 +26,37 @@ if err := DoSomething(); err != nil {
 声明一个对象有4种方式：make, new(), var, :=
 
 比如:
-
+```
 t := make([]int, 0)
 u := new(User)
 var t []int
 u := &User{}
+```
 var 声明但是不立刻初始化
 := 声明并立刻使用
 尽量减少使用 new() 因为他不会初始化值, 使用 u := User{} 更好
 接口命名
 单个功能使用 er 结尾或者名词
-
+```
 type Reader interface {
     Read(p []byte) (n int, err error)
 }
+```
 2 个功能
-
+```
 type ReaderWriter interface {
     Reader
     Writer
 }
+```
 3 个及以上功能
-
+```
 type Car interface {
     Drive()
     Stop()
     Recover()
 }
+```
 命名规范
 代码风格
 [强制] go 文件使用下划线命名
@@ -239,13 +243,14 @@ golang 的内存机制也是内存池, 每个 span 大小为 4KB, 同时维护�
 一个下标的一条链表的每个 Node 储存的内存是一致的.
 
 所以建议将小对象合并为一个 struct
-
+```
 for k, v := range m {
     x := struct {k , v string} {k, v} // copy for capturing by the goroutine
     gofunc() {
         // using x.k & x.v
     }()
 }
+```
 
 使用 buf 缓存
 协议编码的时候需要频繁的操作 buf, 可以使用 bytes.Buffer 作为缓存区对象, 它会一次性分配足够大的内存, 避免内存不够的时候动态申请内存, 减少内存分配次数, 而且, buf 可以被复用(建议复用)
@@ -256,8 +261,9 @@ slice 和 map 创建的时候, 预估大小指定的容量
 t := make([]int, 0, 100)
 m := make(map[string]int, 100)
 如果不确定 slice 会不会初始化, 使用 var 这样不会分配内存, make([]int,0) 会分配内存空间
-
+```
 var t []int
+```
 拓展:
 
 slice 容量在 1024 前扩容是倍增, 1024 后是1/4
@@ -316,7 +322,7 @@ protobuf 比 json 的储存效率和解析效率更高, 推荐在持久化或者
 
 并行请求 errgroup
 对于网关接口, 通常需要聚合多个模块的数据, 当这些业务模块数据之间没有依赖的时候, 可以并行请求, 减少耗时
-
+```
 ctxTimeout, cf := context.WithTimeout(context.Background(), time.Second)
 defer cf()
 g, ctx := errgroup.WithContext(ctxTimeout)
@@ -347,6 +353,7 @@ case <-ctx.Done():
 default:
     fmt.Println("Context not canceled")
 }
+```
 其他优化
 需要注意的坑
 channel 之坑
@@ -367,21 +374,24 @@ CCP: Channel Close Principle (关闭通道原则)
 defer 之坑
 defer 中的变量
 参数传递是在调用的时候
-
+```
 i := 1
 deferprintln("defer", i)
 i++
 // defer 1
-非参数的闭包
+```
 
+非参数的闭包
+```
 i := 1
 deferfunc() {
     println("defer", i)
 }()
 i++
 // defer 2
+```
 有名返回同理闭包, 并且会修改有名返回的返回值
-
+```
 func main(){
 	fmt.Printf("main: %v\n", getNum())
 	// defer 2
@@ -396,10 +406,13 @@ func getNum() (i int) {
 	i++
 	return
 }
-不要 for 循环中调用 deffer
-因为 deffer 只会在函数 return 之后执行, 这样会累积大量的 deffer 而且极其容易出错
+```
 
-建议: 将 for 循环需要 deffer 的代码逻辑封装为一个函数
+`不要 for 循环中调用 defer`
+
+`因为 deffer 只会在函数 return 之后执行, 这样会累积大量的 defer 而且极其容易出错`
+
+建议: 将 for 循环需要 defer 的代码逻辑封装为一个函数
 
 HTTP 之坑
 request 超时时间
@@ -429,7 +442,7 @@ if u == nil {
 }
 // u is nil
 自定义的 struct
-
+```
 var u *user = (*user)(nil)
 if u == nil {
     t.Log("u is nil")
@@ -437,6 +450,8 @@ if u == nil {
     t.Log("u is not nil")
 }
 // u is nil
+```
+
 map 之坑
 map 并发读写
 map 并发读写会 panic, 需要加锁或者使用 sync.Map
@@ -557,7 +572,7 @@ for select default 之坑
 for 中的 default 在 select 一定会执行, CPU 一直被占用不会让出, 导致 CPU 空转
 
 示例代码
-
+```
 func TestForSelect(t *testing.T) {
 	for {
 		select {
@@ -570,8 +585,10 @@ func TestForSelect(t *testing.T) {
 		}
 	}
 }
+```
 top CPU 跑满了
-
+```
 top - 15:00:50 up 1 day, 15:55,  0 users,  load average: 1.36, 0.85, 0.35
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND   
 28632 root      20   0 2168296   1.4g   2244 S 252.8  11.7   1:04.15 __debug_bin   
+```
