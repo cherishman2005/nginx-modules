@@ -2,10 +2,10 @@
 
 操作字符串离不开字符串的拼接，但是Go中string是只读类型，大量字符串的拼接会造成性能问题。
 
-字符串拼接的方式与性能对比？
-bytes.Buffer 与 strings.Builder？
-Buffer 和 Builder底层原理实现？
-字符串拼接的方式与性能对比
+* 字符串拼接的方式与性能对比？
+* bytes.Buffer 与 strings.Builder？
+* Buffer 和 Builder底层原理实现？
+* 字符串拼接的方式与性能对比
 
 拼接字符串，无外乎四种方式，采用“+”，“fmt.Sprintf()”,"bytes.Buffer","strings.Builder"
 ```
