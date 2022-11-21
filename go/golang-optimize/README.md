@@ -12,44 +12,8 @@
 
 说明：`一个完整defer过程要处理缓存对象、参数拷贝，以及多次函数调用，要比直接函数调用慢得多。`
 
-错误示例：实现一个加解锁函数，解锁过程使用defer处理。这是一个非常小的函数，并且能够预知解锁的位置，使用defer编译后会使处理产生很多无用的过程导致性能下降。
-```
-	var lock sync.Mutex
-	func testdefer() {
-	    lock.Lock()
-	    defer lock.Unlock()
-	}
-	
-	func BenchmarkTestDefer(b *testing.B) {
-	    for i := 0; i < b.N; i++ {
-	        testdefer()
-	    }
-	}
-```
-```
-	// 耗时结果
-	BenchmarkTestDefer 10000000 211 ns/op
-```
+## string.Builder使用
 
-推荐做法：`如果能够明确函数退出的位置，可以选择不使用defer处理。保证功能不变的情况下，性能明显提升，是耗时时使用defer的1/3。`
-```
-	var lock sync.Mutex
-	func testdefer() {
-	    lock.Lock()
-	    lock.Unlock() // ## 【修改】去除defer
-	}
-	
-	func BenchmarkTestDefer(b *testing.B) {
-	    for i := 0; i < b.N; i++ {
-	        testdefer()
-	    }
-	}
-```
-
-```
-	// 耗时结果
-	BenchmarkTest" 30000000 43.5 ns/op
-```
 
 # 参考链接
 
