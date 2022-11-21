@@ -45,8 +45,10 @@ func AppendWithStringBuilder(n int) {
     }
     sbuilder.String()
 }
+```
 
- go test -test.bench=.* -count=5
+```
+go test -test.bench=.* -count=5
 goos: windows
 goarch: amd64
 pkg: /studyGo/first
