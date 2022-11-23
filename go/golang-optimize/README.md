@@ -29,6 +29,12 @@ if err := DoSomething(); err != nil {
 ```
 `尽量减少作用域, GC 比较友好`
 
+## 减少内存拷贝
+
+对于slice或者map等结构，如果不指定初始长度，使用类似与append的方法，系统会根据需要动态的增长内存容量，这样会导致内存的重新分配，增大gc压力，因此在可以预估容量时，可以考虑初始化固定长度，避免内存拷贝造成的开销。
+
+
+
 # 参考链接
 
 - [通过 Exit Code 定位 Pod 异常退出原因](https://cloud.tencent.com/document/product/457/43125)
