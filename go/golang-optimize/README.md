@@ -20,6 +20,20 @@
 
 * 采用strings.Builder提升性能
 
+### 字符串的拼接优先考虑bytes.Buffer
+
+由于string类型是一个不可变类型，但拼接会创建新的string。GO中字符串拼接常见有如下几种方式：
+
+string + 操作 ：导致多次对象的分配与值拷贝
+
+fmt.Sprintf ：会动态解析参数，效率好不哪去
+
+strings.Join ：内部是[]byte的append
+
+bytes.Buffer ：可以预先分配大小，减少对象分配与拷贝
+
+建议：对于高性能要求，优先考虑bytes.Buffer，预先分配大小。非关键路径，视简洁使用。fmt.Sprintf可以简化不同类型转换与拼接。
+
 ## 最小作用域
 
 ```
