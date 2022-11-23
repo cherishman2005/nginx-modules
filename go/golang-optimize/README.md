@@ -1,5 +1,8 @@
 # golang优化
 
+ * Go 1.13 改进了 sync 包中的 Pool，在 gc 运行时不会清除 pool。重写了逃逸分析，减少了 Go 程序中堆上的内存申请的空间。 
+ * Go 1.14 进一步提升 defer 性能、页分配器更高效，同时 timer 也更高效。
+
 - [pprof命令](/go/golang-optimize/pprof.md)
 
 ## defer的使用原则
