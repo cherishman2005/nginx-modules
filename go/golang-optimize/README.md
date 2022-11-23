@@ -1,5 +1,7 @@
 # golang优化
 
+- [pprof命令](/go/golang-optimize/pprof.md)
+
 ## defer的使用原则
 
 【建议4.1.5.1】`如果函数存在多个返回的地方，则采用defer来完成如关闭资源、解锁等清理操作。`
@@ -12,7 +14,11 @@
 
 说明：`一个完整defer过程要处理缓存对象、参数拷贝，以及多次函数调用，要比直接函数调用慢得多。`
 
-## string.Builder使用
+## strings.Builder使用
+
+* string：只读变量，对string操作会出现分配空间，拼接，拷贝。
+
+* 采用strings.Builder提升性能
 
 
 # 参考链接
