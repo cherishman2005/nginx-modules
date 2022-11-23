@@ -20,6 +20,14 @@
 
 * 采用strings.Builder提升性能
 
+## 最小作用域
+
+```
+if err := DoSomething(); err != nil {
+    return err
+}
+```
+`尽量减少作用域, GC 比较友好`
 
 # 参考链接
 
