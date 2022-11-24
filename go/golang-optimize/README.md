@@ -5,7 +5,7 @@
 
 - [pprof命令](/go/golang-optimize/pprof.md)
 
-- [如何编写内存高效及CPU调优的Go结构体](/go/golang-optimize/如何编写内存高效及CPU调优的Go结构体.md)
+- [编写内存高效及CPU调优的Go结构体](/go/golang-optimize/编写内存高效及CPU调优的Go结构体.md)
 
 
 ## defer的使用原则
