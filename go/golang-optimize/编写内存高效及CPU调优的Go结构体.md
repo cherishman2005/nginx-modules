@@ -47,9 +47,9 @@ func main() {
 	d.TerraformVersion = "1.1"
 	d.ModuleVersionMajor = 1
 	d.IsVersionControlled = true
-	fmt.Println("==============================================================\n")
+	fmt.Println("==============================================================")
 	fmt.Printf("结构体使用的总内存:d %T => [%d]\n", d, unsafe.Sizeof(d))
-	fmt.Println("==============================================================\n")
+	fmt.Println("==============================================================")
 	fmt.Printf("结构体中的Cloud字段:d.Cloud %T => [%d]\n", d.Cloud, unsafe.Sizeof(d.Cloud))
 	fmt.Printf("结构体中的Name字段:d.Name %T => [%d]\n", d.Name, unsafe.Sizeof(d.Name))
 	fmt.Printf("结构体中的HaveDSL字段:d.HaveDSL %T => [%d]\n", d.HaveDSL, unsafe.Sizeof(d.HaveDSL))
