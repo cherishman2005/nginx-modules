@@ -5,6 +5,9 @@
 
 - [pprof命令](/go/golang-optimize/pprof.md)
 
+- [如何编写内存高效及CPU调优的Go结构体](/go/golang-optimize/如何编写内存高效及CPU调优的Go结构体.md)
+
+
 ## defer的使用原则
 
 【建议4.1.5.1】`如果函数存在多个返回的地方，则采用defer来完成如关闭资源、解锁等清理操作。`
