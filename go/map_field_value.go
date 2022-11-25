@@ -1,3 +1,5 @@
+package main
+
 import "fmt"
 
 type ActiveClient struct {
@@ -15,9 +17,17 @@ func main() {
 	for k, v := range m {
 	    fmt.Println(k, v)
 	}
+	
+	mi := map[int]int{1:1, 2:2}
+	if _,ok := mi[1]; ok {
+	    mi[1] = 3
+	}
+	fmt.Println(mi)
+	
 }
 
 /*
 1 &{127.0.0.1:99}
 2 &{127.0.0.1:88}
+map[1:3 2:2]
 */
