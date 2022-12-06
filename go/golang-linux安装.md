@@ -17,7 +17,8 @@ tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
 
 sudo vim 打开/etc/profile文件，追加导出命令
 ```
-export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
 ```
 
 # 参考链接
