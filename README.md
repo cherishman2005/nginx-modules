@@ -198,6 +198,11 @@
 
 - [浏览器访问跨域问题](doc/浏览器访问跨域问题.md)
 
+## nginx与bfe比较
+
+* 服务器是重资产，人员配置是轻资产。bfe使用15台机器性能来对标nginx 10台机器，对于中小企业尽量使用少的机器，易维护性的成熟软件，并且nginx代理运维成本更低。
+* 另外，还有一些其他公司开源的golang负载均衡软件在协议栈方面做了深度优化，也非常不错。
+
 # 参考链接
 
 - [https://en.wikipedia.org/wiki/Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
