@@ -1,4 +1,4 @@
-# docker模式
+# docker启动模式
 
 docker network下 host模式与bridge不模式一样
 
