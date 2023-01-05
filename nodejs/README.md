@@ -7,6 +7,12 @@
     * 比如通过系统底层语言 Rust 来扩展 Node.js。
     * nodejs嵌入C++ module插件。
 
+## 安装yarn
+
+```
+npm install -g yarn
+```
+
 # 链接
 - [https://hellogithub.com/periodical/volume/55/#ToolGood.Words](https://hellogithub.com/periodical/volume/55/#ToolGood.Words)
 
