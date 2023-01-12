@@ -4,6 +4,11 @@
 
 ![image](https://user-images.githubusercontent.com/17688273/205646816-870361fd-ad44-424f-97cc-e08568b37a10.png)
 
+## api-gateway
+
+API网关
+- [api-gateway](/api_gateway.md)
+
 ## nginx-consul完美组合：
 
 （1）服务发现API网关；
