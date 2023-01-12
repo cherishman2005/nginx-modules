@@ -13,3 +13,8 @@ $ make
 $ make test
 $ sudo make install 
 ```
+
+查看版本
+```
+/usr/local/ssl/bin/openssl version
+```
