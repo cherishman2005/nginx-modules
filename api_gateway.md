@@ -1,0 +1,16 @@
+# api_gateway
+
+## 与微服务系统对接
+
+与微服务系统对接，动态拉取服务ip列表
+
+* etc/consul
+* mysql
+
+## 平滑升级
+
+**怎样做到平滑升级？**
+* 升级时如果有锁，会导致请求瞬时QPS下降，时延增加。怎么优化？ -- 控制面请求相同配置的逻辑，采用请求合并优化。
+ ![image](https://user-images.githubusercontent.com/17688273/212032909-fdcd7ab9-acd5-4170-bd55-7ae5c8acf433.png)
+ 
+ ## 可观察性
