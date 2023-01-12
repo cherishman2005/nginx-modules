@@ -33,5 +33,5 @@ export PATH="/usr/local/ssl/bin:${PATH}"
 ```
 Save and close the file and reload the configuration using the command below.
 ```
-$ source .bashrc
+$ source ~/.bashrc
 ```
