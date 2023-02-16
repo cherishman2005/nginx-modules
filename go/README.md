@@ -77,3 +77,5 @@ go env -json
 - [https://github.com/struCoder/pidusage](https://github.com/struCoder/pidusage)
 
 - [golang获取用户真实的ip地址](https://blog.thinkeridea.com/201903/go/get_client_ip.html)
+
+- [https://stackoverflow.com/questions/28891531/piping-http-response-to-http-responsewriter](https://stackoverflow.com/questions/28891531/piping-http-response-to-http-responsewriter)
