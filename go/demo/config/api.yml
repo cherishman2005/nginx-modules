@@ -1,0 +1,3 @@
+server:
+    # listen port for http request
+    http_port: 8080
