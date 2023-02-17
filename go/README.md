@@ -64,6 +64,19 @@ go env
 go env -json
 ```
 
+## go mod tidy 
+
+问题描述
+```
+go: gopkg.in/yaml.v2@v2.4.0: missing go.sum entry; to add it:
+        go mod download gopkg.in/yaml.v2
+```
+
+解决方法：
+```
+go mod tidy 
+```
+
 # 参考链接
 
 - [Golang error 的突围](https://www.cnblogs.com/qcrao-2018/p/11538387.html)
