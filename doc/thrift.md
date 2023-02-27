@@ -8,7 +8,7 @@ thrift 最初是 facebook 开发使用的 rpc 通信框架，后来贡献给了 
 git clone https://github.com/apache/thrift
 cd thrift
 ./bootstrap.sh
-./configure --without-qt4 --wihout-qt5
+./configure --without-qt4
 make
 sudo make install
 ```
