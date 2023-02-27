@@ -26,6 +26,26 @@ Couldn't find libtoolize!
 sudo apt install libtool automake build-essential flex bison libboost-dev libssl-dev -y
 ```
 
+## 安装boost
+
+Debian/Ubuntu install
+The following command will install tools and libraries required to build and install the Apache Thrift compiler and C++ libraries on a Debian/Ubuntu Linux based system.
+```
+sudo apt-get install automake bison flex g++ git libboost-all-dev libevent-dev libssl-dev libtool make pkg-config
+```
+Debian 7/Ubuntu 12 users need to manually install a more recent version of automake and (for C++ library and test support) boost:
+```
+wget http://ftp.debian.org/debian/pool/main/a/automake-1.15/automake_1.15-3_all.deb
+sudo dpkg -i automake_1.15-3_all.deb
+```
+
+```
+wget http://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.gz                                                                      tar xvf boost_1_60_0.tar.gz
+cd boost_1_60_0
+./bootstrap.sh
+sudo ./b2 install
+```
+
 # 参考链接
 
 - [https://studygolang.com/articles/13988](https://studygolang.com/articles/13988)
