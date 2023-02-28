@@ -15,3 +15,5 @@ source /etc/profile
 ## 下载链接
 
 - [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
+
+- [https://zookeeper.apache.org/releases.html](https://zookeeper.apache.org/releases.html)
