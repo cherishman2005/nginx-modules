@@ -51,3 +51,5 @@ sudo ./b2 install
 - [https://studygolang.com/articles/13988](https://studygolang.com/articles/13988)
 
 - [https://www.cnblogs.com/52fhy/p/11146047.html](https://www.cnblogs.com/52fhy/p/11146047.html)
+
+- [https://www.cnblogs.com/yhp-smarthome/p/8982758.html](https://www.cnblogs.com/yhp-smarthome/p/8982758.html)
