@@ -13,6 +13,14 @@ make
 sudo make install
 ```
 
+## 编译方式2
+
+thrift-v0.11.0
+``` 
+./bootstrap.sh
+./configure --with-boost=/usr/local
+```
+
 # FAQ
 
 问题
