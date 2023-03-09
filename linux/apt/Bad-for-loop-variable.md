@@ -27,10 +27,8 @@ bash test.sh
 修改一下代码．
 ```
 for i in `seq 10`                  
-do                                 
-                                   
-    echo Good Morning ,this is  $i  shell program.
-                                   
+do                                                             
+    echo $i                       
 done
 ```
 这个时候，你再执行 sh test.sh，就不会报错误啦．
