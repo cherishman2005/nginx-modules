@@ -77,6 +77,13 @@ go: gopkg.in/yaml.v2@v2.4.0: missing go.sum entry; to add it:
 go mod tidy 
 ```
 
+## go clean -modcache
+
+清除依赖，重新构建
+```
+go clean -modcache
+```
+
 # 参考链接
 
 - [Golang error 的突围](https://www.cnblogs.com/qcrao-2018/p/11538387.html)
