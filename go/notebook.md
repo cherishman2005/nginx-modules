@@ -4,7 +4,7 @@
 
 ## replace
 
-go mod
+go.mod
 ```
 module agent
 
@@ -34,4 +34,8 @@ go mod tidy
 make
 ```
 编译成功。
+
+### 小结
+
+replace使用时，需要指向 github工程的2级路径，并创建go.mod。
 
