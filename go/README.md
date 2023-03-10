@@ -86,7 +86,7 @@ go clean -modcache
 
 ## golang开发小结
 
-- [golang开发小结](./go/notebook.md)
+- [golang开发小结](/go/notebook.md)
 
 # 参考链接
 
