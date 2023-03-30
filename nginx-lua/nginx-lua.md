@@ -21,3 +21,7 @@ log_by_lua             http, server, location, location if
     log_by_lua: 会话完成后本地异步完成日志记录(日志可以记录在本地，还可以同步到其他机器)
 }
 ```
+
+# 参考链接
+
+- [https://www.cnblogs.com/sfnz/p/14527616.html](https://www.cnblogs.com/sfnz/p/14527616.html)
