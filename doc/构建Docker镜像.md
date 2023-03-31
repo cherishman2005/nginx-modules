@@ -79,7 +79,7 @@ docker images
 ### 9. 运行镜像
 
 ```
-docker run guzhongren/test
+docker run zhangbiwu/test
 ```
 
 总结
