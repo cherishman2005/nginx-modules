@@ -124,7 +124,7 @@ API网关
 
 ## 构建docker镜像
 
--[构建Docker镜像](/doc/构建Docker镜像.md)
+- [构建Docker镜像](/doc/构建Docker镜像.md)
 
 # 小结
 
