@@ -134,7 +134,7 @@ git config --system --unset credential.helper
 ```
 
 * 保存本地用户信息
-````
+```
 git config --global credential.helper store
 ```
 
