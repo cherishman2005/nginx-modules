@@ -126,6 +126,18 @@ API网关
 
 - [构建Docker镜像](/doc/构建Docker镜像.md)
 
+## git操作
+
+* 清除本地用户信息
+```
+git config --system --unset credential.helper
+```
+
+* 保存本地用户信息
+````
+git config --global credential.helper store
+```
+
 # 小结
 
 * 后端开发技术
