@@ -8,7 +8,7 @@
 
 因为没有对全局变量 m 加锁，因此会出现资源争夺问题，代码会出现错误，提示 concurrent map　writes
 
-```
+```golang
 var (
     myMap = make(map[int]int, 10)
     lock sync.Mutex
@@ -65,7 +65,7 @@ channel 必须初始化才能写入数据，即 make 后才能使用
 
 管道是有类型的，intChan 只能写入 整数 int
 
-```
+```golang
 func main() {
     //演示一下管道的使用
     //1. 创建一个可以存放 3 个 int 类型的管道
