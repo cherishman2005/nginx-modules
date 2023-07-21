@@ -23,6 +23,8 @@ For example:
 conn.SetReadDeadline(time.Now().Add(time.Second))
 ```
 
+* bufio使用Read()接口时EOF捕捉不到。
+
 # 参考链接
 
 - [https://stackoverflow.com/questions/72419951/how-to-set-timeout-on-bufio-readbytes](https://stackoverflow.com/questions/72419951/how-to-set-timeout-on-bufio-readbytes)
