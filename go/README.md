@@ -22,6 +22,7 @@
 
 - [golang获取字符串中的字符个数](/go/golang获取字符串中的字符个数.md)
 
+- [Golang优雅保持main函数不退出的办法](/go/Golang优雅保持main函数不退出的办法.md)
 
 ## Go语言的基本类型
 
