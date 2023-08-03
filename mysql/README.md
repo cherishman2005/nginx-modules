@@ -4,3 +4,4 @@
 ```
 echo 'select ' |mysql > txt
 ```
+然后将txt贴到excel。
