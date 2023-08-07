@@ -94,6 +94,8 @@ go clean -modcache
 
 # 参考链接
 
+- [https://jogendra.dev/import-cycles-in-golang-and-how-to-deal-with-them](https://jogendra.dev/import-cycles-in-golang-and-how-to-deal-with-them)
+
 - [Golang error 的突围](https://www.cnblogs.com/qcrao-2018/p/11538387.html)
 
 - [理解go的function types](https://www.jianshu.com/p/fc4902159cf5)
