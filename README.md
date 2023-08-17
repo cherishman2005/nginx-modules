@@ -138,6 +138,10 @@ git config --system --unset credential.helper
 git config --global credential.helper store
 ```
 
+## base64
+
+- [https://tool.oschina.net/encrypt?type=3](https://tool.oschina.net/encrypt?type=3)
+
 # 小结
 
 * 后端开发技术
