@@ -11,3 +11,5 @@
 # 参考链接
 
 - [API 网关选型及包含 BFF 的架构设计](https://developer.aliyun.com/article/893540)
+
+- [https://www.bfe-networks.net/zh_cn/introduction/route/](https://www.bfe-networks.net/zh_cn/introduction/route/)
