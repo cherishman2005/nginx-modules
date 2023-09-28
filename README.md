@@ -82,6 +82,27 @@ API网关
 
 - [go-testing](/go/go-testing/go-testing.md)
 
+
+# rotate
+
+* 日志分割 采用rename(mv)
+```
+mv  xxx.log  xxx.log.1
+gzip xxx.log.1
+```
+
+
+* 不要采用，否则进程找不到描述符，没法再打印日志。
+```
+rm xxx.log
+```
+可以用
+```
+tar -czvf xxx.log.tar.gz ./xxx.log
+echo "" > xxx.log
+```
+
+
 # ab压测
 
 - [ab压测](doc/ab-perf.md)
