@@ -85,7 +85,7 @@ API网关
 
 # rotate
 
-* 日志分割 采用rename(mv)
+* 日志分割与压缩 采用rename(mv)
 ```
 mv  xxx.log  xxx.log.1
 gzip xxx.log.1
