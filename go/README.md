@@ -109,3 +109,5 @@ go clean -modcache
 - [golang获取用户真实的ip地址](https://blog.thinkeridea.com/201903/go/get_client_ip.html)
 
 - [https://stackoverflow.com/questions/28891531/piping-http-response-to-http-responsewriter](https://stackoverflow.com/questions/28891531/piping-http-response-to-http-responsewriter)
+
+- [golang开源日志组件logrus](https://darjun.github.io/2020/02/07/godailylib/logrus/)
