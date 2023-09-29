@@ -113,3 +113,5 @@ go clean -modcache
 - [golang开源日志组件logrus](https://darjun.github.io/2020/02/07/godailylib/logrus/)
 
 - [golang-ticker](https://wangbjun.site/2020/coding/golang/ticker.html)
+- [golang日志对比](https://blog.csdn.net/General_zy/article/details/124914349)
+
