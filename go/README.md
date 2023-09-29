@@ -115,3 +115,4 @@ go clean -modcache
 - [golang-ticker](https://wangbjun.site/2020/coding/golang/ticker.html)
 - [golang日志库对比](https://blog.csdn.net/General_zy/article/details/124914349)
 - [golang日志库对比](https://xiazemin.github.io/MyBlog/golang/2020/05/27/log.html)
+- [Go 日志库 Zap 使用](https://chenhe.me/post/go-zap/)
