@@ -116,3 +116,4 @@ go clean -modcache
 - [golang日志库对比](https://blog.csdn.net/General_zy/article/details/124914349)
 - [golang日志库对比](https://xiazemin.github.io/MyBlog/golang/2020/05/27/log.html)
 - [Go 日志库 Zap 使用](https://chenhe.me/post/go-zap/)
+- [golang日志库比较](https://codeantenna.com/a/dBCxE1KrgM)
