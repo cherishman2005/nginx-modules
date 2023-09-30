@@ -47,4 +47,41 @@ func monitorFile(filepath string) {
                     // add appears to be concurrently safe so calling from multiple go routines is ok
                     err = watcher.Add(filepath)
                     if err != nil {
-                   
+                        log.Fatal(err)
+                    }
+
+                    // there is  not need to break the loop
+                    // we just continue waiting for events from the same watcher
+
+                }
+            case err := <-watcher.Errors:
+                log.Println("Error:", err)
+            }
+        }
+    }()
+
+    // add file to the watcher first time
+    log.Printf("add to watcher 1st: %s\n", filepath)
+    err = watcher.Add(filepath)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // to keep waiting forever, to prevent main exit
+    // this is to replace the done channel
+    select {}
+}
+
+func respawnFile(filepath string) {
+    log.Printf("re creating file %s\n", filepath)
+
+    // you just need the os.Create()
+    respawned, err := os.Create(filepath)
+    if err != nil {
+        log.Fatalf("Err re-spawning file: %v", filepath)
+    }
+    defer respawned.Close()
+
+    // there is no need to call monitorFile again, it never returns
+    // the call to "go monitorFile(filepath)" was causing another go routine leak
+}
