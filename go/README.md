@@ -119,3 +119,4 @@ go clean -modcache
 - [golang日志库比较](https://codeantenna.com/a/dBCxE1KrgM)
 - [https://stackoverflow.com/questions/48001918/recursively-re-spawn-file-on-fsnotify-remove-rename-golang](https://stackoverflow.com/questions/48001918/recursively-re-spawn-file-on-fsnotify-remove-rename-golang)
 - [https://github.com/facebook/watchman/tree/main/watchman](https://github.com/facebook/watchman/tree/main/watchman)
+- [go vet](https://zhuanlan.zhihu.com/p/357406395)
