@@ -1,5 +1,4 @@
-前言
-快一个月没有更新技术文章了，这段时间投注了较多的时间学习字节的开源项目 Kitex/Hertz ，并维护一些简单的 issue ，有兴趣的同学也可以去了解：
+# 如何用好 errors 库的 errors.Is() 与 errors.As() 方法
 
 https://www.cloudwego.io/
 
@@ -9,9 +8,10 @@ https://www.cloudwego.io/
 
 扯远了，写作这篇文章的原因是我在写单元测试的时候，有时会涉及 errors.Is 和 errors.As 方法的调用，借此做一个总结。
 
-error 的定义
-首先需要明确 Go 语言中的错误是通过接口定义的，因此是一个引用类型。
+## error 的定义
 
+首先需要明确 Go 语言中的错误是通过接口定义的，因此是一个引用类型。
+```
 type error interface {
    Error() string
 }
@@ -37,9 +37,11 @@ func main() {
   new error a
   new error b
 */
-wrapError 的定义
-wrapError 是嵌套的 error ，也实现了 error 接口的 Error 方法，本质也是一个 error ，并声明了一个 Unwrap 方法用于拆包装。
+```
 
+## wrapError 的定义
+wrapError 是嵌套的 error ，也实现了 error 接口的 Error 方法，本质也是一个 error ，并声明了一个 Unwrap 方法用于拆包装。
+```
 type wrapError struct {
   msg string
   err error
@@ -52,8 +54,10 @@ func (e *wrapError) Error() string {
 func (e *wrapError) Unwrap() error {
   return e.err
 }
+```
 通过 fmt.Errorf 方法配合 %w 占位符创建嵌套类型的 wrapError。
 
+```
 var BaseErr = errors.New("the underlying base error")
 ​
 func main() {
@@ -67,10 +71,12 @@ func main() {
   wrap base: the underlying base error
   wrap err1: wrap base: the underlying base error
 */
+```
+
 为什么 fmt.Errorf 用了占位符 %w 之后创建的就是 wrapError 类型，而用了 fmt.Errorf 但只是选择其他占位符如上述示例中的 %s 创建的就是 errorString 类型？
 
 可以简单看一下 fmt.Errorf 方法的源码：
-
+```
 func Errorf(format string, a ...any) error {
    p := newPrinter()
    p.wrapErrs = true
@@ -85,13 +91,15 @@ func Errorf(format string, a ...any) error {
    p.free()
    return err
 }
+```
+
 核心就是 p.doPrintf(format, a) 调用后，如果包含 %w 占位符则会先创建内层的 error ，赋值给 p.wrappedErr ，从而触发 wrapError 的创建逻辑。
 
 你也可以进一步去看 p.doPrintf(format, a) 的实现印证这个流程。
 
 errors.Is
 判断被包装的error是否包含指定错误。
-
+```
 var BaseErr = errors.New("the underlying base error")
 ​
 func main() {
@@ -108,8 +116,10 @@ func main() {
   false
   err2 is BaseErr
 */
-来看一下 errors.Is 方法的源码：
+```
 
+来看一下 errors.Is 方法的源码：
+```
 func Is(err, target error) bool {
    if target == nil {
       return err == target
@@ -138,13 +148,14 @@ func Unwrap(err error) error {
   }
   return u.Unwrap()
 }
+```
 如果这个 err 自己实现了 interface{ Is(error) bool } 接口，通过接口断言，可以调用 Is 方法判断 err 是否与 target 相等。
 
 否则递归调用 Unwrap 方法拆包装，返回下一层的 error 去判断是否与 target 相等。
 
 errors.As
 提取指定类型的错误，判断包装的 error 链中，某一个 error 的类型是否与 target 相同，并提取第一个符合目标类型的错误的值，将其赋值给 target。
-
+```
 type TypicalErr struct {
    e string
 }
@@ -169,8 +180,10 @@ func main() {
   TypicalErr is on the chain of err2
   true
 */
+```
 来看一下 error.As 方法的源码：
 
+```
 func As(err error, target any) bool {
    if target == nil {
       panic("errors: target cannot be nil")
@@ -196,6 +209,7 @@ func As(err error, target any) bool {
    }
    return false
 }
+```
 源码 for 循环前的部分是用来约束 target 参数的类型，要求其是一个非空的指针类型。
 
 此外要求 *target 是一个接口或者实现了 error 接口。
