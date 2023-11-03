@@ -17,6 +17,11 @@ ngx.timer.at 的 delay 参数，指定的是以秒为单位的延迟触发时间
 /usr/local/openresty/bin/resty  h.lua
 ```
 
+## openresty屏蔽版本号
+
+```
+server_tokens off;
+```
 
 # 参考文献
 
