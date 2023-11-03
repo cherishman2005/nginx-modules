@@ -6,15 +6,22 @@
 location /url-test {
     default_type text/html;
     content_by_lua_block {
-        ngx.say(ngx.var.uri)
+        ngx.say("uri:", ngx.var.uri)
+        ngx.say("request_uri:", ngx.var.request_uri)
+        ngx.log(ngx.DEBUG, "uri:", ngx.var.uri, " request_uri:", ngx.var.request_uri)
+        
+        local args = ngx.req.get_uri_args()
+        -- ngx.say(args.method)
+        -- ngx.log(ngx.DEBUG, ngx.var.uri, args.method)
     }
 }
 ```
 
 运行结果：
 ```
-# curl 'http://localhost:18080/url-test/abbb?method=1111'
-/url-test/abbb
+# curl 'http://localhost:18080/url-test/ab?method=abc'
+uri:/url-test/ab
+request_uri:/url-test/ab?method=abc
 ```
 
 
