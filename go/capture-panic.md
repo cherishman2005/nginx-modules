@@ -12,7 +12,10 @@ import (
 
 func test() (flag bool, err error) {
     defer func() {
-	   recover()
+	   if r := recover(); r != nil {
+	       fmt.Println("recover=", r)
+	   }
+	   
 	   fmt.Println("hh")
 	   flag = false
 	   err = errors.New("panic")
@@ -31,5 +34,3 @@ func main() {
     fmt.Println("flag=", flag, "err=", err)
 }
 ```
-
-
