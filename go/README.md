@@ -92,6 +92,38 @@ go clean -modcache
 
 - [golang开发小结](/go/notebook.md)
 
+## http URL.Path
+
+*http URL.Path不带参数
+
+```
+package main
+  
+import (
+        "fmt"
+        "net/http"
+        //"strings"
+)
+
+func helloHandlers(w http.ResponseWriter, r *http.Request) {
+    fmt.Printf("URL.Path: %s\n", r.URL.Path)
+        //remPartOfURL := r.URL.Path[len("/hello/"):] // get everything after the /hello/ part of the URL
+        fmt.Fprintf(w, "Hello %s", r.URL.Path)
+}
+
+func main() {
+        http.HandleFunc("/", helloHandlers)
+        http.ListenAndServe("localhost:9999", nil)
+}
+```
+
+```
+curl 'http://localhost:9999/hello/111?a=3'  -v 
+```
+
+运行结果URL.Path=`/hello/111`
+
+
 # 参考链接
 
 - [https://jogendra.dev/import-cycles-in-golang-and-how-to-deal-with-them](https://jogendra.dev/import-cycles-in-golang-and-how-to-deal-with-them)
