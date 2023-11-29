@@ -1,0 +1,31 @@
+# SecureCRT连接ubuntu显示密钥交换失败
+
+Key exchange failed.
+
+No compatible key exchange method. The server supports these methods: curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
+
+环境：
+
+Ubuntu 20.04.1 Secure CRT 7.2
+
+网上看了很多解决方法：
+
+试过不行的方法有：
+
+方法一
+添加密钥交换方式，把没勾选的全部勾选（无果）
+
+方法二
+找到/etc/ssh/ssh_config
+
+如上图文本去掉注释，即删除前面的#，并复制到/etc/ssh/sshd_config中（此方法无果）
+
+放弃的时候又看到有新的方法，修改/etc/ssh/sshd_config，添加以下文本
+KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+如下图：
+
+
+现在可以用了
+
+
+【参考文章】：使用SecureCRT连接Ubuntu20.04报错：Key exchange failed. No compatible key exchange method./www.tomato.cm/179.html
