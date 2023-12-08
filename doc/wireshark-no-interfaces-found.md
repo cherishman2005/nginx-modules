@@ -11,9 +11,11 @@
 
 ### 1.2 用以下命令启动npf
 
+```
 net query npf       #检查npf运行情况
-net start npf       #启动npf
 
+net start npf       #启动npf
+```
 
  
 
