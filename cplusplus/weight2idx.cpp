@@ -18,9 +18,8 @@ int main()
     multimap<int, int, greater<int> > weight2idx;
     //multimap<int, int> weight2idx;
     
-    for (auto & e : idx2weight) {
-        int weight = e.second;
-        weight2idx.insert(make_pair(weight,e.first));
+    for (const auto & e : idx2weight) {
+        weight2idx.insert(make_pair(e.second, e.first));
     }
 
     for (const auto & e : weight2idx) {
