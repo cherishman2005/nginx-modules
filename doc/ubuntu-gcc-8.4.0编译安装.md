@@ -63,3 +63,7 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/local/gcc-8.4/bin/g++ 2
 输入编号1，使用 /usr/bin/gcc-7作为gcc的实体程序。g++切换方法相同。
 
 注意：gcc和g++因保持相同版本。
+
+# 参考链接
+
+- [ubuntu gcc 8.4.0编译安装](https://blog.csdn.net/qq_42170897/article/details/121779490)
