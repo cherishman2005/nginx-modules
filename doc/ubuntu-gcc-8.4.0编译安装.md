@@ -11,7 +11,7 @@ sudo apt update && sudo  apt install build-essential
 
 到：gnu官网 上去找源码。
 
-gcc-8.4.0
+- [gcc-8.4.0](http://mirrors.concertpass.com/gcc/releases/gcc-8.4.0/gcc-8.4.0.tar.xz)
 
 然后解压：tar -Jxvf gcc-8.4.0.tar.xz
 
