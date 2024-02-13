@@ -7,7 +7,7 @@ npm install browserify -g
 
 2.压缩
 ```
-browserify 要压缩的文件 压缩后文件名
+browserify 要压缩的文件 -o 压缩后文件名
 ```
 
 示例：
