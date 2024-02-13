@@ -9,3 +9,8 @@ npm install browserify -g
 ```
 browserify 要压缩的文件 压缩后文件名
 ```
+
+示例：
+```
+browserify lib/index.js -o protoo_client.js
+```
