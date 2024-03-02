@@ -13,8 +13,8 @@ func main() {
        time.Sleep(3*time.Second)
 	   ch <- 1
    }()
-   
-   ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second)
+
+   ctx, cancel := context.WithTimeout(context.Background(), 4*time.Second)
    defer cancel()
    select {
        case <-time.After(2*time.Second):
@@ -23,6 +23,15 @@ func main() {
 	      	fmt.Println("timeout:", ctx.Err())
 	   case i := <-ch:
 	        fmt.Println("i=", i)
+   }
+   
+   fmt.Println("select waiting")
+   
+   select {
+	   case <-ctx.Done():
+	      	fmt.Println("timeout222:", ctx.Err())
+	   //case i := <-ch:
+	   //     fmt.Println("i=", i)
    }
 
    fmt.Println("select end")
