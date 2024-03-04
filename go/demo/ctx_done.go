@@ -23,19 +23,16 @@ func main() {
 	   var closeTicker <-chan time.Time
 	   for {
 		   select {
+		   case i := <-ch:
+			    closeTicker = time.After(2 * time.Millisecond)
+				fmt.Println("i=", i)
+           case <- closeTicker:
+				fmt.Println("closeTicker:", ctx.Err())
+				return
 		   case <-ctx.Done():
 			   closeTicker = time.After(1 * time.Millisecond)
 			   fmt.Println("timeout:", ctx.Err())
-			   default:
-           }
-		   select {
-			   case i := <-ch:
-			         closeTicker = time.After(2 * time.Millisecond)
-					 fmt.Println("i=", i)
-				case <- closeTicker:
-				     fmt.Println("closeTicker:", ctx.Err())
-
-				     return
+			   //return
 		   }
 	   }
    }()
