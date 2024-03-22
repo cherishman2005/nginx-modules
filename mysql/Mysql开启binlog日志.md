@@ -58,7 +58,10 @@ max_binlog_size   = 100M
 systemctl restart mysqld
 ```
 
-## 4. 再次查看binlog开启状态  
+## 4. 再次查看binlog开启状态
+
 ```
 show variables like 'log_%';
 ```
+
+![image](https://github.com/cherishman2005/nginx-modules/assets/17688273/f19845af-d2ba-4538-8cce-8cb92eba96d5)
