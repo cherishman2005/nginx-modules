@@ -66,3 +66,14 @@ show variables like 'log_%';
 
 ![image](https://github.com/cherishman2005/nginx-modules/assets/17688273/a82ca3ec-29d9-4d7c-aa33-a17f1562885d)
 
+
+# FAQ
+
+## The replication sender thread cannot start in AUTO_POSITION mode: this server has GTID_MODE = OFF instead of ON.
+
+
+
+# 参考链接
+
+- [Mysql开启binlog日志](https://www.cnblogs.com/sportsky/p/16357479.html)
+
