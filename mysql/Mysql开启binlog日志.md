@@ -64,4 +64,5 @@ systemctl restart mysqld
 show variables like 'log_%';
 ```
 
-![image](https://github.com/cherishman2005/nginx-modules/assets/17688273/f19845af-d2ba-4538-8cce-8cb92eba96d5)
+![image](https://github.com/cherishman2005/nginx-modules/assets/17688273/a82ca3ec-29d9-4d7c-aa33-a17f1562885d)
+
