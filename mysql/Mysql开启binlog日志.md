@@ -70,8 +70,7 @@ show variables like 'log_%';
 # FAQ
 
 ## The replication sender thread cannot start in AUTO_POSITION mode: this server has GTID_MODE = OFF instead of ON.
-
-
+* 暂时忽略 -- mysql开启binlog的方法已经找到
 
 # 参考链接
 
