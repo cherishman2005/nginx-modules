@@ -10,3 +10,7 @@ echo 'select ' |mysql > txt
 ## 数据库表删除操作
 
 一定要谨慎，特别是敲命令时，尽量把其他写完了，最后写delete。
+
+## mysql开启binlog日志的方法
+
+- [Mysql开启binlog日志](./Mysql开启binlog日志.md)
