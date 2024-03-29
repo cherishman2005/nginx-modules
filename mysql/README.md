@@ -14,3 +14,5 @@ echo 'select ' |mysql > txt
 ## mysql开启binlog日志的方法
 
 - [Mysql开启binlog日志](./Mysql开启binlog日志.md)
+
+* 用途： 订阅mysql binlog，向其他IDC做同步备份，或者做向其他数据库（如es，kafka等）做同步。
