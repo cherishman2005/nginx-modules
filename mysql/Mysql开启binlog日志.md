@@ -58,6 +58,11 @@ max_binlog_size   = 100M
 systemctl restart mysqld
 ```
 
+或
+```
+service mysql restart
+```
+
 ## 4. 再次查看binlog开启状态
 
 ```
