@@ -100,6 +100,11 @@ set global binlog_format=ROW;
 set global binlog_format=STATEMENT;
 ```
 
+* 查询binlog日志格式
+```
+select @@global.binlog_format;
+```
+
 # FAQ
 
 ## The replication sender thread cannot start in AUTO_POSITION mode: this server has GTID_MODE = OFF instead of ON.
