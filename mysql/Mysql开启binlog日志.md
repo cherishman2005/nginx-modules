@@ -72,6 +72,34 @@ show variables like 'log_%';
 ![image](https://github.com/cherishman2005/nginx-modules/assets/17688273/a82ca3ec-29d9-4d7c-aa33-a17f1562885d)
 
 
+## 5. 显示binlog日志格式
+
+```
+show global variables like "binlog_format";
+```
+
+```
+mysql>  show global variables like "binlog_format";
++---------------+-----------+
+| Variable_name | Value     |
++---------------+-----------+
+| binlog_format | STATEMENT |
++---------------+-----------+
+1 row in set (0.00 sec)
+```
+
+* 修改binlog日志格式
+
+5.7版本默认为ROW
+```
+set global binlog_format=ROW;
+```
+
+5.5版本为STATEMENT
+```
+set global binlog_format=STATEMENT;
+```
+
 # FAQ
 
 ## The replication sender thread cannot start in AUTO_POSITION mode: this server has GTID_MODE = OFF instead of ON.
