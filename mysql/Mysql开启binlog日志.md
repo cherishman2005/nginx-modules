@@ -105,6 +105,17 @@ set global binlog_format=STATEMENT;
 select @@global.binlog_format;
 ```
 
+### 设置binlog_format
+
+/etc/mysql/mysql.conf.d/mysql.cnf
+```
+server-id               = 123
+log_bin                 = /var/log/mysql/mysql-bin.log
+expire_logs_days        = 10
+max_binlog_size   = 100M
+binlog_format = STATEMENT
+```
+
 # FAQ
 
 ## The replication sender thread cannot start in AUTO_POSITION mode: this server has GTID_MODE = OFF instead of ON.
