@@ -107,7 +107,7 @@ select @@global.binlog_format;
 
 ### 设置binlog_format
 
-/etc/mysql/mysql.conf.d/mysql.cnf
+/etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 server-id               = 123
 log_bin                 = /var/log/mysql/mysql-bin.log
