@@ -125,3 +125,4 @@ binlog_format = STATEMENT
 
 - [Mysql开启binlog日志](https://www.cnblogs.com/sportsky/p/16357479.html)
 
+- [https://github.com/gdaws/mysql-slave-status](https://github.com/gdaws/mysql-slave-status)
