@@ -270,3 +270,4 @@ git config --global credential.helper store
 
 - [https://en.wikipedia.org/wiki/Reserved_IP_addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
 - [https://github.com/apache/arrow](https://github.com/apache/arrow)
+- [怎么去控制浏览器对资源文件的处理行为](https://segmentfault.com/a/1190000015430643)
