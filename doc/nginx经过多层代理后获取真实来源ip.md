@@ -3,14 +3,15 @@
 
 nginx取 $remote_addr 当做真实ip，而事实上，$http_X_Forwarded_For 才是用户真实ip，$remote_addr只是代理上一层的地址
 
-解决方案：
+## 解决方案
 
 在 http 模块 加
-
+```
     set_real_ip_from 172.17.10.125;   #上一层代理IP地址
 
     real_ip_header X-Forwarded-For;
     real_ip_recursive on;
+```
 
 添加之后启动nginx报错：
 
