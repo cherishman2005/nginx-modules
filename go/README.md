@@ -39,6 +39,11 @@ complex64、complex128
 ```
 当一个变量被声明之后，系统自动赋予它该类型的零值：int 为 0，float 为 0.0，bool 为 false，string 为空字符串，指针为 nil 等。所有的内存在 Go 中都是经过初始化的。
 
+## golang map数据结构
+
+![image](https://github.com/user-attachments/assets/def454b8-0bbb-4123-8487-fce56f5eee06)
+
+
 # FAQ
 
 ## 引用外部模块函数的首字母要大写
