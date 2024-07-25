@@ -1,6 +1,11 @@
 # jwt
 
-json web token
+jwt验证示意图
+
+![image](https://github.com/user-attachments/assets/a779ff03-f9f5-4ad5-abdb-b882d1b39d49)
+
+
+## json web token
 
 jwt token是由.分隔的三部分组成，这三部分依次是：
 
