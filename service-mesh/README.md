@@ -2,6 +2,9 @@
 
 ## nginx
 
+### ingress-nginx
+
+![image](https://github.com/user-attachments/assets/9d29d1fa-5315-4afc-a340-8a85b312b4b6)
 
 
 ## apisix
