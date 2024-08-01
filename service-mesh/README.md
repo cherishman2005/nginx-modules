@@ -1,5 +1,7 @@
 # service-mesh
 
+技术选型
+
 - [技术选型](./技术选型.md)
 
 ## nginx
@@ -20,6 +22,9 @@
 
 ![image](https://github.com/user-attachments/assets/df373852-6cf8-4a9d-b206-d4b6e852216d)
 
+## bfe
+
+- [bfe](./bfe.md)
 
 # 参考链接
 
