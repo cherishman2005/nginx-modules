@@ -12,6 +12,13 @@ kubectl apply -f whoami.yaml
 kubectl expose deployment whoami --type=NodePort --port=80
 ```
 
+## sacheck将 Deployment 暴露出来
+
+```
+kubectl expose deployment sacheck --type=NodePort --port=9090
+```
+
+
 # FAQ
 
 ## Error obtaining Endpoints for Service "default/whoami": no object matching key "default/whoami" in local store
