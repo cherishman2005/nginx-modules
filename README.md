@@ -130,6 +130,13 @@ echo "" > xxx.log
 
 ## 通过netstat和lsof查询 本端和对端服务进程信息
 
+## 安装netstat
+
+Ubuntu 20.04 安装netstat工具
+```
+sudo apt install net-tools
+```
+
 ## linux配置
 
 /etc/hosts
