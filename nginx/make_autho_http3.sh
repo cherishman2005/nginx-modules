@@ -3,6 +3,6 @@
             --with-openssl="../openssl-1.0.2k"
  
 
-make -j40 &&  make install
+make -j2 &&  make install
 
 exit 0
