@@ -12,7 +12,7 @@ location /test {
         local req = ngx.req
 
         -- 获取Authorization请求头字段
-        local authorization_header = req.get_header("Authorization")
+        local authorization_header = req.get_header()["Authorization"]
 
         -- 检查Authorization请求头是否存在
         if authorization_header and authorization_header:starts_with("Bearer ") then
@@ -41,7 +41,7 @@ location /test {
         local req = ngx.req
 
         -- 获取Authorization请求头字段
-        local authorization_header = req.get_header("Authorization")
+        local authorization_header = req.get_header()["Authorization"]
 
         -- 检查Authorization请求头是否存在并包含Bearer
         if authorization_header and authorization_header:match("^Bearer ") then
