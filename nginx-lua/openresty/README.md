@@ -45,3 +45,10 @@
 ## lua-resty-hmac
 
 - [https://github.com/jkeys089/lua-resty-hmac](https://github.com/jkeys089/lua-resty-hmac)
+
+## lua-resty-http
+
+* http-client客户端请求
+
+- [https://github.com/ledgetech/lua-resty-http](https://github.com/ledgetech/lua-resty-http)
+
