@@ -17,3 +17,6 @@ Nginx Ingress Controller是一个集控制平面和数据平面于一体的实�
 
 ![image](https://github.com/user-attachments/assets/07139883-23a5-4161-9473-3cbe10a7cfb6)
 
+# 参考链接
+
+- [Nginx Ingress运维相关知识点](https://www.alibabacloud.com/help/zh/ack/ack-managed-and-ack-dedicated/user-guide/nginx-ingress-operation-and-maintenance-related-knowledge-points)
