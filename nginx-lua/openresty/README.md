@@ -52,3 +52,5 @@
 
 - [https://github.com/ledgetech/lua-resty-http](https://github.com/ledgetech/lua-resty-http)
 
+- [https://opm.openresty.org/package/ledgetech/lua-resty-http](https://opm.openresty.org/package/ledgetech/lua-resty-http)
+
