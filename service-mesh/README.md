@@ -30,3 +30,4 @@
 
 - [Nginx Ingress、ALB Ingress和MSE Ingress对比](https://help.aliyun.com/zh/ack/ack-managed-and-ack-dedicated/user-guide/comparison-among-nginx-ingresses-alb-ingresses-and-mse-ingresses-1?spm=a2c4g.11186623.0.0.2b571a01qX91wa)
 
+- [https://www.taloflow.ai/guides/comparisons/apisix-vs-tyk-api-gateway](https://www.taloflow.ai/guides/comparisons/apisix-vs-tyk-api-gateway)
