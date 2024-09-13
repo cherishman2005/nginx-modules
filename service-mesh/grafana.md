@@ -8,3 +8,5 @@
 - [https://help.aliyun.com/zh/arms/observable-visualization-grafana-edition/product-overview/what-is-grafana](https://help.aliyun.com/zh/arms/observable-visualization-grafana-edition/product-overview/what-is-grafana)
 
 - [https://help.aliyun.com/zh/sls/developer-reference/connect-log-service-to-grafana](https://help.aliyun.com/zh/sls/developer-reference/connect-log-service-to-grafana)
+
+- [https://cloud.tencent.com/developer/article/1624934](https://cloud.tencent.com/developer/article/1624934)
