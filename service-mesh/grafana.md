@@ -16,3 +16,5 @@ Grafana.com维护一个 dashboard 共享库，它们能够下载并在Grafana服
 - [https://cloud.tencent.com/developer/article/1624934](https://cloud.tencent.com/developer/article/1624934)
 
 - [https://help.aliyun.com/document_detail/123108.html](https://help.aliyun.com/document_detail/123108.html)
+
+- [https://cloud.tencent.com/developer/article/2187593](https://cloud.tencent.com/developer/article/2187593)
