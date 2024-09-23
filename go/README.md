@@ -128,6 +128,14 @@ curl 'http://localhost:9999/hello/111?a=3'  -v
 
 运行结果URL.Path=`/hello/111`
 
+## golang发展前景
+
+1，开发团队，这点go语言创始团队Google背景，c语言之父撑腰，论财力，论背景，论后续维护程度都当之无愧为top5。
+
+2，社区影响力，go的社区影响在分布式领域当之无愧为top3，docker，k8s周边技术栈都是go技术栈！
+
+3，语言易用性，go目前为止有仅次于Python的易用性和超过Python十倍的性能。
+
 
 # 参考链接
 
