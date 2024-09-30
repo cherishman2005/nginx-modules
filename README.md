@@ -10,16 +10,18 @@
 
 - [service-mesh](./service-mesh/README.md)
 
+## api-gateway
+
+API网关
+- [api-gateway](/api_gateway.md)
+
+![api-gateway](./api-gateway.png)
+
 ## nginx
 
 ![image](https://user-images.githubusercontent.com/17688273/205646672-7a08347d-eaea-4e35-8e4e-0c476c02a6b0.png)
 
 ![image](https://user-images.githubusercontent.com/17688273/205646816-870361fd-ad44-424f-97cc-e08568b37a10.png)
-
-## api-gateway
-
-API网关
-- [api-gateway](/api_gateway.md)
 
 ## nginx-consul完美组合：
 
