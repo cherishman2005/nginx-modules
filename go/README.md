@@ -1,5 +1,7 @@
 # go development
 
+**最优秀的golang开源就是golang源码**
+
 - [go-set](/go/go-set.md)
 
 - [Go如何优雅的解决方法重载的问题](/go/Go如何优雅的解决方法重载的问题.md)
