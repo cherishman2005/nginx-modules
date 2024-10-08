@@ -133,6 +133,37 @@ curl 'http://localhost:9999/hello/111?a=3'  -v
 
 运行结果URL.Path=`/hello/111`
 
+### url-scheme
+
+```
+// Maybe rawurl is of the form scheme:path.
+// (Scheme must be [a-zA-Z][a-zA-Z0-9+-.]*)
+// If so, return scheme, path; else return "", rawurl.
+func getscheme(rawurl string) (scheme, path string, err error) {
+	for i := 0; i < len(rawurl); i++ {
+		c := rawurl[i]
+		switch {
+		case 'a' <= c && c <= 'z' || 'A' <= c && c <= 'Z':
+		// do nothing
+		case '0' <= c && c <= '9' || c == '+' || c == '-' || c == '.':
+			if i == 0 {
+				return "", rawurl, nil
+			}
+		case c == ':':
+			if i == 0 {
+				return "", "", errors.New("missing protocol scheme")
+			}
+			return rawurl[:i], rawurl[i+1:], nil
+		default:
+			// we have encountered an invalid character,
+			// so there is no valid scheme
+			return "", rawurl, nil
+		}
+	}
+	return "", rawurl, nil
+}
+```
+
 ## golang发展前景
 
 1，开发团队，这点go语言创始团队Google背景，c语言之父撑腰，论财力，论背景，论后续维护程度都当之无愧为top5。
