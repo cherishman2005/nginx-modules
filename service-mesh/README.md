@@ -26,6 +26,11 @@
 
 - [bfe](./bfe.md)
 
+# 小结
+
+* 在某些技术领域，不停炒作概念，反而技术还是原来的技术。-- 旧酒换新瓶。
+  * 不要被表现迷惑。
+
 # 参考链接
 
 - [Nginx Ingress、ALB Ingress和MSE Ingress对比](https://help.aliyun.com/zh/ack/ack-managed-and-ack-dedicated/user-guide/comparison-among-nginx-ingresses-alb-ingresses-and-mse-ingresses-1?spm=a2c4g.11186623.0.0.2b571a01qX91wa)
