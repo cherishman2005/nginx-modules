@@ -4,6 +4,11 @@
 
 - [技术选型](./技术选型.md)
 
+* serivce mesh架构图
+* 
+![serivce-mesh架构图](./serivce-mesh-control-plane.png)
+
+
 ## nginx
 
 ### ingress-nginx
