@@ -204,3 +204,4 @@ func getscheme(rawurl string) (scheme, path string, err error) {
 - [golang websocket](https://tonybai.com/2019/09/28/how-to-build-websockets-in-go/)
 - [https://github.com/phyuany/gin-demo](https://github.com/phyuany/gin-demo)
 - [https://github.com/gin-gonic/examples](https://github.com/gin-gonic/examples)
+- [Golang框架选型比较: goframe, beego, iris和gin](https://goframe.org/pages/viewpage.action?pageId=3673375)
