@@ -17,3 +17,29 @@ openssl genrsa -out private_key.pem 2048
 openssl rsa -in private_key.pem -pubout -out public_key.pem
 ```
 这里的 rsa 命令用于处理 RSA 密钥相关操作。-in 选项指定输入文件为之前生成的私钥文件 private_key.pem，-pubout 表示输出公钥，-out 选项指定公钥的输出文件为 public_key.pem。这样就得到了一个 PEM 格式的公钥文件。
+
+## rsa
+
+Within your terminal (Unix based OS) type the following.
+```
+openssl genrsa -out rsa_1024_priv.pem 1024
+```
+This generates a private key, which you can see by doing the following...
+```
+cat rsa_1024_priv.pem
+```
+You can then copy and paste this in the Private Key section of within index.html.
+Next, you can then get the public key by executing the following command.
+```
+openssl rsa -pubout -in rsa_1024_priv.pem -out rsa_1024_pub.pem
+```
+You can see the public key by typing...
+```
+cat rsa_1024_pub.pem
+```
+
+# 参考链接
+
+- [https://www.npmjs.com/package/encrypt-rsa](https://www.npmjs.com/package/encrypt-rsa)
+
+- [https://github.com/travist/jsencrypt](https://github.com/travist/jsencrypt)
