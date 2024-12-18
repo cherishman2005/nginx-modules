@@ -23,6 +23,13 @@ API网关
 
 ![image](https://user-images.githubusercontent.com/17688273/205646816-870361fd-ad44-424f-97cc-e08568b37a10.png)
 
+## bfe
+
+### bfe分析
+
+- [nginx-bfe](/doc/nginx-bfe.md)
+
+
 ## nginx-consul完美组合：
 
 （1）服务发现API网关；
