@@ -40,6 +40,11 @@
 
 ![image](https://github.com/user-attachments/assets/df373852-6cf8-4a9d-b206-d4b6e852216d)
 
+* sidecar边车模式
+
+![image](https://github.com/user-attachments/assets/f9c22793-2dcf-44cc-8ff4-3d3656d7e22d)
+
+
 ## bfe
 
 - [bfe](./bfe.md)
