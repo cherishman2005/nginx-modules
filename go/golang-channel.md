@@ -23,8 +23,29 @@ goroutine协程采用channel传递数据。
 * 先从 Channel 读取数据的 Goroutine 会先接收到数据；
 * 先向 Channel 发送数据的 Goroutine 会得到先发送数据的权利；
 
+## channel数据结构
 
-# channel优缺点
+```
+type hchan struct {
+	qcount   uint
+	dataqsiz uint
+	buf      unsafe.Pointer
+	elemsize uint16
+	closed   uint32
+	elemtype *_type
+	sendx    uint
+	recvx    uint
+	recvq    waitq
+	sendq    waitq
+
+	lock mutex
+}
+```
+
+* channel本来就有个互斥锁，所以在使用channel时 用户侧不用再加锁，使用非常方便。
+
+
+## channel优缺点
 
 1. 优点：
 
