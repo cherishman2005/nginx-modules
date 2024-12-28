@@ -28,6 +28,9 @@
 
 ![image](https://github.com/user-attachments/assets/9d29d1fa-5315-4afc-a340-8a85b312b4b6)
 
+ingress-nginx基础的负载均衡和服务发现功能。
+
+可以在原有的基础上开发更丰富的负载均衡和服务发现功能，例如可以根据HTTP头部信息进行路由匹配、可以动态更新路由规则等。
 
 ## apisix
 
