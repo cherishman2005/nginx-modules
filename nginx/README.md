@@ -1,5 +1,9 @@
 # nginx
 
+![image](https://user-images.githubusercontent.com/17688273/205646672-7a08347d-eaea-4e35-8e4e-0c476c02a6b0.png)
+
+![image](https://user-images.githubusercontent.com/17688273/205646816-870361fd-ad44-424f-97cc-e08568b37a10.png)
+
 ## ngx_http_stub_status_module
 
 ngx_http_stub_status_module 模块提供对基本状态信息的访问的支持。
