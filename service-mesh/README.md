@@ -59,6 +59,14 @@ ingress-nginx基础的负载均衡和服务发现功能。
 
 # FAQ
 
+## 为什么要开发自己的service-mesh服务
+
+1. evnoy c++需要开发自己的私有协议转发功能； -- 难度较高，开发效率低。
+
+2. 自研ingress-controller和agent服务更好的融入自己的生态。(运维系统，metrics统计上报，告警系统，日志系统等)
+   * agent数据面采用golang开发，开发效率更高。 -- 不过性能会比C++稍差。
+
+
 ## 在数据面(agent)代理转发时怎样防止链接泄露？
 
 ## 怎样对数据面(agent)做cpu和内存 性能优化？
