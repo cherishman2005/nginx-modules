@@ -54,6 +54,12 @@
 * 在某些技术领域，不停炒作概念，反而技术还是原来的技术。-- 旧酒换新瓶。
   * 不要被表象迷惑。
 
+# FAQ
+
+## 在数据面(agent)代理转发时怎样防止链接泄露？
+
+## 怎样对数据面(agent)做cpu和内存 性能优化？
+
 # 参考链接
 
 - [Nginx Ingress、ALB Ingress和MSE Ingress对比](https://help.aliyun.com/zh/ack/ack-managed-and-ack-dedicated/user-guide/comparison-among-nginx-ingresses-alb-ingresses-and-mse-ingresses-1?spm=a2c4g.11186623.0.0.2b571a01qX91wa)
