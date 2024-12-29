@@ -1,5 +1,7 @@
 # service-mesh
 
+Service Mesh架构其实就是云原生时代的微服务架构。
+
 技术选型
 
 - [技术选型](./技术选型.md)
