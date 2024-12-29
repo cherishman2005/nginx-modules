@@ -24,6 +24,13 @@
 
 ## nginx
 
+nginx service-mesh提供
+* 流量控制（路由规则，负载均衡）
+* 鉴权
+
+![image](https://github.com/user-attachments/assets/910712a7-1651-499c-8744-34bc2b9a12a5)
+
+
 ### ingress-nginx
 
 ![image](https://github.com/user-attachments/assets/9d29d1fa-5315-4afc-a340-8a85b312b4b6)
