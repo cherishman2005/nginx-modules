@@ -2,6 +2,8 @@
 
 **最优秀的golang开源就是golang源码**
 
+- [bufio](/go/bufio.md)
+
 - [golang-channel](/go/golang-channel.md)
 
 - [go-set](/go/go-set.md)
