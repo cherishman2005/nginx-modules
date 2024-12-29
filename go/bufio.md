@@ -28,6 +28,8 @@ bufio通过缓存来提高效率，缓存放在主存中。
 
 当然，使用bufio后，对开发者的要求更高，不要用错了，特别是只能基础平台，出现bug，就会影响比较大。
 
+## 善于使用优秀的第3方插件也是一种能力。
+
 # 参考链接
 
 - [Go bufio](https://blog.csdn.net/JunChow520/article/details/115567330)
