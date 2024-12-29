@@ -1,5 +1,8 @@
 # ingress-nginx
 
+![image](https://github.com/user-attachments/assets/c48be1a2-dfbf-4942-817a-339fd6904d57)
+
+
 * 节点变更不用nginx reload重启；ingress-controller会触发nginx-lua upstream模块更新后端节点信息。
 * 只有路由规则变化时，才需要nginx-reload。
 
