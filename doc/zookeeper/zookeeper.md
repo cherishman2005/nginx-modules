@@ -14,6 +14,11 @@
 * 仲裁机制方式。
 * 启动磁盘锁定方式。
 
+## 小结
+
+* 为了保证一致性，宁可不可用，也不要污染了数据。
+
+
 # 参考链接
 
 - [Zookeeper](https://www.runoob.com/w3cnote/zookeeper-tutorial.html)
