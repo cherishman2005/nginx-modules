@@ -22,6 +22,8 @@ Service Mesh架构其实就是云原生时代的微服务架构。
 8. 如果请求的截止时间已过，sidecar 主动失败该请求，而不是再次尝试添加负载。
 9. Sidecar 以 metric 和分布式追踪的形式捕获上述行为的各个方面，这些追踪信息将发送到集中 metric 系统。
 
+![image](https://github.com/user-attachments/assets/68c5e89a-b253-4df8-932c-b497008bfff8)
+
 `服务网格并没有给我们带来新功能，它是用于解决其他工具已经解决过的问题，只不过这次是在云原生的 Kubernetes 环境下的实现。`
 
 ## nginx
