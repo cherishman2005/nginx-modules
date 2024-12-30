@@ -59,6 +59,11 @@ ingress-nginx基础的负载均衡和服务发现功能。
 ![image](https://github.com/user-attachments/assets/f9c22793-2dcf-44cc-8ff4-3d3656d7e22d)
 
 
+只包含控制面和数据面的 Service Mesh 服务网格全局结构图 如下：
+
+![image](https://github.com/user-attachments/assets/26c03982-9fc7-46ac-bdba-c1b4dd8a470c)
+
+
 ## bfe
 
 - [bfe](./bfe.md)
