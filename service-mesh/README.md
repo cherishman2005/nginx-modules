@@ -101,3 +101,5 @@ service-mesh提供基础服务： 可靠的消息传递，流量控制，权限�
 - [https://www.taloflow.ai/guides/comparisons/apisix-vs-tyk-api-gateway](https://www.taloflow.ai/guides/comparisons/apisix-vs-tyk-api-gateway)
 
 - [https://jimmysong.io/kubernetes-handbook/usecases/service-mesh.html](https://jimmysong.io/kubernetes-handbook/usecases/service-mesh.html)
+
+- [微服务及其演进史](https://www.cnblogs.com/wzh2010/p/14940280.html)
