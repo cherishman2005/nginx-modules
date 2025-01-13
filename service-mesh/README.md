@@ -24,8 +24,6 @@ Service Mesh架构其实就是云原生时代的微服务架构。
 
 ![image](https://github.com/user-attachments/assets/68c5e89a-b253-4df8-932c-b497008bfff8)
 
-`服务网格并没有给我们带来新功能，它是用于解决其他工具已经解决过的问题，只不过这次是在云原生的 Kubernetes 环境下的实现。`
-
 ## nginx
 
 nginx service-mesh提供
@@ -67,11 +65,6 @@ ingress-nginx基础的负载均衡和服务发现功能。
 ## bfe
 
 - [bfe](./bfe.md)
-
-# 小结
-
-* 在某些技术领域，不停炒作概念，反而技术还是原来的技术。-- 旧酒换新瓶。
-  * 不要被表象迷惑。
 
 # FAQ
 
