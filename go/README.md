@@ -59,7 +59,7 @@ complex64、complex128
 * 读写锁sync.RWMutex
 * 条件变量sync.Cond
 * Channel操作
-* 原子锁
+* 原子操作
 
 # FAQ
 
