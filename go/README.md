@@ -1,4 +1,4 @@
-# go development
+# golang
 
 **最优秀的golang开源就是golang源码**
 
@@ -52,6 +52,14 @@ complex64、complex128
 
 ![image](https://github.com/user-attachments/assets/def454b8-0bbb-4123-8487-fce56f5eee06)
 
+
+## golang协程直之间的同步方式
+
+* 互斥锁sync.Mutex
+* 读写锁sync.RWMutex
+* 条件变量sync.Cond
+* Channel操作
+* 原子锁
 
 # FAQ
 
