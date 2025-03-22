@@ -9,3 +9,6 @@
 
 ![image](https://github.com/user-attachments/assets/d8f8e3ab-3e6d-43ed-bc1e-7d7001e2308a)
 
+# 参考链接
+
+- [https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/](https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/)
