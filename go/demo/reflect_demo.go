@@ -5,6 +5,11 @@ import (
 	"reflect"
 )
 
+/*
+如何判断 2 个字符串切片（slice) 是相等的？
+reflect.DeepEqual() ， 但反射非常影响性能。
+ */
+
 type Author struct {
 	Name         int      `json:Name`
 	Publications []string `json:Publication,omitempty`
