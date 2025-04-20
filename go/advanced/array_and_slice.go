@@ -11,4 +11,10 @@ func main() {
 	fmt.Println("main sc=",sc)
 	fmt.Println("main s=",s)
 	fmt.Println("main s1=",s1)
+
+	str := "abc"
+	strb := []byte(str)
+	strb[0] = 'k'
+	fmt.Println("main str=", str)
+	fmt.Println("main strb=", string(strb))
 }
