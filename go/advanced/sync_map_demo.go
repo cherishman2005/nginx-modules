@@ -5,6 +5,10 @@ import (
 	"sync"
 )
 
+/*
+sync.Map主要是由 互斥锁Mutex 和 map组合而成；并且做到读写时部分逻辑绕过Mutex互斥锁
+*/
+
 func main() {
 	var m sync.Map
 
