@@ -34,4 +34,5 @@ update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 100
 ```shell
 apt-get install -y gcc-multilib
 ```
+
 果然很复杂的问题解决方案往往很简单
