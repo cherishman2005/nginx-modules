@@ -12,6 +12,6 @@ impl ServerTrait for Server {
 }
 
 fn main() {
-	let server = Server::default();
+    let server = Server::default();
     println!("add={}", server.add(1,2));
 }
