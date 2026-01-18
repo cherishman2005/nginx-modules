@@ -4,7 +4,7 @@
 ```
 sudo apt install curl
 ```
-安装速度慢的话可以参考https://blog.csdn.net/cacique111/article/details/125952535更换源
+安装速度慢的话可以参考https://blog.csdn.net/cacique111/article/details/125952535 更换源
 
 
 ## 2.安装rust
