@@ -22,6 +22,16 @@ https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clas
 
 # http_proxy代理设置
 
+## 启动 Clash
+
+```bash
+# 前台启动（测试）
+clash -d ~/.config/clash
+
+# 后台启动（推荐）
+nohup clash -d ~/.config/clash > /dev/null 2>&1 &
+```
+
 ## 设置系统代理（临时生效）
 
 ```bash
