@@ -16,6 +16,10 @@ chmod +x clash-linux-amd64-2024.12.15
 mv clash-linux-amd64-2024.12.15 /usr/local/bin/clash
 ```
 
+```
+https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge_2.4.4_amd64.deb
+```
+
 # http_proxy代理设置
 
 ## 设置系统代理（临时生效）
