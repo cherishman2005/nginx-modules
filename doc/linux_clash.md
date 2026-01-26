@@ -17,7 +17,7 @@ mv clash-linux-amd64-2024.12.15 /usr/local/bin/clash
 ```
 
 ```
-https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge_2.4.4_amd64.deb
+https://github.com/MetaCubeX/mihomo/releases/download/v1.19.19/mihomo-linux-amd64-v1.19.19.gz
 ```
 
 # http_proxy代理设置
