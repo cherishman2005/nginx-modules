@@ -18,6 +18,8 @@ mv clash-linux-amd64-2024.12.15 /usr/local/bin/clash
 
 ```
 https://github.com/MetaCubeX/mihomo/releases/download/v1.19.19/mihomo-linux-amd64-v1.19.19.gz
+
+nohup mihomo > /dev/null 2>&1 &
 ```
 
 # http_proxy代理设置
